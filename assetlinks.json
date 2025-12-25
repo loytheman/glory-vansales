@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.meyzer360.app_corpsec",
+      "sha256_cert_fingerprints": ["2E:B6:16:7E:C1:DC:BE:1A:F4:E7:B3:9F:35:9C:58:CD:02:C8:F5:98:DA:E9:37:A6:14:BD:89:23:99:65:EB:32"]
+    }
+  }
+]

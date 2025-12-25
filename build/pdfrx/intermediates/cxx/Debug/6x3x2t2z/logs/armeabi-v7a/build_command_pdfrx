@@ -1,0 +1,4 @@
+/Users/loy/Library/Android/sdk/cmake/3.22.1/bin/ninja \
+  -C \
+  /Users/loy/.pub-cache/hosted/pub.dev/pdfrx-1.1.19/android/.cxx/Debug/6x3x2t2z/armeabi-v7a \
+  pdfrx

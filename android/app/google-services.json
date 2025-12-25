@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "405154127394",
+    "project_id": "meyzer360-331ae",
+    "storage_bucket": "meyzer360-331ae.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:405154127394:android:7a586bdb70d80e5b18747b",
+        "android_client_info": {
+          "package_name": "com.meyzer360.app_corpsec"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-O8XjBmnET-rrgF519s8qDKv_bGT0Eik"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

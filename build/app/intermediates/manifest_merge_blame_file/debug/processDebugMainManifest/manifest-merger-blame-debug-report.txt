@@ -1,0 +1,467 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.meyzer360.app_corpsec"
+4    android:versionCode="1"
+5    android:versionName="0.1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="35" />
+10    <!--
+11         The INTERNET permission is required for development. Specifically,
+12         the Flutter tool needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/debug/AndroidManifest.xml:6:5-66
+15-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/debug/AndroidManifest.xml:6:22-64
+16    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+16-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:2:5-71
+16-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:2:22-69
+17    <!--
+18 Required to query activities that can process text, see:
+19         https://developer.android.com/training/package-visibility and
+20         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+21
+22         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
+23    -->
+24    <queries>
+24-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:56:5-75:15
+25        <intent>
+25-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:57:9-60:18
+26            <action android:name="android.intent.action.PROCESS_TEXT" />
+26-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:58:13-73
+26-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:58:21-70
+27
+28            <data android:mimeType="text/plain" />
+28-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:59:13-51
+28-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:59:19-48
+29        </intent>
+30        <!-- If your app checks for SMS support -->
+31        <intent>
+31-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:62:9-65:18
+32            <action android:name="android.intent.action.VIEW" />
+32-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:63:13-65
+32-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:63:21-62
+33
+34            <data android:scheme="sms" />
+34-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:59:13-51
+35        </intent>
+36        <!-- If your app checks for call support -->
+37        <intent>
+37-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:67:9-70:18
+38            <action android:name="android.intent.action.VIEW" />
+38-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:63:13-65
+38-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:63:21-62
+39
+40            <data android:scheme="tel" />
+40-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:59:13-51
+41        </intent>
+42        <!-- If your application checks for inAppBrowserView launch mode support -->
+43        <intent>
+43-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:72:9-74:18
+44            <action android:name="android.support.customtabs.action.CustomTabsService" />
+44-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:73:13-90
+44-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:73:21-87
+45        </intent>
+46    </queries>
+47
+48    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- suppress DeprecatedClassUsageInspection -->
+48-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:5-77
+48-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:22-74
+49    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+49-->[androidx.biometric:biometric:1.1.0] /Users/loy/.gradle/caches/transforms-3/ca03760eb2b5403f0d47f1b7be3b02c5/transformed/biometric-1.1.0/AndroidManifest.xml:27:5-74
+49-->[androidx.biometric:biometric:1.1.0] /Users/loy/.gradle/caches/transforms-3/ca03760eb2b5403f0d47f1b7be3b02c5/transformed/biometric-1.1.0/AndroidManifest.xml:27:22-71
+50    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+50-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:22:5-79
+50-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:22:22-76
+51    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+51-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:24:5-68
+51-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:24:22-65
+52    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+52-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:26:5-82
+52-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:26:22-79
+53
+54    <permission
+54-->[androidx.core:core:1.13.1] /Users/loy/.gradle/caches/transforms-3/201033d89854edb197c4e0803a90b79a/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+55        android:name="com.meyzer360.app_corpsec.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+55-->[androidx.core:core:1.13.1] /Users/loy/.gradle/caches/transforms-3/201033d89854edb197c4e0803a90b79a/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+56        android:protectionLevel="signature" />
+56-->[androidx.core:core:1.13.1] /Users/loy/.gradle/caches/transforms-3/201033d89854edb197c4e0803a90b79a/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+57
+58    <uses-permission android:name="com.meyzer360.app_corpsec.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+58-->[androidx.core:core:1.13.1] /Users/loy/.gradle/caches/transforms-3/201033d89854edb197c4e0803a90b79a/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+58-->[androidx.core:core:1.13.1] /Users/loy/.gradle/caches/transforms-3/201033d89854edb197c4e0803a90b79a/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+59
+60    <application
+61        android:name="android.app.Application"
+62        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+62-->[androidx.core:core:1.13.1] /Users/loy/.gradle/caches/transforms-3/201033d89854edb197c4e0803a90b79a/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+63        android:debuggable="true"
+64        android:enableOnBackInvokedCallback="true"
+65        android:extractNativeLibs="true"
+66        android:icon="@mipmap/launcher_icon"
+67        android:label="m360_app_corpsec" >
+68        <activity
+69            android:name="com.meyzer360.app_corpsec.MainActivity"
+70            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+71            android:exported="true"
+72            android:hardwareAccelerated="true"
+73            android:launchMode="singleTop"
+74            android:taskAffinity=""
+75            android:theme="@style/LaunchTheme"
+76            android:windowSoftInputMode="adjustResize" >
+77
+78            <!--
+79                 Specifies an Android theme to apply to this Activity as soon as
+80                 the Android process has started. This theme is visible to the user
+81                 while the Flutter UI initializes. After that, this theme continues
+82                 to determine the Window background behind the Flutter UI.
+83            -->
+84            <meta-data
+85                android:name="io.flutter.embedding.android.NormalTheme"
+86                android:resource="@style/NormalTheme" />
+87
+88            <intent-filter>
+89                <action android:name="android.intent.action.MAIN" />
+90
+91                <category android:name="android.intent.category.LAUNCHER" />
+92            </intent-filter>
+93
+94            <meta-data
+95                android:name="flutter_deeplink_enabled"
+96                android:value="true" />
+97
+98            <intent-filter android:autoVerify="true" >
+99                <action android:name="android.intent.action.VIEW" />
+99-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:63:13-65
+99-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:63:21-62
+100
+101                <category android:name="android.intent.category.DEFAULT" />
+102                <category android:name="android.intent.category.BROWSABLE" />
+103
+104                <!-- LOYNOTE: should we have a delicate domain to handle mobile deep link post login? else can't have multiple host... -->
+105                <data
+105-->/Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/android/app/src/main/AndroidManifest.xml:59:13-51
+106                    android:host="corpsec.meyzer.xyz"
+107                    android:scheme="https" />
+108            </intent-filter>
+109        </activity>
+110        <!--
+111             Don't delete the meta-data below.
+112             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+113        -->
+114        <meta-data
+115            android:name="flutterEmbedding"
+116            android:value="2" />
+117        <!--
+118           Declares a provider which allows us to store files to share in
+119           '.../caches/share_plus' and grant the receiving action access
+120        -->
+121        <provider
+121-->[:share_plus] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/share_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:13:9-21:20
+122            android:name="dev.fluttercommunity.plus.share.ShareFileProvider"
+122-->[:share_plus] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/share_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:14:13-77
+123            android:authorities="com.meyzer360.app_corpsec.flutter.share_provider"
+123-->[:share_plus] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/share_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:15:13-74
+124            android:exported="false"
+124-->[:share_plus] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/share_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:16:13-37
+125            android:grantUriPermissions="true" >
+125-->[:share_plus] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/share_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:17:13-47
+126            <meta-data
+126-->[:share_plus] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/share_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:18:13-20:68
+127                android:name="android.support.FILE_PROVIDER_PATHS"
+127-->[:share_plus] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/share_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:19:17-67
+128                android:resource="@xml/flutter_share_file_paths" />
+128-->[:share_plus] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/share_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:20:17-65
+129        </provider>
+130        <!--
+131           This manifest declared broadcast receiver allows us to use an explicit
+132           Intent when creating a PendingItent to be informed of the user's choice
+133        -->
+134        <receiver
+134-->[:share_plus] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/share_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:26:9-32:20
+135            android:name="dev.fluttercommunity.plus.share.SharePlusPendingIntent"
+135-->[:share_plus] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/share_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:27:13-82
+136            android:exported="false" >
+136-->[:share_plus] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/share_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:28:13-37
+137            <intent-filter>
+137-->[:share_plus] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/share_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:29:13-31:29
+138                <action android:name="EXTRA_CHOSEN_COMPONENT" />
+138-->[:share_plus] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/share_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:30:17-65
+138-->[:share_plus] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/share_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:30:25-62
+139            </intent-filter>
+140        </receiver>
+141
+142        <activity
+142-->[:url_launcher_android] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/url_launcher_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:8:9-11:74
+143            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+143-->[:url_launcher_android] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/url_launcher_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:9:13-74
+144            android:exported="false"
+144-->[:url_launcher_android] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/url_launcher_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:10:13-37
+145            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+145-->[:url_launcher_android] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/url_launcher_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:11:13-71
+146
+147        <service
+147-->[:firebase_core] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/firebase_core/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:8:9-12:19
+148            android:name="com.google.firebase.components.ComponentDiscoveryService"
+148-->[:firebase_core] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/firebase_core/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:8:18-89
+149            android:directBootAware="true"
+149-->[com.google.firebase:firebase-common:21.0.0] /Users/loy/.gradle/caches/transforms-3/cccd5ddf249db02fd5ee00f444fc14ec/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:32:13-43
+150            android:exported="false" >
+150-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:56:13-37
+151            <meta-data
+151-->[:firebase_core] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/firebase_core/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:9:13-11:85
+152                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+152-->[:firebase_core] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/firebase_core/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:10:17-124
+153                android:value="com.google.firebase.components.ComponentRegistrar" />
+153-->[:firebase_core] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/firebase_core/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:11:17-82
+154            <meta-data
+154-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:57:13-59:85
+155                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar"
+155-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:58:17-122
+156                android:value="com.google.firebase.components.ComponentRegistrar" />
+156-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:59:17-82
+157            <meta-data
+157-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:60:13-62:85
+158                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+158-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:61:17-119
+159                android:value="com.google.firebase.components.ComponentRegistrar" />
+159-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:62:17-82
+160            <meta-data
+160-->[com.google.firebase:firebase-installations:18.0.0] /Users/loy/.gradle/caches/transforms-3/f58d5385ed6775f62c1b20aaa8b1be70/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:15:13-17:85
+161                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+161-->[com.google.firebase:firebase-installations:18.0.0] /Users/loy/.gradle/caches/transforms-3/f58d5385ed6775f62c1b20aaa8b1be70/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:16:17-130
+162                android:value="com.google.firebase.components.ComponentRegistrar" />
+162-->[com.google.firebase:firebase-installations:18.0.0] /Users/loy/.gradle/caches/transforms-3/f58d5385ed6775f62c1b20aaa8b1be70/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:17:17-82
+163            <meta-data
+163-->[com.google.firebase:firebase-installations:18.0.0] /Users/loy/.gradle/caches/transforms-3/f58d5385ed6775f62c1b20aaa8b1be70/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:18:13-20:85
+164                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+164-->[com.google.firebase:firebase-installations:18.0.0] /Users/loy/.gradle/caches/transforms-3/f58d5385ed6775f62c1b20aaa8b1be70/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:19:17-127
+165                android:value="com.google.firebase.components.ComponentRegistrar" />
+165-->[com.google.firebase:firebase-installations:18.0.0] /Users/loy/.gradle/caches/transforms-3/f58d5385ed6775f62c1b20aaa8b1be70/transformed/jetified-firebase-installations-18.0.0/AndroidManifest.xml:20:17-82
+166            <meta-data
+166-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/loy/.gradle/caches/transforms-3/af73312f36e284eb165dd4f073c63fe6/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
+167                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+167-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/loy/.gradle/caches/transforms-3/af73312f36e284eb165dd4f073c63fe6/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
+168                android:value="com.google.firebase.components.ComponentRegistrar" />
+168-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/loy/.gradle/caches/transforms-3/af73312f36e284eb165dd4f073c63fe6/transformed/jetified-firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
+169            <meta-data
+169-->[com.google.firebase:firebase-common:21.0.0] /Users/loy/.gradle/caches/transforms-3/cccd5ddf249db02fd5ee00f444fc14ec/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
+170                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+170-->[com.google.firebase:firebase-common:21.0.0] /Users/loy/.gradle/caches/transforms-3/cccd5ddf249db02fd5ee00f444fc14ec/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:36:17-109
+171                android:value="com.google.firebase.components.ComponentRegistrar" />
+171-->[com.google.firebase:firebase-common:21.0.0] /Users/loy/.gradle/caches/transforms-3/cccd5ddf249db02fd5ee00f444fc14ec/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:37:17-82
+172            <meta-data
+172-->[com.google.firebase:firebase-datatransport:18.2.0] /Users/loy/.gradle/caches/transforms-3/fcc29f723f579ddb4e38a08e2fd536c3/transformed/jetified-firebase-datatransport-18.2.0/AndroidManifest.xml:25:13-27:85
+173                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+173-->[com.google.firebase:firebase-datatransport:18.2.0] /Users/loy/.gradle/caches/transforms-3/fcc29f723f579ddb4e38a08e2fd536c3/transformed/jetified-firebase-datatransport-18.2.0/AndroidManifest.xml:26:17-115
+174                android:value="com.google.firebase.components.ComponentRegistrar" />
+174-->[com.google.firebase:firebase-datatransport:18.2.0] /Users/loy/.gradle/caches/transforms-3/fcc29f723f579ddb4e38a08e2fd536c3/transformed/jetified-firebase-datatransport-18.2.0/AndroidManifest.xml:27:17-82
+175        </service>
+176
+177        <receiver
+177-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:10:9-17:20
+178            android:name="uk.orth.push.FirebaseMessagingReceiver"
+178-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:11:13-66
+179            android:exported="true"
+179-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:12:13-36
+180            android:permission="com.google.android.c2dm.permission.SEND" >
+180-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:13:13-73
+181            <intent-filter>
+181-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:14:13-16:29
+182                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+182-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:15:17-81
+182-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:15:25-78
+183            </intent-filter>
+184        </receiver>
+185
+186        <service
+186-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:19:9-25:19
+187            android:name="uk.orth.push.MessagingService"
+187-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:20:13-57
+188            android:exported="false" >
+188-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:21:13-37
+189            <intent-filter>
+189-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:22:13-24:29
+190                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+190-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:23:17-78
+190-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:23:25-75
+191            </intent-filter>
+192        </service>
+193
+194        <receiver
+194-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:29:9-40:20
+195            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+195-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:30:13-78
+196            android:exported="true"
+196-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:31:13-36
+197            android:permission="com.google.android.c2dm.permission.SEND" >
+197-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:32:13-73
+198            <intent-filter>
+198-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:14:13-16:29
+199                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+199-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:15:17-81
+199-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:15:25-78
+200            </intent-filter>
+201
+202            <meta-data
+202-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:37:13-39:40
+203                android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED"
+203-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:38:17-92
+204                android:value="true" />
+204-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:39:17-37
+205        </receiver>
+206        <!--
+207             FirebaseMessagingService performs security checks at runtime,
+208             but set to not exported to explicitly avoid allowing another app to call it.
+209        -->
+210        <service
+210-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:46:9-53:19
+211            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+211-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:47:13-82
+212            android:directBootAware="true"
+212-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:48:13-43
+213            android:exported="false" >
+213-->[com.google.firebase:firebase-messaging:24.1.0] /Users/loy/.gradle/caches/transforms-3/94abb67d700fb96007f215527a1f5484/transformed/jetified-firebase-messaging-24.1.0/AndroidManifest.xml:49:13-37
+214            <intent-filter android:priority="-500" >
+214-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:22:13-24:29
+215                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+215-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:23:17-78
+215-->[:push] /Users/loy/Desktop/www/lyhco/projects/glory/_ref/glory_vansales_app/build/push/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:23:25-75
+216            </intent-filter>
+217        </service>
+218
+219        <activity
+219-->[com.google.android.gms:play-services-base:18.0.1] /Users/loy/.gradle/caches/transforms-3/1a56e7c995f7fa6c47902d444e08c64a/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+220            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+220-->[com.google.android.gms:play-services-base:18.0.1] /Users/loy/.gradle/caches/transforms-3/1a56e7c995f7fa6c47902d444e08c64a/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+221            android:exported="false"
+221-->[com.google.android.gms:play-services-base:18.0.1] /Users/loy/.gradle/caches/transforms-3/1a56e7c995f7fa6c47902d444e08c64a/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+222            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+222-->[com.google.android.gms:play-services-base:18.0.1] /Users/loy/.gradle/caches/transforms-3/1a56e7c995f7fa6c47902d444e08c64a/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+223
+224        <provider
+224-->[com.google.firebase:firebase-common:21.0.0] /Users/loy/.gradle/caches/transforms-3/cccd5ddf249db02fd5ee00f444fc14ec/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
+225            android:name="com.google.firebase.provider.FirebaseInitProvider"
+225-->[com.google.firebase:firebase-common:21.0.0] /Users/loy/.gradle/caches/transforms-3/cccd5ddf249db02fd5ee00f444fc14ec/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:24:13-77
+226            android:authorities="com.meyzer360.app_corpsec.firebaseinitprovider"
+226-->[com.google.firebase:firebase-common:21.0.0] /Users/loy/.gradle/caches/transforms-3/cccd5ddf249db02fd5ee00f444fc14ec/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:25:13-72
+227            android:directBootAware="true"
+227-->[com.google.firebase:firebase-common:21.0.0] /Users/loy/.gradle/caches/transforms-3/cccd5ddf249db02fd5ee00f444fc14ec/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:26:13-43
+228            android:exported="false"
+228-->[com.google.firebase:firebase-common:21.0.0] /Users/loy/.gradle/caches/transforms-3/cccd5ddf249db02fd5ee00f444fc14ec/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:27:13-37
+229            android:initOrder="100" />
+229-->[com.google.firebase:firebase-common:21.0.0] /Users/loy/.gradle/caches/transforms-3/cccd5ddf249db02fd5ee00f444fc14ec/transformed/jetified-firebase-common-21.0.0/AndroidManifest.xml:28:13-36
+230        <provider
+230-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/loy/.gradle/caches/transforms-3/558a8dd566f73f6cc0f09d02c4323c35/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+231            android:name="androidx.startup.InitializationProvider"
+231-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/loy/.gradle/caches/transforms-3/558a8dd566f73f6cc0f09d02c4323c35/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:25:13-67
+232            android:authorities="com.meyzer360.app_corpsec.androidx-startup"
+232-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/loy/.gradle/caches/transforms-3/558a8dd566f73f6cc0f09d02c4323c35/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:26:13-68
+233            android:exported="false" >
+233-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/loy/.gradle/caches/transforms-3/558a8dd566f73f6cc0f09d02c4323c35/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:27:13-37
+234            <meta-data
+234-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/loy/.gradle/caches/transforms-3/558a8dd566f73f6cc0f09d02c4323c35/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+235                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+235-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/loy/.gradle/caches/transforms-3/558a8dd566f73f6cc0f09d02c4323c35/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+236                android:value="androidx.startup" />
+236-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/loy/.gradle/caches/transforms-3/558a8dd566f73f6cc0f09d02c4323c35/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+237            <meta-data
+237-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+238                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+238-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+239                android:value="androidx.startup" />
+239-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+240        </provider>
+241
+242        <uses-library
+242-->[androidx.window:window:1.2.0] /Users/loy/.gradle/caches/transforms-3/3c04db6b753b953e0f0a1baf92e03697/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
+243            android:name="androidx.window.extensions"
+243-->[androidx.window:window:1.2.0] /Users/loy/.gradle/caches/transforms-3/3c04db6b753b953e0f0a1baf92e03697/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
+244            android:required="false" />
+244-->[androidx.window:window:1.2.0] /Users/loy/.gradle/caches/transforms-3/3c04db6b753b953e0f0a1baf92e03697/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
+245        <uses-library
+245-->[androidx.window:window:1.2.0] /Users/loy/.gradle/caches/transforms-3/3c04db6b753b953e0f0a1baf92e03697/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
+246            android:name="androidx.window.sidecar"
+246-->[androidx.window:window:1.2.0] /Users/loy/.gradle/caches/transforms-3/3c04db6b753b953e0f0a1baf92e03697/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
+247            android:required="false" />
+247-->[androidx.window:window:1.2.0] /Users/loy/.gradle/caches/transforms-3/3c04db6b753b953e0f0a1baf92e03697/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
+248
+249        <meta-data
+249-->[com.google.android.gms:play-services-basement:18.3.0] /Users/loy/.gradle/caches/transforms-3/acd1b6c03b1ee75b7d322e0e21b04a02/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:21:9-23:69
+250            android:name="com.google.android.gms.version"
+250-->[com.google.android.gms:play-services-basement:18.3.0] /Users/loy/.gradle/caches/transforms-3/acd1b6c03b1ee75b7d322e0e21b04a02/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:22:13-58
+251            android:value="@integer/google_play_services_version" />
+251-->[com.google.android.gms:play-services-basement:18.3.0] /Users/loy/.gradle/caches/transforms-3/acd1b6c03b1ee75b7d322e0e21b04a02/transformed/jetified-play-services-basement-18.3.0/AndroidManifest.xml:23:13-66
+252
+253        <receiver
+253-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+254            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+254-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+255            android:directBootAware="false"
+255-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+256            android:enabled="true"
+256-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+257            android:exported="true"
+257-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+258            android:permission="android.permission.DUMP" >
+258-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+259            <intent-filter>
+259-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+260                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+260-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+260-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+261            </intent-filter>
+262            <intent-filter>
+262-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+263                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+263-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+263-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+264            </intent-filter>
+265            <intent-filter>
+265-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+266                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+266-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+266-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+267            </intent-filter>
+268            <intent-filter>
+268-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+269                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+269-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+269-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/loy/.gradle/caches/transforms-3/8e2ab3037611797652aab5a79a6e537a/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+270            </intent-filter>
+271        </receiver>
+272
+273        <service
+273-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/loy/.gradle/caches/transforms-3/999f4dada97bb424dfbed075f99be5e2/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:28:9-34:19
+274            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+274-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/loy/.gradle/caches/transforms-3/999f4dada97bb424dfbed075f99be5e2/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:29:13-103
+275            android:exported="false" >
+275-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/loy/.gradle/caches/transforms-3/999f4dada97bb424dfbed075f99be5e2/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:30:13-37
+276            <meta-data
+276-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/loy/.gradle/caches/transforms-3/999f4dada97bb424dfbed075f99be5e2/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:31:13-33:39
+277                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+277-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/loy/.gradle/caches/transforms-3/999f4dada97bb424dfbed075f99be5e2/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:32:17-94
+278                android:value="cct" />
+278-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/loy/.gradle/caches/transforms-3/999f4dada97bb424dfbed075f99be5e2/transformed/jetified-transport-backend-cct-3.1.9/AndroidManifest.xml:33:17-36
+279        </service>
+280        <service
+280-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/loy/.gradle/caches/transforms-3/50858a7fd497a397d0848e467bf5d4ce/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:26:9-30:19
+281            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+281-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/loy/.gradle/caches/transforms-3/50858a7fd497a397d0848e467bf5d4ce/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:27:13-117
+282            android:exported="false"
+282-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/loy/.gradle/caches/transforms-3/50858a7fd497a397d0848e467bf5d4ce/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:28:13-37
+283            android:permission="android.permission.BIND_JOB_SERVICE" >
+283-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/loy/.gradle/caches/transforms-3/50858a7fd497a397d0848e467bf5d4ce/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:29:13-69
+284        </service>
+285
+286        <receiver
+286-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/loy/.gradle/caches/transforms-3/50858a7fd497a397d0848e467bf5d4ce/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:32:9-34:40
+287            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+287-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/loy/.gradle/caches/transforms-3/50858a7fd497a397d0848e467bf5d4ce/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:33:13-132
+288            android:exported="false" />
+288-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/loy/.gradle/caches/transforms-3/50858a7fd497a397d0848e467bf5d4ce/transformed/jetified-transport-runtime-3.1.9/AndroidManifest.xml:34:13-37
+289    </application>
+290
+291</manifest>
