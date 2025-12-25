@@ -1,4 +1,4 @@
-package com.meyzer360.app_corpsec
+package com.glory.vansales
 
 import io.flutter.embedding.android.FlutterFragmentActivity;
 

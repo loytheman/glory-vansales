@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "405154127394",
-    "project_id": "meyzer360-331ae",
-    "storage_bucket": "meyzer360-331ae.firebasestorage.app"
+    "project_number": "496182547296",
+    "project_id": "glory-vansales",
+    "storage_bucket": "glory-vansales.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:405154127394:android:7a586bdb70d80e5b18747b",
+        "mobilesdk_app_id": "1:496182547296:android:807302e57d81b442b54405",
         "android_client_info": {
-          "package_name": "com.meyzer360.app_corpsec"
+          "package_name": "com.glory.vansales"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyA-O8XjBmnET-rrgF519s8qDKv_bGT0Eik"
+          "current_key": "AIzaSyACg4XVnc0KgrTCJzXTR0CldUPMp1pMEgY"
         }
       ],
       "services": {
