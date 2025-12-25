@@ -1,0 +1,9 @@
+## loynote: run cmd to rebuild
+## dart run flutter_native_splash:create --path=flutter_native_splash.yaml
+
+flutter_native_splash:
+  color: "#071b5d"
+  image: "assets/img/m360.png"
+  android: false
+  ios: false
+  

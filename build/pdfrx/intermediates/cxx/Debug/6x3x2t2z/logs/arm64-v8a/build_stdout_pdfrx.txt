@@ -1,2 +1,0 @@
-ninja: Entering directory `/Users/loy/.pub-cache/hosted/pub.dev/pdfrx-1.1.19/android/.cxx/Debug/6x3x2t2z/arm64-v8a'
-ninja: no work to do.
