@@ -37,7 +37,8 @@
 
                 <!-- LOYNOTE: should we have a delicate domain to handle mobile deep link post login? else can't have multiple host... -->
                 <!-- <data android:scheme="https" android:host="vansales.glory.com.sg"  /> -->
-                <data android:scheme="https" android:host="localhost"  />
+                <!-- <data android:scheme="https" android:host="localhost"  /> -->
+                <data android:scheme="https" android:host="glory-vansales.lyhco.me" />
             </intent-filter>
 
 

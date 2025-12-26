@@ -7,7 +7,6 @@ import 'package:m360_app_corpsec/app/app.router.dart';
 import 'package:m360_app_corpsec/common/config.dart';
 import 'package:m360_app_corpsec/common/constants.dart';
 import 'package:m360_app_corpsec/helpers/mixins.dart';
-import 'package:m360_app_corpsec/helpers/push.dart';
 import 'package:m360_app_corpsec/helpers/store.dart';
 import 'package:m360_app_corpsec/helpers/utils.dart';
 import 'package:m360_app_corpsec/models/model.account.dart';
@@ -96,10 +95,12 @@ class AuthenticationService with ApiServiceMixin {
 
   Future<TokenSet> returnToAuthCodeLoginFlow(String code) async {
     final oidcTs = await _exchangeCodeForOidcToken(code);
-    final ts = await _loginWithOidcToken(oidcTs);
+    //loynote: skipping intermediary server for now
+    // final ts = await _loginWithOidcToken(oidcTs);
     user?.tokenSetOidc = oidcTs;
     // ts.saveSecure();
-    return ts;
+    // return ts;
+    return oidcTs;
   }
 
   Future<TokenSet> _exchangeCodeForOidcToken(String code) async {
@@ -112,6 +113,7 @@ class AuthenticationService with ApiServiceMixin {
       'redirect_uri': redirectUrl,
       'code': code,
       //'code_verifier': "S",
+      'scope': scope,
     };
     final h = {
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -126,7 +128,9 @@ class AuthenticationService with ApiServiceMixin {
           accessToken: r.data['access_token'],
           idToken: r.data['id_token'],
           refreshToken: r.data['refresh_token'],
-          exp: e.toString());
+          exp: e.toString(),
+          // exp: r.data['expires_in'],
+        );
       ts.saveOIDCSecure();
       return ts;
     }
@@ -139,9 +143,6 @@ class AuthenticationService with ApiServiceMixin {
       [String clientId = 'central']) async {
     setBusy(true);
     var ort = await StoreHelper.read(StoreKey.OIDC_REFRESH_TOKEN);
-    print('getOidcTokenWithRefreshToken');
-    print(ort);
-    print(clientId);
     if (ort != null) {
       Map<String, String> data = {
         'client_id': clientId,
@@ -171,19 +172,18 @@ class AuthenticationService with ApiServiceMixin {
   }
 
   Future<TokenSet> loginCentralWithOidcToken(TokenSet tr) async {
-    return _loginWithOidcToken(tr, 'central');
+    return _loginWithOidcToken(tr);
   }
 
-  Future<TokenSet> _loginWithOidcToken(TokenSet tr,
-      [String moduleType = 'corpsec']) async {
+  Future<TokenSet> _loginWithOidcToken(TokenSet tr) async {
     setBusy(true);
     final headers = {
       'Content-Type': 'application/json; charset=UTF-8',
       'Authorization': tr.accessToken,
-      'Token': tr.idToken,
+      'Token': tr.idToken ?? "",
     };
     String endpoint = "/auth/oidc-login";
-    final ar = await WebApi.callApi("POST", endpoint, {}, headers, moduleType);
+    final ar = await WebApi.callApi("POST", endpoint, {}, headers);
 
     // ShareFunc.cancelToast();
     // ShareFunc.showToast("login ok");
@@ -367,7 +367,7 @@ class OpenIdConfig {
 //loynote: adb test deep links. no underscores!!! for custom scheme!
 
 // adb shell 'am start -a android.intent.action.VIEW -c android.intent.category.BROWSABLE  -d "com.meyzer.myfirstapp/auth.callback"'
-// adb shell 'am start -a android.intent.action.VIEW -c android.intent.category.BROWSABLE  -d "https://central.meyzer.xyz/auth-callback"'
+// adb shell 'am start -a android.intent.action.VIEW -c android.intent.category.BROWSABLE  -d "https://glory-vansales.lyhco.me/auth-callback"'
 
 //flutter build apk
 //adb install app-release.apk

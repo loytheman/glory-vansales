@@ -7,6 +7,7 @@ import 'package:skeletonizer/skeletonizer.dart';
 
 class Account {
   late String userId = "";
+  late String name = "";
   late String firstName = "";
   late String lastName = "";
   late String mobileFull = "";
@@ -41,17 +42,17 @@ class Account {
       // final t1 = JWT.decode(ts.accessToken);
       final t2 = JWT.decode(ts.idToken);
       final payload = t2.payload;
+      // final payload = {};
 
       a.userId = payload["sub"];
-      a.mobileFull = payload["mobileFull"];
-      a.firstName = payload["firstName"];
-      a.lastName = payload["lastName"];
-      a.displayPicture = payload["displayPicture"];
-      a.email = payload["email"];
-      a.mobileNumber = payload["mobile"];
-      a.mobileCountryCode = payload["mobileCountryCode"];
-
-      a.kycVerified = payload["kycVerified"] == 'passed';
+      a.name = payload["name"];
+      // a.mobileFull = payload["mobileFull"];
+      // a.firstName = payload["firstName"];
+      // a.lastName = payload["lastName"];
+      // a.displayPicture = payload["displayPicture"];
+      // a.email = payload["email"];
+      // a.mobileNumber = payload["mobile"];
+      // a.mobileCountryCode = payload["mobileCountryCode"];
     }
 
     return a;
@@ -84,7 +85,7 @@ class TokenSet {
 
   Future<void> saveSecure() async {
     await StoreHelper.write(StoreKey.ACCESS_TOKEN, accessToken);
-    await StoreHelper.write(StoreKey.ID_TOKEN, idToken);
+    await StoreHelper.write(StoreKey.ID_TOKEN, idToken ?? '');
     await StoreHelper.write(StoreKey.REFRESH_TOKEN, refreshToken ?? '');
     await StoreHelper.write(StoreKey.EXP, exp ?? '');
   }
@@ -93,7 +94,7 @@ class TokenSet {
     print('saveOIDCSecure');
     print(refreshToken);
     await StoreHelper.write(StoreKey.OIDC_ACCESS_TOKEN, accessToken);
-    await StoreHelper.write(StoreKey.OIDC_ID_TOKEN, idToken);
+    await StoreHelper.write(StoreKey.OIDC_ID_TOKEN, idToken ?? '');
     await StoreHelper.write(StoreKey.OIDC_REFRESH_TOKEN, refreshToken ?? '');
     await StoreHelper.write(StoreKey.OIDC_EXP, exp ?? '');
   }

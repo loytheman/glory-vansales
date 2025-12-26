@@ -34,7 +34,7 @@ class DocumentDetailView extends StackedView<DocumentDetailViewModel> {
         icon: Icon(Icons.ios_share),
         onPressed: () async {
           // Share.share('check out my website https://example.com');
-          final res = await WebApi.call("GET", path, {}, WebApi.getAuthHeader(), 'corpsec', ResponseType.bytes);
+          final res = await WebApi.call("GET", path, {}, WebApi.getAuthHeader(), ResponseType.bytes);
           final dir = await getTemporaryDirectory();
           final temp = "${dir.path}/$filename";
           File(temp).writeAsBytesSync(res.data);

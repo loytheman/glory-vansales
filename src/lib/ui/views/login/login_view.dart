@@ -35,7 +35,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView, WidgetsBind
     viewModel.setValidationMessages({});
 
     viewModel.emailValue = "cto@lycho.me";
-    viewModel.passwordValue = "12345@";
+    viewModel.passwordValue = "";
 
     WidgetsBinding.instance.addObserver(this);
 

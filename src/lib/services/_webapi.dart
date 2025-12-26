@@ -23,7 +23,6 @@ class WebApi {
   static Dio dio = Dio(BaseOptions());
   static Dio dioRefresh = Dio(BaseOptions());
   static Dio dioRetry = Dio(BaseOptions());
-  static const _defaultModuleType = 'corpsec';
 
   static init() {
     dio.interceptors.add(DioInterceptor());
@@ -51,14 +50,10 @@ class WebApi {
     String endpoint = "/",
     Map data = const {},
     Map<String, String> headers = const {},
-    String moduleType = _defaultModuleType,
     ResponseType resType = ResponseType.json,
   ]) async {
     // ignore: no_leading_underscores_for_local_identifiers
     String _baseUrl = Config.API_BASE_URL;
-    if (moduleType == 'central') {
-      _baseUrl = Config.CENTRAL_API_BASE_URL;
-    }
 
     endpoint = endpoint.startsWith("https://") ? endpoint : _baseUrl + endpoint;
 
@@ -86,7 +81,6 @@ class WebApi {
     String endpoint = "/",
     Map data = const {},
     Map<String, String> headers = const {},
-    String moduleType = _defaultModuleType,
     ResponseType resType = ResponseType.json,
   ]) async {
     final u = _authenticationService.user;
@@ -102,7 +96,7 @@ class WebApi {
     mergeHeaders.addAll(headers);
 
     try {
-      final r = await call(method, endpoint, data, mergeHeaders, moduleType);
+      final r = await call(method, endpoint, data, mergeHeaders);
       final ar = ApiResponse.fromJson(r.data, statusCode: r.statusCode);
       return ar;
     } on ApiException catch (e) {
@@ -112,7 +106,7 @@ class WebApi {
         await _authenticationService.loginViaRefreshToken();
         mergeHeaders['Authorization'] = u?.tokenSetApp?.accessToken ?? '';
         mergeHeaders['Token'] = u?.tokenSetApp?.idToken ?? '';
-        final r = await callApi(method, endpoint, data, mergeHeaders, moduleType);
+        final r = await callApi(method, endpoint, data, mergeHeaders);
         return r;
       }
       if (e.code == ErrorType.REFRESH_TOKEN_EXPIRED ||

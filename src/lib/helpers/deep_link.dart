@@ -3,8 +3,6 @@ import 'dart:async';
 import 'package:app_links/app_links.dart';
 import 'package:m360_app_corpsec/app/app.locator.dart';
 import 'package:m360_app_corpsec/app/app.router.dart';
-import 'package:m360_app_corpsec/common/constants.dart';
-import 'package:m360_app_corpsec/helpers/life_cycle.dart';
 import 'package:m360_app_corpsec/helpers/shareFunc.dart';
 import 'package:m360_app_corpsec/helpers/utils.dart';
 import 'package:m360_app_corpsec/services/authentication_service.dart';
