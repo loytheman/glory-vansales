@@ -41,22 +41,9 @@ class DashboardView extends StackedView<DashboardViewModel> {
                     textAlign: TextAlign.right, style: context.bodyMedium?.copyWith(color: myStyle?.linkColor)),
                 onTap: () {
                   //navigationService.navigateTo(Routes.companyView, parameters: {"tabIndex": "0"});
-                  navigationService.navigateToCompanyView(tabIndex: 0);
                 },
               )),
-          wCompanyInfoTable(company: viewModel.company, isCompact: true),
           MyUi.hs_lg(),
-          SizedBox(
-              width: double.infinity,
-              child: InkWell(
-                child: Text("View cap table",
-                    textAlign: TextAlign.right, style: context.bodyMedium?.copyWith(color: myStyle?.linkColor)),
-                onTap: () {
-                  //navigationService.navigateTo(Routes.companyView, parameters: {"tabIndex": "3"});
-                  navigationService.navigateToCompanyView(tabIndex: 2);
-                },
-              )),
-          wDashboardShareholder(company: viewModel.company),
         ],
       ),
     );
