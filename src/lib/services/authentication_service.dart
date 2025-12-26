@@ -24,10 +24,13 @@ class AuthenticationService with ApiServiceMixin {
 
   final discoveryUrl = Config.DISCOVERY_URL;
   final clientId = Config.CLIENT_ID;
+  final clientSecret = Config.CLIENT_SECRET;
   final redirectUrl = Config.REDIRECT_URL;
+  final scope = Config.SCOPE;
+  // final scopes = ['profile', "openid", "permissions"];
   // final logoutUrl = Config.LOGOUT_URL;
   final postLogoutRedirectUrl = Config.POST_LOGOUT_REDIRECT_URL;
-  final scopes = ['profile', "openid", "permissions"];
+  
   OpenIdConfig? openIdConfig;
 
   final LocalAuthentication _auth = LocalAuthentication();
@@ -35,8 +38,12 @@ class AuthenticationService with ApiServiceMixin {
   bool _isLocalAuthenticated = false;
 
   Future<void> init() async {
-    openIdConfig = OpenIdConfig(discoveryUrl: discoveryUrl);
-    await openIdConfig?.getConfiguration();
+    // openIdConfig = OpenIdConfig.fromDiscoveryUrl(discoveryUrl);
+    // await openIdConfig?.getConfiguration();
+    final a = Config.AUTH_URL;
+    final t = Config.TOKEN_URL;
+    final e = Config.END_SESSION_URL;
+    openIdConfig = OpenIdConfig.fromUrl(a, t, e);
   }
 
   bool isLogin() {
@@ -67,11 +74,13 @@ class AuthenticationService with ApiServiceMixin {
 
     String qs = Uri(queryParameters: {
       'client_id': clientId,
+      'client_secret': clientSecret,
       'response_type': 'code',
       'redirect_uri': redirectUrl,
       //'code_challenge': '',
       //'code_challenge_method': 'S256',
-      'scope': scopes.join(" "),
+      // 'scope': scopes.join(" "),
+      'scope': scope,
     }).query;
 
     final url = "${openIdConfig?.authorizationEndpoint}?$qs";
@@ -98,6 +107,7 @@ class AuthenticationService with ApiServiceMixin {
 
     Map<String, String> data = {
       'client_id': clientId,
+      'client_secret': clientSecret,
       'grant_type': 'authorization_code',
       'redirect_uri': redirectUrl,
       'code': code,
@@ -321,12 +331,26 @@ class AuthenticationService with ApiServiceMixin {
 }
 
 class OpenIdConfig {
-  final String discoveryUrl;
+  late final String discoveryUrl;
   String? authorizationEndpoint;
-  String? endSessionEndpoint;
   String? tokenEndpoint;
+  String? endSessionEndpoint;
+  OpenIdConfig();
 
-  OpenIdConfig({required this.discoveryUrl});
+
+  factory OpenIdConfig.fromDiscoveryUrl(String url) {
+    final cfg = OpenIdConfig();
+    cfg.discoveryUrl = url;
+    return cfg;
+  }
+
+  factory OpenIdConfig.fromUrl(String a, String t, String e) {
+    final cfg = OpenIdConfig();
+    cfg.authorizationEndpoint = a;
+    cfg.tokenEndpoint = t;
+    cfg.endSessionEndpoint = e;
+    return cfg;
+  }
 
   Future<void> getConfiguration() async {
     try {

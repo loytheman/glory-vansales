@@ -4,9 +4,16 @@ import 'package:m360_app_corpsec/helpers/utils.dart';
 
 class Config {
   //oidc
+  static String MS_URL = "https://login.microsoftonline.com/";
+  static String TENANT_ID = "d62e4ed3-ef4a-42a3-8978-7fde68b5c61b";
+  static String SCOPE = "https://api.businesscentral.dynamics.com/.default";
   static late String MODE;
   static late String DISCOVERY_URL;
+  static late String AUTH_URL;
+  static late String TOKEN_URL;
+  static late String END_SESSION_URL;
   static late String CLIENT_ID;
+  static late String CLIENT_SECRET;
   static late String REDIRECT_URL;
   static late String LOGOUT_URL;
   static late String POST_LOGOUT_REDIRECT_URL;
@@ -23,36 +30,23 @@ class Config {
     if (mode == "stg") {
       MODE = "stg";
       DISCOVERY_URL = "https://account.meyzer.xyz/.well-known/openid-configuration";
-      //oidcConnect: handshake error
-      //DISCOVERY_URL = "https://127.0.0.1:3002/.well-known/openid-configuration";
-      CLIENT_ID = "mobile-corpsec";
-      REDIRECT_URL = "https://corpsec.meyzer.xyz/auth-callback";
+      AUTH_URL = "$MS_URL/$TENANT_ID/oauth2/v2.0/authorize";
+      TOKEN_URL = "$MS_URL/$TENANT_ID/oauth2/v2.0/token";
+      // END_SESSION_URL = "https://login.microsoftonline.com/<TenantID>/oauth2/v2.0/logout?post_logout_redirect_uri=<RedirectURL>";
+      CLIENT_ID = "f3d2bf52-c3ca-4efb-a748-32e8a448c794";
+      CLIENT_SECRET = "MeR8Q~vFwpFzlWIDnbix_uHqpb2w.nNGltCQfbq~";
+      REDIRECT_URL = "https://localhost/auth-callback";
+      // REDIRECT_URL = "https://localhost";
       LOGOUT_URL = "https://account.meyzer.xyz/session/end";
-      //loynote: should we have a delicate domain to handle mobile deep link post login?
-      POST_LOGOUT_REDIRECT_URL = "https://corpsec.meyzer.xyz/post-logout";
+      POST_LOGOUT_REDIRECT_URL = "https://localhost/post-logout";
+      END_SESSION_URL = "$MS_URL/$TENANT_ID/oauth2/v2.0/logout?post_logout_redirect_uri=$POST_LOGOUT_REDIRECT_URL";
       API_BASE_URL = 'https://api.corpsec.meyzer.xyz/v1';
-      // API_BASE_URL = 'https://localhost:3004/v1';
-      CENTRAL_API_BASE_URL = 'https://api.central.meyzer.xyz/v1';
-      // CENTRAL_API_BASE_URL = 'https://localhost:3005/v1';
-      //API_BASE_URL = "https://127.0.0.1:3004/v1";
     } else if (mode == "sit") {
       MODE = "sit";
-      DISCOVERY_URL = "https://account.meyzer360.rocks/.well-known/openid-configuration";
-      CLIENT_ID = "mobile-corpsec";
-      REDIRECT_URL = "https://central.meyzer360.rocks/callback";
-      LOGOUT_URL = "https://account.meyzer360.rocks/session/end";
-      POST_LOGOUT_REDIRECT_URL = "https://corpsec.meyzer360.rocks/post-logout";
-      API_BASE_URL = 'https://api.corpsec.meyzer360.rocks/v1';
-      CENTRAL_API_BASE_URL = 'https://api.central.meyzer360.rocks/v1';
+
     } else if (mode == "prod") {
       MODE = "prod";
-      DISCOVERY_URL = "https://account.meyzer360.com/.well-known/openid-configuration";
-      CLIENT_ID = "mobile-corpsec";
-      REDIRECT_URL = "https://central.meyzer360.com/callback";
-      LOGOUT_URL = "https://account.meyzer360.com/session/end";
-      POST_LOGOUT_REDIRECT_URL = "https://corpsec.meyzer360.com/post-logout";
-      API_BASE_URL = 'https://api.corpsec.meyzer360.com/v1';
-      CENTRAL_API_BASE_URL = 'https://api.central.meyzer360.com/v1';
+
     }
   }
 
