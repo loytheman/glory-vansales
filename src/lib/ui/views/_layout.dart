@@ -36,7 +36,7 @@ class Layout01Scaffold extends StatelessWidget {
       dynamic title,
       dynamic trailing})
       : leading = (leading ?? "drawer"),
-        title = (title ?? "company-selector"),
+        title = (title ?? "Glory Vansales"),
         trailing = (trailing ?? "profile"),
         padding = (padding ?? EdgeInsets.all(16));
 
@@ -69,18 +69,7 @@ class Layout01Scaffold extends StatelessWidget {
     }
 
     Widget t = Container();
-    if (title == "company-selector") {
-      t = ViewModelBuilder<LayoutViewModel>.reactive(
-          builder: (context, viewModel, child) {
-            final c = viewModel.company;
-            final d = {"companyName": c?.companyName ?? "-"};
-            final w = wCompanyName(onClickFunc: f2, coData: d, scrollFlag: true);
-            return w;
-          },
-          viewModelBuilder: () => LayoutViewModel());
-    } else if (title is Widget) {
-      t = title;
-    }
+    t = Text(title);
 
     Widget tt = Container();
     if (trailing == "profile") {
@@ -176,7 +165,7 @@ class NavDrawer extends StatelessWidget {
                 height: 100,
                 alignment: Alignment.topLeft,
                 padding: const EdgeInsets.fromLTRB(24, 32, 0, 0),
-                child: Image.asset("assets/icon/g-black.png", width: 48),
+                // child: Image.asset("assets/icon/g-black.png", width: 48),
               ),
               Container(
                 padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
@@ -187,7 +176,7 @@ class NavDrawer extends StatelessWidget {
                   // Container( height: 10, decoration: BoxDecoration(color: Colors.red),),
                   // Container( height: 10, decoration: BoxDecoration(color: Colors.red),),
                   // Container( height: 10, decoration: BoxDecoration(color: Colors.red),),
-                  wCompanyName(coData: d, onClickFunc: onShowCompanySelector, scrollFlag: true),
+                  // wCompanyName(coData: d, onClickFunc: onShowCompanySelector, scrollFlag: true),
                   MyUi.hs_lg(),
 
                   TextButton.icon(
@@ -200,39 +189,63 @@ class NavDrawer extends StatelessWidget {
                       style: TextButton.styleFrom(alignment: Alignment.centerLeft)),
 
                   TextButton.icon(
-                      icon: const Icon(CupertinoIcons.briefcase),
+                      icon: const Icon(CupertinoIcons.map),
                       onPressed: () {
-                        _navigationService.navigateTo(Routes.companyView);
+                        // _navigationService.navigateTo(Routes.timelineView);
                         closeDrawer.call();
                       },
-                      label: const Text("Company"),
-                      style: TextButton.styleFrom(alignment: Alignment.centerLeft)),
-
-                  // TextButton.icon(
-                  //     icon: const Icon(CupertinoIcons.doc_on_clipboard),
-                  //     onPressed: () {
-                  //       _navigationService.navigateTo(Routes.requestView);
-                  //     },
-                  //     label: const Text("Request"),
-                  //     style: TextButton.styleFrom(alignment: Alignment.centerLeft)),
-
-                  TextButton.icon(
-                      icon: const Icon(CupertinoIcons.folder),
-                      onPressed: () {
-                        _navigationService.navigateTo(Routes.documentView);
-                        closeDrawer.call();
-                      },
-                      label: const Text("Document"),
+                      label: const Text("Route Planning"),
                       style: TextButton.styleFrom(alignment: Alignment.centerLeft)),
 
                   TextButton.icon(
-                      icon: const Icon(Icons.history_outlined),
+                      icon: const Icon(CupertinoIcons.cube_box),
                       onPressed: () {
-                        _navigationService.navigateTo(Routes.timelineView);
                         closeDrawer.call();
                       },
-                      label: const Text("Timeline"),
+                      label: const Text("Stock Requisition"),
                       style: TextButton.styleFrom(alignment: Alignment.centerLeft)),
+
+                  TextButton.icon(
+                      icon: const Icon(CupertinoIcons.doc_plaintext),
+                      onPressed: () {
+                        closeDrawer.call();
+                      },
+                      label: const Text("Orders"),
+                      style: TextButton.styleFrom(alignment: Alignment.centerLeft)),
+
+                  TextButton.icon(
+                      icon: const Icon(CupertinoIcons.doc_text_search),
+                      onPressed: () {
+                        closeDrawer.call();
+                      },
+                      label: const Text("Stock Balance"),
+                      style: TextButton.styleFrom(alignment: Alignment.centerLeft)),
+
+                  TextButton.icon(
+                      icon: const Icon(CupertinoIcons.tray_arrow_down),
+                      onPressed: () {
+                        closeDrawer.call();
+                      },
+                      label: const Text("Cash Collectiom"),
+                      style: TextButton.styleFrom(alignment: Alignment.centerLeft)),
+
+                  TextButton.icon(
+                      icon: const Icon(CupertinoIcons.tray_full),
+                      onPressed: () {
+                        closeDrawer.call();
+                      },
+                      label: const Text("Outstanding Invoices"),
+                      style: TextButton.styleFrom(alignment: Alignment.centerLeft)),
+
+                  TextButton.icon(
+                      icon: const Icon(CupertinoIcons.printer),
+                      onPressed: () {
+                        closeDrawer.call();
+                      },
+                      label: const Text("Invoice Print"),
+                      style: TextButton.styleFrom(alignment: Alignment.centerLeft)),
+
+                  
                 ]),
               ),
               MyUi.hs_sm(),
@@ -262,7 +275,7 @@ class NavDrawer extends StatelessWidget {
                   children: [
                     Image.asset("assets/img/glory.png", height: 36),
                     MyUi.hs_md(),
-                    Text("www.meyzer360.com", style: context.bodyMedium?.copyWith(color: myStyle?.linkColor)),
+                    Text("www.gloryfood.com.sg", style: context.bodyMedium?.copyWith(color: myStyle?.linkColor)),
                     Row(
                       children: [
                         Text("About", style: context.bodyMedium?.copyWith(color: myStyle?.linkColor)),
@@ -281,7 +294,7 @@ class NavDrawer extends StatelessWidget {
                       ],
                     ),
                     MyUi.hs_xs(),
-                    Text("© 2025 MEYZER360", style: context.bodySmall),
+                    Text("Copyright © GLORY 2026", style: context.bodySmall),
                   ],
                 ),
               ),
