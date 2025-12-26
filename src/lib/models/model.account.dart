@@ -16,7 +16,6 @@ class Account {
   late String mobileNumber = "";
   late String mobileCountryCode = "";
   late bool kycVerified = false;
-  //late List<CompanyAccess> companyAccess;
 
   TokenSet? tokenSetApp;
   TokenSet? tokenSetOidc;
@@ -29,9 +28,10 @@ class Account {
   factory Account.fromMock() {
     final c = Account();
     c.userId = BoneMock.chars(32);
-    c.firstName = BoneMock.name;
-    c.lastName = BoneMock.name;
-    c.mobileFull = "";
+    c.name = "Alan Tan";
+    // c.firstName = BoneMock.name;
+    // c.lastName = BoneMock.name;
+    // c.mobileFull = "";
     return c;
   }
 
@@ -128,28 +128,3 @@ class TokenSet {
   }
 }
 
-// company access stuffs mainly for central?
-// class CompanyAccess {
-//   late String companyId = "";
-//   late String baseRole = "";
-//   late String moduleAccess = "";
-//   late String registeredNumber = "";
-//   late String companyName = "";
-
-//   CompanyAccess();
-
-//   factory CompanyAccess.fromMap(m) {
-//     final c = CompanyAccess();
-//     c.companyId = m.companyId;
-//     c.baseRole = m.baseRole;
-//     c.moduleAccess = m.moduleAccess;
-//     c.registeredNumber = m.registeredNumber;
-//     c.companyName = m.companyName;
-//     return c;
-//   }
-// }
-
-// class ModuleAccess {
-//   late String module = "";
-//   late String access = "";
-// }

@@ -25,8 +25,10 @@ final Map<String, String? Function(String?)?> _LoginViewTextValidations = {
 };
 
 mixin $LoginView {
-  TextEditingController get emailController => _getFormTextEditingController(EmailValueKey);
-  TextEditingController get passwordController => _getFormTextEditingController(PasswordValueKey);
+  TextEditingController get emailController =>
+      _getFormTextEditingController(EmailValueKey);
+  TextEditingController get passwordController =>
+      _getFormTextEditingController(PasswordValueKey);
 
   FocusNode get emailFocusNode => _getFormFocusNode(EmailValueKey);
   FocusNode get passwordFocusNode => _getFormFocusNode(PasswordValueKey);
@@ -39,7 +41,8 @@ mixin $LoginView {
       return _LoginViewTextEditingControllers[key]!;
     }
 
-    _LoginViewTextEditingControllers[key] = TextEditingController(text: initialValue);
+    _LoginViewTextEditingControllers[key] =
+        TextEditingController(text: initialValue);
     return _LoginViewTextEditingControllers[key]!;
   }
 
@@ -110,7 +113,10 @@ mixin $LoginView {
 }
 
 extension ValueProperties on FormStateHelper {
-  bool get hasAnyValidationMessage => this.fieldsValidationMessages.values.any((validation) => validation != null);
+  bool get hasAnyValidationMessage => this
+      .fieldsValidationMessages
+      .values
+      .any((validation) => validation != null);
 
   bool get isFormValid {
     if (!_autoTextFieldValidation) this.validateForm();
@@ -141,14 +147,22 @@ extension ValueProperties on FormStateHelper {
     }
   }
 
-  bool get hasEmail => this.formValueMap.containsKey(EmailValueKey) && (emailValue?.isNotEmpty ?? false);
-  bool get hasPassword => this.formValueMap.containsKey(PasswordValueKey) && (passwordValue?.isNotEmpty ?? false);
+  bool get hasEmail =>
+      this.formValueMap.containsKey(EmailValueKey) &&
+      (emailValue?.isNotEmpty ?? false);
+  bool get hasPassword =>
+      this.formValueMap.containsKey(PasswordValueKey) &&
+      (passwordValue?.isNotEmpty ?? false);
 
-  bool get hasEmailValidationMessage => this.fieldsValidationMessages[EmailValueKey]?.isNotEmpty ?? false;
-  bool get hasPasswordValidationMessage => this.fieldsValidationMessages[PasswordValueKey]?.isNotEmpty ?? false;
+  bool get hasEmailValidationMessage =>
+      this.fieldsValidationMessages[EmailValueKey]?.isNotEmpty ?? false;
+  bool get hasPasswordValidationMessage =>
+      this.fieldsValidationMessages[PasswordValueKey]?.isNotEmpty ?? false;
 
-  String? get emailValidationMessage => this.fieldsValidationMessages[EmailValueKey];
-  String? get passwordValidationMessage => this.fieldsValidationMessages[PasswordValueKey];
+  String? get emailValidationMessage =>
+      this.fieldsValidationMessages[EmailValueKey];
+  String? get passwordValidationMessage =>
+      this.fieldsValidationMessages[PasswordValueKey];
 }
 
 extension Methods on FormStateHelper {
@@ -185,7 +199,8 @@ String? getValidationMessage(String key) {
 }
 
 /// Updates the fieldsValidationMessages on the FormViewModel
-void updateValidationData(FormStateHelper model) => model.setValidationMessages({
+void updateValidationData(FormStateHelper model) =>
+    model.setValidationMessages({
       EmailValueKey: getValidationMessage(EmailValueKey),
       PasswordValueKey: getValidationMessage(PasswordValueKey),
     });

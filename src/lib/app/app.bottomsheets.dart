@@ -23,12 +23,14 @@ void setupBottomSheetUi() {
   final bottomsheetService = locator<BottomSheetService>();
 
   final Map<BottomSheetType, SheetBuilder> builders = {
-    BottomSheetType.notice: (context, request, completer) => NoticeSheet(request: request, completer: completer),
+    BottomSheetType.notice: (context, request, completer) =>
+        NoticeSheet(request: request, completer: completer),
     BottomSheetType.memberDetail: (context, request, completer) =>
         MemberDetailSheet(request: request, completer: completer),
     BottomSheetType.shareholderDetail: (context, request, completer) =>
         ShareholderDetailSheet(request: request, completer: completer),
-    BottomSheetType.aboutUs: (context, request, completer) => AboutUsSheet(request: request, completer: completer),
+    BottomSheetType.aboutUs: (context, request, completer) =>
+        AboutUsSheet(request: request, completer: completer),
   };
 
   bottomsheetService.setCustomSheetBuilders(builders);

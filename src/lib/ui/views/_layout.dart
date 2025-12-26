@@ -74,13 +74,13 @@ class Layout01Scaffold extends StatelessWidget {
     Widget tt = Container();
     if (trailing == "profile") {
       final u = _authenticationService.user;
-      if (u?.displayPicture != null) {
-        tt = CircleAvatar(radius: 16, backgroundImage: NetworkImage(u!.displayPicture));
-        //IconButton(icon: const Icon(CupertinoIcons.profile_circled),onPressed: () => {},);
-      } else {
-        final str = "${u?.firstName[0]}${u?.lastName[0]}";
+      // if (u?.displayPicture != null) {
+      //   tt = CircleAvatar(radius: 16, backgroundImage: NetworkImage(u!.displayPicture));
+      //   //IconButton(icon: const Icon(CupertinoIcons.profile_circled),onPressed: () => {},);
+      // } else {
+        final str = "${u?.name}";
         tt = CircleAvatar(radius: 16, backgroundColor: Colors.blue.shade100, child: Text(str));
-      }
+      // }
       tt = GestureDetector(
           child: tt,
           onTap: () {

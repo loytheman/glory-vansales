@@ -17,11 +17,12 @@ class ApiResponse {
     final c = ApiResponse();
 
     c.statusCode = statusCode;
-    c.status = jsonData['status'];
+    c.status = jsonData['status'] ?? statusCode.toString();
     c.message = jsonData['message'] ??= "";
     c.stack = jsonData['stack'] ??= [];
     c.code = jsonData['code'] ??= "";
-    c.data = jsonData['data'] ??= {};
+    // c.data = jsonData['data'] ??= {};
+    c.data = jsonData['value'] ??= {};
 
     return c;
   }

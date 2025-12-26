@@ -18,7 +18,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class AuthenticationService with ApiServiceMixin {
   final _navigationService = locator<NavigationService>();
-  final _companyService = locator<CompanyService>();
+  // final _companyService = locator<CompanyService>();
   Account? user;
 
   final discoveryUrl = Config.DISCOVERY_URL;
@@ -274,16 +274,16 @@ class AuthenticationService with ApiServiceMixin {
     // Utils.log("_afterLogin: $user");
     await ts.saveSecure();
     // _navigationService.replaceWith(Routes.dashboardView);
-    final l = await _companyService.getAllCompany();
-    final c = await StoreHelper.readPrefCompany();
+    // final l = await _companyService.getAllCompany();
+    // final c = await StoreHelper.readPrefCompany();
     // Utils.log("_afterLogin: pref company $c");
-    if (c != null) {
-      _companyService.setCurrentCompany(companyId: c.id);
-    } else if (l.isNotEmpty) {
-      _companyService.setCurrentCompany(companyId: l[0].id);
-    } else {
-      Utils.err("_afterLogin error: no companies selected");
-    }
+    // if (c != null) {
+    //   _companyService.setCurrentCompany(companyId: c.id);
+    // } else if (l.isNotEmpty) {
+    //   _companyService.setCurrentCompany(companyId: l[0].id);
+    // } else {
+    //   Utils.err("_afterLogin error: no companies selected");
+    // }
 
     // await registerDeviceToken(PushHelper.fcmToken);
   }

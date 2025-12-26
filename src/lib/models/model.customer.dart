@@ -1,8 +1,8 @@
 import 'package:skeletonizer/skeletonizer.dart';
 
 class Customer {
-  late String? id;
-  late String? displayName;
+  late String id;
+  late String displayName;
 
   Customer();
 

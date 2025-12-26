@@ -7,8 +7,7 @@ import 'package:m360_app_corpsec/services/_webapi.dart';
 import 'package:stacked/stacked.dart';
 
 class CustomerService with ApiServiceMixin, ListenableServiceMixin {
-  List<Customer> companyArr = [];
-  //List<Timeline> timeline = [];
+  List<Customer> customerArr = [];
 
   CustomerService() ;
 
@@ -31,7 +30,7 @@ class CustomerService with ApiServiceMixin, ListenableServiceMixin {
       final ar = await WebApi.callApi("GET", '/customers');
       final d = ar.data;
       l = (List<Customer>.from(d.map((x) => Customer.fromJson(x))));
-      companyArr = l;
+      customerArr = l;
     } catch (e) {
       // ShareFunc.showToast(e.toString());
       Utils.err("getAllCustomer : $e");

@@ -7,6 +7,7 @@ import 'package:m360_app_corpsec/common/theme.dart';
 import 'package:m360_app_corpsec/common/ui.dart';
 import 'package:m360_app_corpsec/ui/views/_layout.dart';
 import 'package:m360_app_corpsec/ui/views/company/company_info_table.dart';
+import 'package:m360_app_corpsec/ui/views/customer/customer_card.dart';
 import 'package:m360_app_corpsec/ui/views/dashboard/dashboard_shareholder.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -18,6 +19,7 @@ class DashboardView extends StackedView<DashboardViewModel> {
 
   @override
   void onViewModelReady(DashboardViewModel viewModel) async {
+    await viewModel.refreshData();
     // await Future.delayed(Duration(seconds: 3));
     // //await viewModel.refreshData();
     // var b = await StoreHelper.read('use_biometric_flag');
@@ -28,22 +30,27 @@ class DashboardView extends StackedView<DashboardViewModel> {
 
   @override
   Widget builder(BuildContext context, DashboardViewModel viewModel, Widget? child) {
-    final navigationService = locator<NavigationService>();
+    // final navigationService = locator<NavigationService>();
     final myStyle = Theme.of(context).extension<MyCustomStyle>();
 
+
     final w = SingleChildScrollView(
+      physics: const AlwaysScrollableScrollPhysics(),
       child: Column(
         children: [
           SizedBox(
               width: double.infinity,
               child: InkWell(
-                child: Text("View company information",
+                child: Text("Refresh customer information",
                     textAlign: TextAlign.right, style: context.bodyMedium?.copyWith(color: myStyle?.linkColor)),
                 onTap: () {
+                  viewModel.refreshData();
                   //navigationService.navigateTo(Routes.companyView, parameters: {"tabIndex": "0"});
                 },
               )),
           MyUi.hs_lg(),
+          wCustomerList(list:viewModel.customerList),
+          
         ],
       ),
     );
