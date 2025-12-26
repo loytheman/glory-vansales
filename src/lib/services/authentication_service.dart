@@ -58,7 +58,8 @@ class AuthenticationService with ApiServiceMixin {
             DateTime.now().millisecondsSinceEpoch ~/ 1000 >= expiryTimestamp;
         if (isExpired) {
           // expired token, need to refresh
-          final t = await loginViaRefreshToken();
+          // final t = await loginViaRefreshToken();
+          final t = getOidcTokenWithRefreshToken();
           return t;
         } else {
           return ts;
@@ -139,15 +140,18 @@ class AuthenticationService with ApiServiceMixin {
   }
 
   // use RefreshToken to get new access token as access token would be expired in 5 minutes
-  Future<TokenSet> getOidcTokenWithRefreshToken(
-      [String clientId = 'central']) async {
+  Future<TokenSet> getOidcTokenWithRefreshToken() async {
     setBusy(true);
+    // final rt = await StoreHelper.read(StoreKey.REFRESH_TOKEN);
     var ort = await StoreHelper.read(StoreKey.OIDC_REFRESH_TOKEN);
     if (ort != null) {
       Map<String, String> data = {
         'client_id': clientId,
+        'client_secret': clientSecret,
         'grant_type': 'refresh_token',
-        'refresh_token': '1fuba3JC5Nj-t2Iz5mEmo5qMIk2G5A_bJFhDanLhJpW',
+        'refresh_token': ort,
+        'scope': scope,
+        'consent': 'none',
       };
       final h = {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -180,7 +184,7 @@ class AuthenticationService with ApiServiceMixin {
     final headers = {
       'Content-Type': 'application/json; charset=UTF-8',
       'Authorization': tr.accessToken,
-      'Token': tr.idToken ?? "",
+      'Token': tr.idToken,
     };
     String endpoint = "/auth/oidc-login";
     final ar = await WebApi.callApi("POST", endpoint, {}, headers);

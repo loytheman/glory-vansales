@@ -104,8 +104,8 @@ class WebApi {
         //loynote: auto refresh tokenSet.
         //ref: https://medium.com/flutter-community/dio-jwt-in-flutter-solution-of-async-hell-fbde4759b261
         await _authenticationService.loginViaRefreshToken();
-        mergeHeaders['Authorization'] = u?.tokenSetApp?.accessToken ?? '';
-        mergeHeaders['Token'] = u?.tokenSetApp?.idToken ?? '';
+        mergeHeaders['Authorization'] = "Bearer ${u?.tokenSetApp?.accessToken}";
+        // mergeHeaders['Token'] = u?.tokenSetApp?.idToken ?? '';
         final r = await callApi(method, endpoint, data, mergeHeaders);
         return r;
       }

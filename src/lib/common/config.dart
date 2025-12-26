@@ -21,8 +21,8 @@ class Config {
   //api
   //https://api.businesscentral.dynamics.com/v2.0/d62e4ed3-ef4a-42a3-8978-7fde68b5c61b/Staging/api/v2.0/$metadata#companies(c3505205-7bd0-f011-8bce-6045bd74ddca)/customers
   static String MS_API_URL = "https://api.businesscentral.dynamics.com/v2.0/";
+  static String COMPANY_ID = "c3505205-7bd0-f011-8bce-6045bd74ddca";
   static late String API_BASE_URL;
-  static late String CENTRAL_API_BASE_URL;
 
   static bool inStageEnv() {
     return MODE != 'prod';
@@ -38,12 +38,12 @@ class Config {
       TOKEN_URL = "$MS_URL/$TENANT_ID/oauth2/v2.0/token";
       // END_SESSION_URL = "https://login.microsoftonline.com/<TenantID>/oauth2/v2.0/logout?post_logout_redirect_uri=<RedirectURL>";
       CLIENT_ID = "f3d2bf52-c3ca-4efb-a748-32e8a448c794";
-      CLIENT_SECRET = "MeR8Q~vFwpFzlWIDnbix_uHqpb2w.nNGltCQfbq~";
+      CLIENT_SECRET = "oSC8Q~H3wXofd6fUurkQJ2khoNgjPoagbZctdbS1";
       REDIRECT_URL = "https://glory-vansales.lyhco.me/auth-callback";
       // LOGOUT_URL = "https://account.meyzer.xyz/session/end";
       POST_LOGOUT_REDIRECT_URL = "https://localhost/post-logout";
       END_SESSION_URL = "$MS_URL/$TENANT_ID/oauth2/v2.0/logout?post_logout_redirect_uri=$POST_LOGOUT_REDIRECT_URL";
-      API_BASE_URL = '$MS_API_URL/$TENANT_ID/$env/api/v2.0';
+      API_BASE_URL = '$MS_API_URL/$TENANT_ID/$env/api/v2.0/companies($COMPANY_ID)';
     } else if (mode == "sit") {
       MODE = "sit";
 
