@@ -78,8 +78,8 @@ class Layout01Scaffold extends StatelessWidget {
       //   tt = CircleAvatar(radius: 16, backgroundImage: NetworkImage(u!.displayPicture));
       //   //IconButton(icon: const Icon(CupertinoIcons.profile_circled),onPressed: () => {},);
       // } else {
-        final str = "${u?.name}";
-        tt = CircleAvatar(radius: 16, backgroundColor: Colors.blue.shade100, child: Text(str));
+      final str = "${u?.name}";
+      tt = CircleAvatar(radius: 16, backgroundColor: Colors.blue.shade100, child: Text(str));
       // }
       tt = GestureDetector(
           child: tt,
@@ -244,8 +244,6 @@ class NavDrawer extends StatelessWidget {
                       },
                       label: const Text("Invoice Print"),
                       style: TextButton.styleFrom(alignment: Alignment.centerLeft)),
-
-                  
                 ]),
               ),
               MyUi.hs_sm(),

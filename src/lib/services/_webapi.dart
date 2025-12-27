@@ -165,7 +165,7 @@ class DioInterceptor extends Interceptor {
       super.onError(ae, handler);
     } else {
       m = 'Error response not in right format';
-      if (data != null && data.containsKey("error") && data.containsKey("error_description"))  {
+      if (data != null && data.containsKey("error") && data.containsKey("error_description")) {
         m = '${data["error"]}: ${data["error_description"]}';
       }
       super.onError(err, handler);

@@ -52,7 +52,7 @@ class Utils {
   }
 
   static String formatDate(String? s) {
-    final str = s != null ? Jiffy.parse(s).format(pattern: "do MMM yyyy") : "-";
+    final str = s != null ? Jiffy.parse(s).format(pattern: "dd/MM/yyyy") : "-";
 
     return str;
   }

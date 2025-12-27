@@ -46,10 +46,8 @@ class Config {
       API_BASE_URL = '$MS_API_URL/$TENANT_ID/$env/api/v2.0/companies($COMPANY_ID)';
     } else if (mode == "sit") {
       MODE = "sit";
-
     } else if (mode == "prod") {
       MODE = "prod";
-
     }
   }
 

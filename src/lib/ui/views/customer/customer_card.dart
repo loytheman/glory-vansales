@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:m360_app_corpsec/models/model.customer.dart';
 
-
 class wCustomerList extends StatelessWidget {
   final List<Customer> list;
 
@@ -10,7 +9,6 @@ class wCustomerList extends StatelessWidget {
     super.key,
     required this.list,
   });
-
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +24,6 @@ class wCustomerList extends StatelessWidget {
   }
 }
 
-
 class wCustomerCard extends StatelessWidget {
   final Customer customer;
 
@@ -38,15 +35,10 @@ class wCustomerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget w = Container(
-      padding: EdgeInsets.all(2.0),
-      child: 
-      Column(
-        children: [
-          Icon(Icons.calendar_today_outlined, size: 16),
-          Text(customer.displayName)
-        ],
-      )
-    );
+        padding: EdgeInsets.all(2.0),
+        child: Column(
+          children: [Icon(Icons.calendar_today_outlined, size: 16), Text(customer.displayName)],
+        ));
 
     return w;
   }

@@ -5,9 +5,9 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i14;
+import 'package:flutter/material.dart' as _i15;
 import 'package:flutter/material.dart';
-import 'package:m360_app_corpsec/models/model.account.dart' as _i15;
+import 'package:m360_app_corpsec/models/model.account.dart' as _i16;
 import 'package:m360_app_corpsec/ui/views/_startup/startup_view.dart' as _i2;
 import 'package:m360_app_corpsec/ui/views/account/account_view.dart' as _i12;
 import 'package:m360_app_corpsec/ui/views/biometric_preference/biometric_preference_view.dart'
@@ -21,10 +21,12 @@ import 'package:m360_app_corpsec/ui/views/document_detail/document_detail_view.d
     as _i11;
 import 'package:m360_app_corpsec/ui/views/login/login_view.dart' as _i3;
 import 'package:m360_app_corpsec/ui/views/request/request_view.dart' as _i7;
+import 'package:m360_app_corpsec/ui/views/sales_invoice/sales_invoice_view.dart'
+    as _i14;
 import 'package:m360_app_corpsec/ui/views/sign_up/sign_up_view.dart' as _i4;
 import 'package:m360_app_corpsec/ui/views/timeline/timeline_view.dart' as _i9;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i16;
+import 'package:stacked_services/stacked_services.dart' as _i17;
 
 class Routes {
   static const startupView = '/startup-view';
@@ -51,6 +53,8 @@ class Routes {
 
   static const biometricPreferenceView = '/biometric-preference-view';
 
+  static const salesInvoiceView = '/sales-invoice-view';
+
   static const all = <String>{
     startupView,
     loginView,
@@ -64,6 +68,7 @@ class Routes {
     documentDetailView,
     accountView,
     biometricPreferenceView,
+    salesInvoiceView,
   };
 }
 
@@ -117,6 +122,10 @@ class StackedRouter extends _i1.RouterBase {
       Routes.biometricPreferenceView,
       page: _i13.BiometricPreferenceView,
     ),
+    _i1.RouteDef(
+      Routes.salesInvoiceView,
+      page: _i14.SalesInvoiceView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
@@ -124,7 +133,7 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<StartupViewArguments>(
         orElse: () => const StartupViewArguments(),
       );
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) =>
             _i2.StartupView(key: args.key, tokenSet: args.tokenSet),
         settings: data,
@@ -134,20 +143,20 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<LoginViewArguments>(
         orElse: () => const LoginViewArguments(),
       );
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => _i3.LoginView(
             key: args.key, useBiometricFlag: args.useBiometricFlag),
         settings: data,
       );
     },
     _i4.SignUpView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.SignUpView(),
         settings: data,
       );
     },
     _i5.DashboardView: (data) {
-      return _i14.PageRouteBuilder<dynamic>(
+      return _i15.PageRouteBuilder<dynamic>(
         pageBuilder: (context, animation, secondaryAnimation) =>
             const _i5.DashboardView(),
         settings: data,
@@ -158,56 +167,62 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<CompanyViewArguments>(
         orElse: () => const CompanyViewArguments(),
       );
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) =>
             _i6.CompanyView(key: args.key, tabIndex: args.tabIndex),
         settings: data,
       );
     },
     _i7.RequestView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.RequestView(),
         settings: data,
       );
     },
     _i8.DocumentView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.DocumentView(),
         settings: data,
       );
     },
     _i9.TimelineView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => const _i9.TimelineView(),
         settings: data,
       );
     },
     _i10.DevDebugView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.DevDebugView(),
         settings: data,
       );
     },
     _i11.DocumentDetailView: (data) {
       final args = data.getArgs<DocumentDetailViewArguments>(nullOk: false);
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => _i11.DocumentDetailView(
             key: args.key, filename: args.filename, path: args.path),
         settings: data,
       );
     },
     _i12.AccountView: (data) {
-      return _i14.MaterialPageRoute<dynamic>(
+      return _i15.MaterialPageRoute<dynamic>(
         builder: (context) => const _i12.AccountView(),
         settings: data,
       );
     },
     _i13.BiometricPreferenceView: (data) {
-      return _i14.PageRouteBuilder<dynamic>(
+      return _i15.PageRouteBuilder<dynamic>(
         pageBuilder: (context, animation, secondaryAnimation) =>
             const _i13.BiometricPreferenceView(),
         settings: data,
         transitionsBuilder: data.transition ?? _i1.TransitionsBuilders.fadeIn,
+      );
+    },
+    _i14.SalesInvoiceView: (data) {
+      return _i15.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i14.SalesInvoiceView(),
+        settings: data,
       );
     },
   };
@@ -225,9 +240,9 @@ class StartupViewArguments {
     this.tokenSet,
   });
 
-  final _i14.Key? key;
+  final _i15.Key? key;
 
-  final _i15.TokenSet? tokenSet;
+  final _i16.TokenSet? tokenSet;
 
   @override
   String toString() {
@@ -252,7 +267,7 @@ class LoginViewArguments {
     this.useBiometricFlag,
   });
 
-  final _i14.Key? key;
+  final _i15.Key? key;
 
   final bool? useBiometricFlag;
 
@@ -279,7 +294,7 @@ class CompanyViewArguments {
     this.tabIndex,
   });
 
-  final _i14.Key? key;
+  final _i15.Key? key;
 
   final int? tabIndex;
 
@@ -307,7 +322,7 @@ class DocumentDetailViewArguments {
     required this.path,
   });
 
-  final _i14.Key? key;
+  final _i15.Key? key;
 
   final String filename;
 
@@ -330,10 +345,10 @@ class DocumentDetailViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i16.NavigationService {
+extension NavigatorStateExtension on _i17.NavigationService {
   Future<dynamic> navigateToStartupView({
-    _i14.Key? key,
-    _i15.TokenSet? tokenSet,
+    _i15.Key? key,
+    _i16.TokenSet? tokenSet,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -349,7 +364,7 @@ extension NavigatorStateExtension on _i16.NavigationService {
   }
 
   Future<dynamic> navigateToLoginView({
-    _i14.Key? key,
+    _i15.Key? key,
     bool? useBiometricFlag,
     int? routerId,
     bool preventDuplicates = true,
@@ -395,7 +410,7 @@ extension NavigatorStateExtension on _i16.NavigationService {
   }
 
   Future<dynamic> navigateToCompanyView({
-    _i14.Key? key,
+    _i15.Key? key,
     int? tabIndex,
     int? routerId,
     bool preventDuplicates = true,
@@ -468,7 +483,7 @@ extension NavigatorStateExtension on _i16.NavigationService {
   }
 
   Future<dynamic> navigateToDocumentDetailView({
-    _i14.Key? key,
+    _i15.Key? key,
     required String filename,
     required String path,
     int? routerId,
@@ -514,9 +529,23 @@ extension NavigatorStateExtension on _i16.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToSalesInvoiceView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.salesInvoiceView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithStartupView({
-    _i14.Key? key,
-    _i15.TokenSet? tokenSet,
+    _i15.Key? key,
+    _i16.TokenSet? tokenSet,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -532,7 +561,7 @@ extension NavigatorStateExtension on _i16.NavigationService {
   }
 
   Future<dynamic> replaceWithLoginView({
-    _i14.Key? key,
+    _i15.Key? key,
     bool? useBiometricFlag,
     int? routerId,
     bool preventDuplicates = true,
@@ -578,7 +607,7 @@ extension NavigatorStateExtension on _i16.NavigationService {
   }
 
   Future<dynamic> replaceWithCompanyView({
-    _i14.Key? key,
+    _i15.Key? key,
     int? tabIndex,
     int? routerId,
     bool preventDuplicates = true,
@@ -651,7 +680,7 @@ extension NavigatorStateExtension on _i16.NavigationService {
   }
 
   Future<dynamic> replaceWithDocumentDetailView({
-    _i14.Key? key,
+    _i15.Key? key,
     required String filename,
     required String path,
     int? routerId,
@@ -691,6 +720,20 @@ extension NavigatorStateExtension on _i16.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.biometricPreferenceView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithSalesInvoiceView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.salesInvoiceView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

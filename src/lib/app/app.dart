@@ -26,6 +26,8 @@ import 'package:m360_app_corpsec/ui/dialogs/about_us/about_us_dialog.dart';
 import 'package:m360_app_corpsec/ui/bottom_sheets/about_us/about_us_sheet.dart';
 import 'package:m360_app_corpsec/ui/dialogs/biometric_login/biometric_login_dialog.dart';
 import 'package:m360_app_corpsec/ui/views/biometric_preference/biometric_preference_view.dart';
+import 'package:m360_app_corpsec/services/business_central_service.dart';
+import 'package:m360_app_corpsec/ui/views/sales_invoice/sales_invoice_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -45,6 +47,7 @@ import 'package:m360_app_corpsec/ui/views/biometric_preference/biometric_prefere
       page: BiometricPreferenceView,
       transitionsBuilder: TransitionsBuilders.fadeIn,
     ),
+    MaterialRoute(page: SalesInvoiceView),
 // @stacked-route
   ],
   dependencies: [
@@ -54,6 +57,7 @@ import 'package:m360_app_corpsec/ui/views/biometric_preference/biometric_prefere
     LazySingleton(classType: AuthenticationService),
     LazySingleton(classType: ShareService),
     LazySingleton(classType: CompanyService),
+    LazySingleton(classType: BusinessCentralService),
 // @stacked-service
   ],
   bottomsheets: [

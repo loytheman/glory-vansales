@@ -31,7 +31,6 @@ class AccountViewModel extends BaseViewModel {
     user = Account.fromTokenSet(ts);
     // print(user.TokenSetApp?.accessToken);
     // await ts.saveSecure();
-
   }
 
   void useBiometric() async {

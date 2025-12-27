@@ -5,6 +5,7 @@ import 'package:stacked_services/stacked_services.dart';
 import 'package:m360_app_corpsec/services/authentication_service.dart';
 import 'package:m360_app_corpsec/services/share_service.dart';
 import 'package:m360_app_corpsec/services/company_service.dart';
+import 'package:m360_app_corpsec/services/business_central_service.dart';
 // @stacked-import
 
 import 'test_helpers.mocks.dart';
@@ -16,6 +17,7 @@ import 'test_helpers.mocks.dart';
   MockSpec<AuthenticationService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<ShareService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<CompanyService>(onMissingStub: OnMissingStub.returnDefault),
+  MockSpec<BusinessCentralService>(onMissingStub: OnMissingStub.returnDefault),
 // @stacked-mock-spec
 ])
 void registerServices() {
@@ -25,6 +27,7 @@ void registerServices() {
   getAndRegisterAuthenticationService();
   getAndRegisterShareService();
   getAndRegisterCompanyService();
+  getAndRegisterBusinessCentralService();
 // @stacked-mock-register
 }
 
@@ -95,6 +98,13 @@ MockCompanyService getAndRegisterCompanyService() {
   _removeRegistrationIfExists<CompanyService>();
   final service = MockCompanyService();
   locator.registerSingleton<CompanyService>(service);
+  return service;
+}
+
+MockBusinessCentralService getAndRegisterBusinessCentralService() {
+  _removeRegistrationIfExists<BusinessCentralService>();
+  final service = MockBusinessCentralService();
+  locator.registerSingleton<BusinessCentralService>(service);
   return service;
 }
 // @stacked-mock-create

@@ -94,33 +94,34 @@ class MyTheme {
 
   static ElevatedButtonThemeData elevatedButtonTheme = ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-      elevation: 0,
-      foregroundColor: Colors.white,
-      backgroundColor: myRed,
-      disabledBackgroundColor: myRed.withAlpha(150),
-      textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-      padding: const EdgeInsets.symmetric(vertical: 8),
-    ));
-
+    elevation: 0,
+    foregroundColor: Colors.white,
+    backgroundColor: myRed,
+    disabledBackgroundColor: myRed.withAlpha(150),
+    textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+    padding: const EdgeInsets.symmetric(vertical: 8),
+  ));
 
   static FilledButtonThemeData filledButtonTheme = FilledButtonThemeData(
       style: FilledButton.styleFrom(
-      foregroundColor: Colors.white,
-      backgroundColor: myRed,
-      disabledBackgroundColor: myRed.withAlpha(150),
-      textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-      padding: const EdgeInsets.symmetric(vertical: 16),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-    ));
+    foregroundColor: Colors.white,
+    backgroundColor: myRed,
+    disabledBackgroundColor: myRed.withAlpha(150),
+    textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+    padding: const EdgeInsets.symmetric(vertical: 16),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+  ));
 
   static OutlinedButtonThemeData outlinedButtonTheme = OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
-        foregroundColor: myRed,
-        backgroundColor: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10),),
-        textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-        padding: const EdgeInsets.symmetric(vertical: 16),
-        side: const BorderSide(color: myRed,width: 1.6),
+    foregroundColor: myRed,
+    backgroundColor: Colors.white,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10),
+    ),
+    textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+    padding: const EdgeInsets.symmetric(vertical: 16),
+    side: const BorderSide(color: myRed, width: 1.6),
   ));
 
   static TextButtonThemeData lightTextButtonTheme = TextButtonThemeData(

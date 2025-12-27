@@ -9,7 +9,11 @@ import 'dart:ui' as _i7;
 import 'package:flutter/material.dart' as _i5;
 import 'package:m360_app_corpsec/models/model.account.dart' as _i2;
 import 'package:m360_app_corpsec/models/model.company.dart' as _i11;
+import 'package:m360_app_corpsec/models/model.customer.dart' as _i13;
+import 'package:m360_app_corpsec/models/model.salesInvoice.dart' as _i14;
 import 'package:m360_app_corpsec/services/authentication_service.dart' as _i8;
+import 'package:m360_app_corpsec/services/business_central_service.dart'
+    as _i12;
 import 'package:m360_app_corpsec/services/company_service.dart' as _i10;
 import 'package:m360_app_corpsec/services/share_service.dart' as _i9;
 import 'package:mockito/mockito.dart' as _i1;
@@ -1292,6 +1296,138 @@ class MockCompanyService extends _i1.Mock implements _i10.CompanyService {
           ),
         ),
       ) as String);
+
+  @override
+  void setBusy(bool? flag) => super.noSuchMethod(
+        Invocation.method(
+          #setBusy,
+          [flag],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void listenToReactiveValues(List<dynamic>? reactiveValues) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #listenToReactiveValues,
+          [reactiveValues],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void addListener(void Function()? listener) => super.noSuchMethod(
+        Invocation.method(
+          #addListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void removeListener(void Function()? listener) => super.noSuchMethod(
+        Invocation.method(
+          #removeListener,
+          [listener],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void notifyListeners() => super.noSuchMethod(
+        Invocation.method(
+          #notifyListeners,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
+}
+
+/// A class which mocks [BusinessCentralService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockBusinessCentralService extends _i1.Mock
+    implements _i12.BusinessCentralService {
+  @override
+  List<_i13.Customer> get customerArr => (super.noSuchMethod(
+        Invocation.getter(#customerArr),
+        returnValue: <_i13.Customer>[],
+        returnValueForMissingStub: <_i13.Customer>[],
+      ) as List<_i13.Customer>);
+
+  @override
+  set customerArr(List<_i13.Customer>? _customerArr) => super.noSuchMethod(
+        Invocation.setter(
+          #customerArr,
+          _customerArr,
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  List<_i14.SalesInvoice> get salesInvoiceArr => (super.noSuchMethod(
+        Invocation.getter(#salesInvoiceArr),
+        returnValue: <_i14.SalesInvoice>[],
+        returnValueForMissingStub: <_i14.SalesInvoice>[],
+      ) as List<_i14.SalesInvoice>);
+
+  @override
+  set salesInvoiceArr(List<_i14.SalesInvoice>? _salesInvoiceArr) =>
+      super.noSuchMethod(
+        Invocation.setter(
+          #salesInvoiceArr,
+          _salesInvoiceArr,
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  bool get isBusy => (super.noSuchMethod(
+        Invocation.getter(#isBusy),
+        returnValue: false,
+        returnValueForMissingStub: false,
+      ) as bool);
+
+  @override
+  set isBusy(bool? _isBusy) => super.noSuchMethod(
+        Invocation.setter(
+          #isBusy,
+          _isBusy,
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  int get listenersCount => (super.noSuchMethod(
+        Invocation.getter(#listenersCount),
+        returnValue: 0,
+        returnValueForMissingStub: 0,
+      ) as int);
+
+  @override
+  _i6.Future<List<_i13.Customer>> getAllCustomers() => (super.noSuchMethod(
+        Invocation.method(
+          #getAllCustomers,
+          [],
+        ),
+        returnValue: _i6.Future<List<_i13.Customer>>.value(<_i13.Customer>[]),
+        returnValueForMissingStub:
+            _i6.Future<List<_i13.Customer>>.value(<_i13.Customer>[]),
+      ) as _i6.Future<List<_i13.Customer>>);
+
+  @override
+  _i6.Future<List<_i14.SalesInvoice>> getAllSalesInvoice() =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getAllSalesInvoice,
+          [],
+        ),
+        returnValue:
+            _i6.Future<List<_i14.SalesInvoice>>.value(<_i14.SalesInvoice>[]),
+        returnValueForMissingStub:
+            _i6.Future<List<_i14.SalesInvoice>>.value(<_i14.SalesInvoice>[]),
+      ) as _i6.Future<List<_i14.SalesInvoice>>);
 
   @override
   void setBusy(bool? flag) => super.noSuchMethod(

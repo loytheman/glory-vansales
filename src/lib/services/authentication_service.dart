@@ -30,7 +30,7 @@ class AuthenticationService with ApiServiceMixin {
   // final scopes = ['profile', "openid", "permissions"];
   // final logoutUrl = Config.LOGOUT_URL;
   final postLogoutRedirectUrl = Config.POST_LOGOUT_REDIRECT_URL;
-  
+
   OpenIdConfig? openIdConfig;
 
   final LocalAuthentication _auth = LocalAuthentication();
@@ -55,8 +55,7 @@ class AuthenticationService with ApiServiceMixin {
     if (ts != null) {
       int? expiryTimestamp = int.tryParse(ts.exp ?? "");
       if (expiryTimestamp != null) {
-        bool isExpired =
-            DateTime.now().millisecondsSinceEpoch ~/ 1000 >= expiryTimestamp;
+        bool isExpired = DateTime.now().millisecondsSinceEpoch ~/ 1000 >= expiryTimestamp;
         if (isExpired) {
           // expired token, need to refresh
           // final t = await loginViaRefreshToken();
@@ -127,12 +126,12 @@ class AuthenticationService with ApiServiceMixin {
       final a = JWT.decode(r.data['access_token']);
       final e = a.payload["exp"];
       final ts = TokenSet(
-          accessToken: r.data['access_token'],
-          idToken: r.data['id_token'],
-          refreshToken: r.data['refresh_token'],
-          exp: e.toString(),
-          // exp: r.data['expires_in'],
-        );
+        accessToken: r.data['access_token'],
+        idToken: r.data['id_token'],
+        refreshToken: r.data['refresh_token'],
+        exp: e.toString(),
+        // exp: r.data['expires_in'],
+      );
       ts.saveOIDCSecure();
       return ts;
     }
@@ -172,10 +171,9 @@ class AuthenticationService with ApiServiceMixin {
           ts.saveOIDCSecure();
           return ts;
         }
-      } catch(e) {
+      } catch (e) {
         ShareFunc.showToast(ErrorMessage.NO_PERMISSION);
       }
-      
     }
     //https://login.microsoftonline.com/d62e4ed3-ef4a-42a3-8978-7fde68b5c61b/adminconsent?client_id=f3d2bf52-c3ca-4efb-a748-32e8a448c794
     throw ErrorType.OIDC_ERROR;
@@ -241,8 +239,7 @@ class AuthenticationService with ApiServiceMixin {
     final logoutUrl = openIdConfig?.endSessionEndpoint;
 
     //const url = "https://account.meyzer.xyz/session/end?client_id=mobile-corpsec&post_logout_redirect_uri=https://central.meyzer.xyz/postlogout";
-    final url =
-        "$logoutUrl?client_id=$clientId&post_logout_redirect_uri=$postLogoutRedirectUrl";
+    final url = "$logoutUrl?client_id=$clientId&post_logout_redirect_uri=$postLogoutRedirectUrl";
     //loynote: open external browser and will redirect to post logout
     if (!await launchUrl(Uri.parse(url), mode: LaunchMode.inAppBrowserView)) {
       setBusy(false);
@@ -303,8 +300,7 @@ class AuthenticationService with ApiServiceMixin {
     final bool canAuthenticateWithBiometrics = await _auth.canCheckBiometrics;
     // print(canAuthenticateWithBiometrics);
     if (canAuthenticateWithBiometrics) {
-      final List<BiometricType> availableBiometrics =
-          await _auth.getAvailableBiometrics();
+      final List<BiometricType> availableBiometrics = await _auth.getAvailableBiometrics();
       print(availableBiometrics);
       // if (availableBiometrics.isNotEmpty) {
       //   // Some biometrics are enrolled.
@@ -346,7 +342,6 @@ class OpenIdConfig {
   String? tokenEndpoint;
   String? endSessionEndpoint;
   OpenIdConfig();
-
 
   factory OpenIdConfig.fromDiscoveryUrl(String url) {
     final cfg = OpenIdConfig();

@@ -33,7 +33,6 @@ class DashboardView extends StackedView<DashboardViewModel> {
     // final navigationService = locator<NavigationService>();
     final myStyle = Theme.of(context).extension<MyCustomStyle>();
 
-
     final w = SingleChildScrollView(
       physics: const AlwaysScrollableScrollPhysics(),
       child: Column(
@@ -49,17 +48,14 @@ class DashboardView extends StackedView<DashboardViewModel> {
                 },
               )),
           MyUi.hs_lg(),
-          viewModel.isBusy ? MyUi.loadingList() : wCustomerList(list:viewModel.customerList),
-          
+          viewModel.isBusy ? MyUi.loadingList() : wCustomerList(list: viewModel.customerList),
         ],
       ),
     );
 
     final l = Layout01Scaffold(
         body: CustomMaterialIndicator(
-            triggerMode: IndicatorTriggerMode.anywhere,
-            onRefresh: viewModel.refreshData,
-            child:  w));
+            triggerMode: IndicatorTriggerMode.anywhere, onRefresh: viewModel.refreshData, child: w));
 
     return l;
   }
