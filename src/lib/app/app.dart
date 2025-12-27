@@ -28,6 +28,7 @@ import 'package:m360_app_corpsec/ui/dialogs/biometric_login/biometric_login_dial
 import 'package:m360_app_corpsec/ui/views/biometric_preference/biometric_preference_view.dart';
 import 'package:m360_app_corpsec/services/business_central_service.dart';
 import 'package:m360_app_corpsec/ui/views/sales_invoice/sales_invoice_view.dart';
+import 'package:m360_app_corpsec/ui/views/sales_invoice/sales_invoice_detail_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -48,6 +49,7 @@ import 'package:m360_app_corpsec/ui/views/sales_invoice/sales_invoice_view.dart'
       transitionsBuilder: TransitionsBuilders.fadeIn,
     ),
     MaterialRoute(page: SalesInvoiceView),
+    MaterialRoute(page: SalesInvoiceDetailView),
 // @stacked-route
   ],
   dependencies: [

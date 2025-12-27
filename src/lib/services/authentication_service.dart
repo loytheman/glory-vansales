@@ -42,7 +42,8 @@ class AuthenticationService with ApiServiceMixin {
     // await openIdConfig?.getConfiguration();
     final a = Config.AUTH_URL;
     final t = Config.TOKEN_URL;
-    final e = Config.END_SESSION_URL;
+    // final e = Config.END_SESSION_URL;
+    final e = Config.LOGOUT_URL;
     openIdConfig = OpenIdConfig.fromUrl(a, t, e);
   }
 
@@ -238,8 +239,7 @@ class AuthenticationService with ApiServiceMixin {
   Future<void> logoutOidc() async {
     final logoutUrl = openIdConfig?.endSessionEndpoint;
 
-    //const url = "https://account.meyzer.xyz/session/end?client_id=mobile-corpsec&post_logout_redirect_uri=https://central.meyzer.xyz/postlogout";
-    final url = "$logoutUrl?client_id=$clientId&post_logout_redirect_uri=$postLogoutRedirectUrl";
+    final url = "$logoutUrl?post_logout_redirect_uri=$postLogoutRedirectUrl";
     //loynote: open external browser and will redirect to post logout
     if (!await launchUrl(Uri.parse(url), mode: LaunchMode.inAppBrowserView)) {
       setBusy(false);
@@ -276,6 +276,8 @@ class AuthenticationService with ApiServiceMixin {
     user = Account.fromTokenSet(ts);
     // Utils.log("_afterLogin: $user");
     await ts.saveSecure();
+
+    // await _afterLogout();
     // _navigationService.replaceWith(Routes.dashboardView);
     // final l = await _companyService.getAllCompany();
     // final c = await StoreHelper.readPrefCompany();

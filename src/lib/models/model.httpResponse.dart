@@ -18,11 +18,13 @@ class ApiResponse {
 
     c.statusCode = statusCode;
     c.status = jsonData['status'] ?? statusCode.toString();
-    c.message = jsonData['message'] ??= "";
-    c.stack = jsonData['stack'] ??= [];
-    c.code = jsonData['code'] ??= "";
+    // c.message = jsonData['message'] ??= "";
+    // c.stack = jsonData['stack'] ??= [];
+    // c.code = jsonData['code'] ??= "";
     // c.data = jsonData['data'] ??= {};
-    c.data = jsonData['value'] ??= {};
+    // c.data = jsonData['value'] ??= {};
+    //loynote: fucking bc response not standardise
+    c.data = jsonData['value'] ??= jsonData;
 
     return c;
   }

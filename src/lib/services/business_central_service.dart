@@ -28,10 +28,7 @@ class BusinessCentralService with ApiServiceMixin, ListenableServiceMixin {
     return l;
   }
 
-
   // GET {businesscentralPrefix}/companies({id})/salesInvoices({salesInvoiceId})/salesInvoiceLines
-
-
 
   Future<List<SalesInvoice>> getAllPostedSalesInvoice() async {
     List<SalesInvoice> l = [];
@@ -49,19 +46,20 @@ class BusinessCentralService with ApiServiceMixin, ListenableServiceMixin {
     return l;
   }
 
-  Future<List<SalesInvoice>> getSalesInvoicedetail(String id) async {
-    List<SalesInvoice> l = [];
+  Future<SalesInvoice> getSalesInvoiceDetail(String id) async {
+    SalesInvoice? s;
+    Utils.log("getSalesInvoiceDetail $id");
     try {
       final ar = await WebApi.callApi("GET", '/salesInvoices($id)?\$expand=salesInvoiceLines,customer');
+      // final ar = await WebApi.callApi("GET", '/salesInvoices(92afc879-7bd0-f011-8bce-6045bd74ddca)');
       final d = ar.data;
-      l = (List<SalesInvoice>.from(d.map((x) => SalesInvoice.fromJson(x))));
-      salesInvoiceArr = l;
+      s = SalesInvoice.fromJson(d);
     } catch (e) {
       // ShareFunc.showToast(e.toString());
-      Utils.err("getAllSalesInvoice : $e");
+      Utils.err("getSalesInvoiceDetail : $e");
       rethrow;
     }
 
-    return l;
+    return s;
   }
 }

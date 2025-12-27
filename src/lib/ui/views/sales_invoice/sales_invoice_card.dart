@@ -8,8 +8,9 @@ import 'package:m360_app_corpsec/models/model.salesInvoice.dart';
 
 class wSalesInvoiceList extends StatelessWidget {
   final List<SalesInvoice> list;
+  final void Function(SalesInvoice s)? onTapFunc;
 
-  const wSalesInvoiceList({ super.key, required this.list,});
+  const wSalesInvoiceList({ super.key, required this.list, this.onTapFunc });
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class wSalesInvoiceList extends StatelessWidget {
     List<Widget> rows = [];
 
     for (var c in list) {
-      final w = wSalesInvoiceCard(salesInvoice: c);
+      final w = wSalesInvoiceCard(salesInvoice: c, onTapFunc: onTapFunc);
       rows.add(w);
     }
 
@@ -33,16 +34,15 @@ class wSalesInvoiceList extends StatelessWidget {
       ...rows,
     ]);
 
-
     return w;
-
   }
 }
 
 class wSalesInvoiceCard extends StatelessWidget {
   final SalesInvoice salesInvoice;
+  final void Function(SalesInvoice s)? onTapFunc;
 
-  const wSalesInvoiceCard({ super.key, required this.salesInvoice,});
+  const wSalesInvoiceCard({ super.key, required this.salesInvoice, this.onTapFunc});
 
   @override
   Widget build(BuildContext context) {
@@ -51,69 +51,63 @@ class wSalesInvoiceCard extends StatelessWidget {
     final blgw = blg?.copyWith(color: Colors.white);
     final bsm = context.bodySmall;
 
-
     Widget w = Container(
-      margin: EdgeInsets.only(bottom: 6),
-      // padding: EdgeInsets.symmetric(horizontal: 6.0),
-      // color:Colors.grey.shade200,
-      width: double.infinity,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          MyUi.hs_2xs(),
-          InkWell(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 2),
-                  color: Colors.grey.shade500,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        margin: EdgeInsets.only(bottom: 6),
+        // padding: EdgeInsets.symmetric(horizontal: 6.0),
+        // color:Colors.grey.shade200,
+        width: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            MyUi.hs_2xs(),
+            InkWell(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 2),
+                    color: Colors.grey.shade500,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Icon(CupertinoIcons.tray_full, size: 20, color: Colors.white),
+                            MyUi.vs_xs(),
+                            Text(salesInvoice.number, style: blgw),
+                          ],
+                        ),
+                        // Text(Utils.formatDate(salesInvoice.invoiceDate), style: blgw),
+                      ],
+                    ),
+                  ),
+                  Text('${salesInvoice.customerNumber} - ${salesInvoice.customerName}', style: tlg),
+                  Text(salesInvoice.shipToAddressLine1),
+                  Text('Shipping date: ${Utils.formatDate(salesInvoice.invoiceDate)}'),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Icon(CupertinoIcons.tray_full, size:20, color: Colors.white),
-                          MyUi.vs_xs(),
-                          Text(salesInvoice.number, style: blgw),
-                        ],
-                      ),
-                      // Text(Utils.formatDate(salesInvoice.invoiceDate), style: blgw),
+                      Text("Amount:", style: bsm),
+                      MyUi.vs_sm(),
+                      Text('\$${salesInvoice.totalAmountIncludingTax.toString()}', style: tlg),
                     ],
                   ),
-                ),
-                Text('${salesInvoice.customerNumber} - ${salesInvoice.customerName}', style: tlg),
-                Text(salesInvoice.shipToAddressLine1),
-                Text('Shipping date: ${Utils.formatDate(salesInvoice.invoiceDate)}'),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text("Amount:", style: bsm),
-                    MyUi.vs_sm(),
-                    Text('\$${salesInvoice.totalAmountIncludingTax.toString()}', style: tlg),
-                  ],
-                  
-                ),
-                
-              ],
+                ],
+              ),
+              onTap: () {
+                // f(m);
+                if(onTapFunc != null) onTapFunc!.call(salesInvoice);
+                Utils.log("onTapFunc ${salesInvoice.id}");
+              },
             ),
-            onTap: () {
-              // f(m);
-              Utils.log("yea");
-            },
-          ),
-          MyUi.hs_2xs(),
-          MyUi.hr(paddingFlag: false),
-        ],
-      )
-    );
+            MyUi.hs_2xs(),
+            MyUi.hr(paddingFlag: false),
+          ],
+        ));
 
     return w;
   }
 }
-
-
-

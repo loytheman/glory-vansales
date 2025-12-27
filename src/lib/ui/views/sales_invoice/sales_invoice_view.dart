@@ -1,15 +1,22 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:m360_app_corpsec/app/app.locator.dart';
+import 'package:m360_app_corpsec/app/app.router.dart';
 import 'package:m360_app_corpsec/common/theme.dart';
 import 'package:m360_app_corpsec/common/ui.dart';
+import 'package:m360_app_corpsec/models/model.salesInvoice.dart';
 import 'package:m360_app_corpsec/ui/views/_layout.dart';
 import 'package:m360_app_corpsec/ui/views/sales_invoice/sales_invoice_card.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 import 'sales_invoice_viewmodel.dart';
 
 class SalesInvoiceView extends StackedView<SalesInvoiceViewModel> {
+  static final _navigationService = locator<NavigationService>();
+  
+  
   const SalesInvoiceView({Key? key}) : super(key: key);
 
   @override
@@ -17,9 +24,13 @@ class SalesInvoiceView extends StackedView<SalesInvoiceViewModel> {
     await viewModel.refreshData();
   }
 
+  void gotoDetail(SalesInvoice s) {
+    _navigationService.navigateToSalesInvoiceDetailView(salesInvoice: s);
+  }
+
   @override
-  Widget builder( BuildContext context, SalesInvoiceViewModel viewModel, Widget? child) {
-     final myStyle = Theme.of(context).extension<MyCustomStyle>();
+  Widget builder(BuildContext context, SalesInvoiceViewModel viewModel, Widget? child) {
+    final myStyle = Theme.of(context).extension<MyCustomStyle>();
 
     final w = SingleChildScrollView(
       physics: const AlwaysScrollableScrollPhysics(),
@@ -36,7 +47,7 @@ class SalesInvoiceView extends StackedView<SalesInvoiceViewModel> {
           //       },
           //     )),
           // MyUi.hs_lg(),
-          viewModel.isBusy ? MyUi.loadingList() : wSalesInvoiceList(list: viewModel.salesInvoiceList),
+          viewModel.isBusy ? MyUi.loadingList() : wSalesInvoiceList(list: viewModel.salesInvoiceList, onTapFunc: gotoDetail),
         ],
       ),
     );
@@ -49,5 +60,8 @@ class SalesInvoiceView extends StackedView<SalesInvoiceViewModel> {
   }
 
   @override
-  SalesInvoiceViewModel viewModelBuilder(BuildContext context,) => SalesInvoiceViewModel();
+  SalesInvoiceViewModel viewModelBuilder(
+    BuildContext context,
+  ) =>
+      SalesInvoiceViewModel();
 }

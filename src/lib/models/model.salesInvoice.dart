@@ -13,6 +13,9 @@ class SalesInvoice {
   late String shipToAddressLine1;
   late double totalAmountIncludingTax;
 
+  Customer? customer;
+  List<SalesInvoiceLine>? salesInvoiceLine_arr;
+
   SalesInvoice();
 
   factory SalesInvoice.fromMock() {
@@ -40,6 +43,15 @@ class SalesInvoice {
     s.shipToAddressLine1 = d["shipToAddressLine1"];
     s.totalAmountIncludingTax = d["totalAmountIncludingTax"].toDouble();
 
+    if(d['customer'] != null) {
+      s.customer = Customer.fromJson(d['customer']);
+    }
+    
+    final arr = d['salesInvoiceLines'];
+    if(arr != null) {
+      s.salesInvoiceLine_arr = (List<SalesInvoiceLine>.from(arr.map((x) => SalesInvoiceLine.fromJson(x))));
+    }
+
     return s;
   }
   @override
@@ -48,9 +60,7 @@ class SalesInvoice {
   }
 }
 
-
-enum LineType {item,comment}
-
+enum LineType { item, comment }
 
 class SalesInvoiceLine {
   late String id;
@@ -59,7 +69,7 @@ class SalesInvoiceLine {
   late String lineObjectNumber;
   late String description;
   late String unitOfMeasureCode;
-  late String quantity;
+  late double quantity;
   late double unitPrice;
   late double discountPercent;
   late double amountExcludingTax;
@@ -85,17 +95,12 @@ class SalesInvoiceLine {
     s.lineObjectNumber = d['lineObjectNumber'];
     s.description = d['description'];
     s.unitOfMeasureCode = d['unitOfMeasureCode'];
-    s.quantity = d['quantity'];
-    s.unitPrice = d['unitPrice'];
-    s.discountPercent = d['discountPercent'];
-    s.amountExcludingTax = d['amountExcludingTax'];
-    s.netAmountIncludingTax = d['netAmountIncludingTax'];
+    s.quantity = d['quantity'].toDouble();
+    s.unitPrice = d['unitPrice'].toDouble();
+    s.discountPercent = d['discountPercent'].toDouble();
+    s.amountExcludingTax = d['amountExcludingTax'].toDouble();
+    s.netAmountIncludingTax = d['netAmountIncludingTax'].toDouble();
 
-    s.customer = Customer.fromJson(d['customer']);
-    final arr = d["salesInvoiceLines"];
-    if (arr) {
-      s.salesInvoiceLine_arr = (List<SalesInvoiceLine>.from(arr.map((x) => SalesInvoiceLine.fromJson(x))));
-    }
     return s;
   }
 
