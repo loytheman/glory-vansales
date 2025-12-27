@@ -34,6 +34,7 @@ class CustomerService with ApiServiceMixin, ListenableServiceMixin {
     } catch (e) {
       // ShareFunc.showToast(e.toString());
       Utils.err("getAllCustomer : $e");
+      rethrow;
     }
 
     return l;

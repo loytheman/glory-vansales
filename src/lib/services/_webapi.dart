@@ -86,8 +86,7 @@ class WebApi {
     final u = _authenticationService.user;
     var h = {'Content-Type': 'application/json; charset=UTF-8'};
     if (u?.isLogin() ?? false) {
-      // h['Authorization'] = 'Bearer ${u?.tokenSetApp?.accessToken}';
-      h['Authorization'] = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InJ0c0ZULWItN0x1WTdEVlllU05LY0lKN1ZuYyIsImtpZCI6InJ0c0ZULWItN0x1WTdEVlllU05LY0lKN1ZuYyJ9.eyJhdWQiOiJodHRwczovL2FwaS5idXNpbmVzc2NlbnRyYWwuZHluYW1pY3MuY29tIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvZDYyZTRlZDMtZWY0YS00MmEzLTg5NzgtN2ZkZTY4YjVjNjFiLyIsImlhdCI6MTc2Njc1NjkyMywibmJmIjoxNzY2NzU2OTIzLCJleHAiOjE3NjY3NjI0NTIsImFjciI6IjEiLCJhaW8iOiJBWlFBYS84YUFBQUF6NEVtV21aN05PVnRGMXZCU2hHalNzZm5xc2JwbVd1dE5ZZUF6VytnODcyWDQ4V1VPbnZIbGI5QlpicTRpb3pGdVVZcTIyVktxVW9oUHdGNlpzUFlEL0hKYlNHOFZNczdDZUMvRUl2ZTFDMlJMRU5nTmcyRy9GeGZXZTFmVmNUUWFKVks2WlVxREhnU2lqVnM3ODQ0NHU3QktiTkQrS0owZEU4cEl6VnZFRk1RV0l4MmRZMkZzNXJUdW13UHhobEsiLCJhbXIiOlsicHdkIiwibWZhIl0sImFwcGlkIjoiZjNkMmJmNTItYzNjYS00ZWZiLWE3NDgtMzJlOGE0NDhjNzk0IiwiYXBwaWRhY3IiOiIxIiwiZmFtaWx5X25hbWUiOiJMb3kiLCJnaXZlbl9uYW1lIjoiWW9rZSBIb3ciLCJpZHR5cCI6InVzZXIiLCJpcGFkZHIiOiI0OS4yNDUuNTAuMTc1IiwibmFtZSI6Illva2UgSG93IExveSIsIm9pZCI6IjU3MjgxOGQ0LTc0NDUtNGE3NS1iYjY0LTYyNGE2NjM1ZjYyNCIsInB1aWQiOiIxMDAzMjAwNTVGQTE3MEQ0IiwicmgiOiIxLkFXWUEwMDR1MWtydm8wS0plSF9lYUxYR0d6M3ZiWmxzczFOQmhnZW1fVHdCdUotakFDZG1BQS4iLCJzY3AiOiIuM2ZlMjNiNWMtYWY3My00MDY2LWE5MzAtMWFhZjdiYmIzN2QwIiwic2lkIjoiMDBiYjFhODktYTRjMi1kNGZlLTU3ZWQtMmVmMDE0MWIxZjU2Iiwic3ViIjoiMFFDZWhZRGJNTy0tdTJXYWprSW1IWWF1VEtrMHhtc2llT0RhVmRWOUhoVSIsInRpZCI6ImQ2MmU0ZWQzLWVmNGEtNDJhMy04OTc4LTdmZGU2OGI1YzYxYiIsInVuaXF1ZV9uYW1lIjoiY3RvQGx5aGNvLm1lIiwidXBuIjoiY3RvQGx5aGNvLm1lIiwidXRpIjoiZUdCMWdXUUJpa2FwOW9jVzB6Ty1BQSIsInZlciI6IjEuMCIsIndpZHMiOlsiNjJlOTAzOTQtNjlmNS00MjM3LTkxOTAtMDEyMTc3MTQ1ZTEwIiwiYjc5ZmJmNGQtM2VmOS00Njg5LTgxNDMtNzZiMTk0ZTg1NTA5Il0sInhtc19hY3RfZmN0IjoiMyA5IiwieG1zX2Z0ZCI6InlBME1OZHREeHRKLTF1by1oTW9vUzFsd3FNMEdBQ1pQTnVFU0IzVVV0X01CWVhWemRISmhiR2xoWldGemRDMWtjMjF6IiwieG1zX2lkcmVsIjoiMjYgMSIsInhtc19zdWJfZmN0IjoiMyAxMCJ9.U-o2y41ZafdkH7FEx8FPRHgwKrxwaMnd6Xm0eOM2DyGZqECGNRwD4f_3IZ4y8O6E1r4c_QwfFzOqB1eI5Rkqyt9QsMKQtpLho4xlhEA0feWLzIxjGRq85vEkiW7W8lP_-HzAKbdfh3DvE8-iXeI-XSa7Uh5kv1uWwfbgGcIcagYS75qnF3gu9Y18QrRU9Mbpx7Nz2gTgXIgX2JSm6IhsyOUBGv5YZ87xyrBwy_1w14hCSxdxr4tJZXhu1u18IgF1W8BuBbWt7yXJcCaSrWPlaNPDfGgSgOoxyyLD6oCVPqIkQ8kX0kQbrNYbi0_mSWksUh2nxrQwfqWgmmo5YKcwNQ";
+      h['Authorization'] = 'Bearer ${u?.tokenSetApp?.accessToken}';
     }
     final mergeHeaders = <String, String>{};
     mergeHeaders.addAll(h);
@@ -157,15 +156,21 @@ class DioInterceptor extends Interceptor {
     Utils.err('err detail: ${err.response}');
     final data = err.response?.data;
 
+    String m = "Error";
+
     if (data != null && data.containsKey("status") && data.containsKey("message") && data.containsKey("code")) {
       //loynote: this true, means is from our custom API format.
       data["statusCode"] = err.response?.statusCode;
       final ae = ApiException(requestOptions: err.requestOptions, response: err.response);
       super.onError(ae, handler);
     } else {
-      Utils.err('Error response not in right format');
-      Utils.err('ERROR CODE: ${err.error}');
+      m = 'Error response not in right format';
+      if (data != null && data.containsKey("error") && data.containsKey("error_description"))  {
+        m = '${data["error"]}: ${data["error_description"]}';
+      }
       super.onError(err, handler);
     }
+    Utils.err('Dio Error: $m');
+    ShareFunc.showToast(m);
   }
 }

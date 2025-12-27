@@ -7,6 +7,7 @@ import 'package:m360_app_corpsec/app/app.router.dart';
 import 'package:m360_app_corpsec/common/config.dart';
 import 'package:m360_app_corpsec/common/constants.dart';
 import 'package:m360_app_corpsec/helpers/mixins.dart';
+import 'package:m360_app_corpsec/helpers/shareFunc.dart';
 import 'package:m360_app_corpsec/helpers/store.dart';
 import 'package:m360_app_corpsec/helpers/utils.dart';
 import 'package:m360_app_corpsec/models/model.account.dart';
@@ -158,20 +159,25 @@ class AuthenticationService with ApiServiceMixin {
       };
 
       final url = openIdConfig?.tokenEndpoint;
-      final r = await WebApi.call("POST", url!, data, h);
-      if (r.statusCode == 200) {
-        final a = JWT.decode(r.data['access_token']);
-        final e = a.payload["exp"];
-        final ts = TokenSet(
-            accessToken: r.data['access_token'],
-            idToken: r.data['id_token'],
-            refreshToken: r.data['refresh_token'],
-            exp: e.toString());
-        ts.saveOIDCSecure();
-        return ts;
+      try {
+        final r = await WebApi.call("POST", url!, data, h);
+        if (r.statusCode == 200) {
+          final a = JWT.decode(r.data['access_token']);
+          final e = a.payload["exp"];
+          final ts = TokenSet(
+              accessToken: r.data['access_token'],
+              idToken: r.data['id_token'],
+              refreshToken: r.data['refresh_token'],
+              exp: e.toString());
+          ts.saveOIDCSecure();
+          return ts;
+        }
+      } catch(e) {
+        ShareFunc.showToast(ErrorMessage.NO_PERMISSION);
       }
+      
     }
-
+    //https://login.microsoftonline.com/d62e4ed3-ef4a-42a3-8978-7fde68b5c61b/adminconsent?client_id=f3d2bf52-c3ca-4efb-a748-32e8a448c794
     throw ErrorType.OIDC_ERROR;
   }
 

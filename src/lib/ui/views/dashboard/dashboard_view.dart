@@ -49,7 +49,7 @@ class DashboardView extends StackedView<DashboardViewModel> {
                 },
               )),
           MyUi.hs_lg(),
-          wCustomerList(list:viewModel.customerList),
+          viewModel.isBusy ? MyUi.loadingList() : wCustomerList(list:viewModel.customerList),
           
         ],
       ),
@@ -59,7 +59,7 @@ class DashboardView extends StackedView<DashboardViewModel> {
         body: CustomMaterialIndicator(
             triggerMode: IndicatorTriggerMode.anywhere,
             onRefresh: viewModel.refreshData,
-            child: viewModel.isBusy ? MyUi.loadingList() : w));
+            child:  w));
 
     return l;
   }
