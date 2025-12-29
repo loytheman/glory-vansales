@@ -10,7 +10,7 @@ class wSalesInvoiceList extends StatelessWidget {
   final List<SalesInvoice> list;
   final void Function(SalesInvoice s)? onTapFunc;
 
-  const wSalesInvoiceList({ super.key, required this.list, this.onTapFunc });
+  const wSalesInvoiceList({super.key, required this.list, this.onTapFunc});
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class wSalesInvoiceCard extends StatelessWidget {
   final SalesInvoice salesInvoice;
   final void Function(SalesInvoice s)? onTapFunc;
 
-  const wSalesInvoiceCard({ super.key, required this.salesInvoice, this.onTapFunc});
+  const wSalesInvoiceCard({super.key, required this.salesInvoice, this.onTapFunc});
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +99,7 @@ class wSalesInvoiceCard extends StatelessWidget {
               ),
               onTap: () {
                 // f(m);
-                if(onTapFunc != null) onTapFunc!.call(salesInvoice);
+                if (onTapFunc != null) onTapFunc!.call(salesInvoice);
                 Utils.log("onTapFunc ${salesInvoice.id}");
               },
             ),

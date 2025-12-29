@@ -2,8 +2,6 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:glory_vansales_app/helpers/utils.dart';
 
-
-
 class ApiResponse {
   late int? statusCode; //Not Implemented
   //late Map<String, dynamic> jsonData;
@@ -119,5 +117,3 @@ class ValidationError {
         message: data['message'],
       );
 }
-
-

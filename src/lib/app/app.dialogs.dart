@@ -25,14 +25,12 @@ void setupDialogUi() {
   final dialogService = locator<DialogService>();
 
   final Map<DialogType, DialogBuilder> builders = {
-    DialogType.infoAlert: (context, request, completer) =>
-        InfoAlertDialog(request: request, completer: completer),
+    DialogType.infoAlert: (context, request, completer) => InfoAlertDialog(request: request, completer: completer),
     DialogType.companySelector: (context, request, completer) =>
         CompanySelectorDialog(request: request, completer: completer),
     DialogType.confirmation: (context, request, completer) =>
         ConfirmationDialog(request: request, completer: completer),
-    DialogType.aboutUs: (context, request, completer) =>
-        AboutUsDialog(request: request, completer: completer),
+    DialogType.aboutUs: (context, request, completer) => AboutUsDialog(request: request, completer: completer),
     DialogType.biometricLogin: (context, request, completer) =>
         BiometricLoginDialog(request: request, completer: completer),
   };

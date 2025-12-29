@@ -43,12 +43,12 @@ class SalesInvoice {
     s.shipToAddressLine1 = d["shipToAddressLine1"];
     s.totalAmountIncludingTax = d["totalAmountIncludingTax"].toDouble();
 
-    if(d['customer'] != null) {
+    if (d['customer'] != null) {
       s.customer = Customer.fromJson(d['customer']);
     }
-    
+
     final arr = d['salesInvoiceLines'];
-    if(arr != null) {
+    if (arr != null) {
       s.salesInvoiceLine_arr = (List<SalesInvoiceLine>.from(arr.map((x) => SalesInvoiceLine.fromJson(x))));
     }
 

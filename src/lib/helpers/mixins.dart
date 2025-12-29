@@ -16,21 +16,13 @@ mixin FormMixin on FormViewModel {
   }
 }
 
-
 mixin ApiServiceMixin {
   bool isBusy = false;
-  
-  
 
   void setBusy(bool flag) {
     isBusy = flag;
   }
-
-
-
 }
-
-
 
 mixin EventChildWidgetMixin on BaseViewModel {
   List<StreamSubscription> eventSubscriptions = [];

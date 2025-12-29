@@ -176,9 +176,6 @@ class DioInterceptor extends Interceptor {
   }
 }
 
-
-
-
 enum SortDirection {
   ASC,
   DESC,
@@ -235,10 +232,9 @@ class FilterQuery {
     orderList = [];
   }
 
-
   String getString() {
     String qs = "?";
-    for (int i = 0; i< filterList.length; i++) {
+    for (int i = 0; i < filterList.length; i++) {
       String s = filterList[i];
       if (i == 0) {
         qs += "&\$filter=$s ";
@@ -246,7 +242,7 @@ class FilterQuery {
         qs += "and $s ";
       }
     }
-    for (int i = 0; i< orderList.length; i++) {
+    for (int i = 0; i < orderList.length; i++) {
       String s = orderList[i];
       if (i == 0) {
         qs += "&\$orderby=$s";

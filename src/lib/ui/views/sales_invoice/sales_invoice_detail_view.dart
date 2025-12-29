@@ -24,26 +24,20 @@ class SalesInvoiceDetailView extends StackedView<SalesInvoiceDetailViewModel> {
   }
 
   @override
-  Widget builder( BuildContext context, SalesInvoiceDetailViewModel viewModel, Widget? child ) {
-
+  Widget builder(BuildContext context, SalesInvoiceDetailViewModel viewModel, Widget? child) {
     List<Widget> rows = [];
     List<SalesInvoiceLine>? list = viewModel.salesInvoice?.salesInvoiceLine_arr;
     list = list ?? [];
-    
-    
+
     for (var r in list) {
       final w = Text(r.description);
       rows.add(w);
-
     }
-    final w = Column(children: [
-      MyUi.hs_lg(),
-      Text('Invoice ${salesInvoice.number}'),
-      ...rows
-      ]);
-    
+    final w = Column(children: [MyUi.hs_lg(), Text('Invoice ${salesInvoice.number}'), ...rows]);
+
     final l = Layout01Scaffold(
-        leading: "back-btn", title: salesInvoice.customerName, 
+        leading: "back-btn",
+        title: salesInvoice.customerName,
         body: viewModel.isBusy ? MyUi.loadingList() : w,
         padding: EdgeInsets.all(0));
 
@@ -51,6 +45,8 @@ class SalesInvoiceDetailView extends StackedView<SalesInvoiceDetailViewModel> {
   }
 
   @override
-  SalesInvoiceDetailViewModel viewModelBuilder(BuildContext context,) =>
+  SalesInvoiceDetailViewModel viewModelBuilder(
+    BuildContext context,
+  ) =>
       SalesInvoiceDetailViewModel(salesInvoice);
 }

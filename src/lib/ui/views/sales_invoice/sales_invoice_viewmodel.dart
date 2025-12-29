@@ -30,8 +30,8 @@ class SalesInvoiceViewModel extends ReactiveViewModel {
     // await Future.delayed(const Duration(milliseconds: 30));
     try {
       fq.reset();
-      fq.filterField(field:'customerNumber', value:'10000');
-      fq.filterDate(field:'invoiceDate', startDate:'2025-11-01', endDate: '2025-11-21');
+      fq.filterField(field: 'customerNumber', value: '10000');
+      // fq.filterDate(field:'invoiceDate', startDate:'2025-11-01', endDate: '2025-11-21');
       salesInvoiceList = await _bcService.getAllPostedSalesInvoice(filter: fq);
     } catch (e) {
       Utils.err("SalesInvoiceViewModel refreshData error $e");
@@ -51,7 +51,7 @@ class SalesInvoiceViewModel extends ReactiveViewModel {
     setBusy(false);
   }
 
-   Future<void> handleRefreshOrFetch(IndicatorTrigger trigger) async {
+  Future<void> handleRefreshOrFetch(IndicatorTrigger trigger) async {
     if (trigger == IndicatorTrigger.leadingEdge) {
       // Action for leading edge (e.g., pull down to refresh new data)
       print("Leading edge action triggered (refresh)");
