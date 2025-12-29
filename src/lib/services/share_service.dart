@@ -1,5 +1,5 @@
 import 'dart:ui';
-import 'package:m360_app_corpsec/helpers/utils.dart';
+import 'package:glory_vansales_app/helpers/utils.dart';
 import 'package:stacked/stacked.dart';
 
 class ShareService with ListenableServiceMixin {

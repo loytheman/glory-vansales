@@ -1,8 +1,8 @@
-import 'package:m360_app_corpsec/app/app.dialogs.dart';
-import 'package:m360_app_corpsec/app/app.locator.dart';
-import 'package:m360_app_corpsec/helpers/utils.dart';
-import 'package:m360_app_corpsec/models/model.customer.dart';
-import 'package:m360_app_corpsec/services/business_central_service.dart';
+import 'package:glory_vansales_app/app/app.dialogs.dart';
+import 'package:glory_vansales_app/app/app.locator.dart';
+import 'package:glory_vansales_app/helpers/utils.dart';
+import 'package:glory_vansales_app/models/model.customer.dart';
+import 'package:glory_vansales_app/services/business_central_service.dart';
 
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';

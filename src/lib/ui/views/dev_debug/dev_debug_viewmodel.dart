@@ -1,9 +1,9 @@
-import 'package:m360_app_corpsec/common/constants.dart';
-import 'package:m360_app_corpsec/helpers/push.dart';
-import 'package:m360_app_corpsec/helpers/utils.dart';
-import 'package:m360_app_corpsec/models/model.account.dart';
+import 'package:glory_vansales_app/common/constants.dart';
+import 'package:glory_vansales_app/helpers/push.dart';
+import 'package:glory_vansales_app/helpers/utils.dart';
+import 'package:glory_vansales_app/models/model.account.dart';
 import 'package:stacked/stacked.dart';
-import 'package:m360_app_corpsec/helpers/store.dart';
+import 'package:glory_vansales_app/helpers/store.dart';
 
 class DevDebugViewModel extends BaseViewModel {
   String? fcmToken = "test test test";

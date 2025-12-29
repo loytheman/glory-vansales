@@ -4,10 +4,10 @@ import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:jiffy/jiffy.dart';
-import 'package:m360_app_corpsec/common/theme.dart';
-import 'package:m360_app_corpsec/common/ui.dart';
-import 'package:m360_app_corpsec/models/model.company.dart';
-import 'package:m360_app_corpsec/ui/components/country_flag.dart';
+import 'package:glory_vansales_app/common/theme.dart';
+import 'package:glory_vansales_app/common/ui.dart';
+import 'package:glory_vansales_app/models/model.company.dart';
+import 'package:glory_vansales_app/ui/components/country_flag.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class wCompanyInfoTable extends StatelessWidget {

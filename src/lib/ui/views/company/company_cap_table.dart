@@ -2,14 +2,14 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:dart_helper_utils/dart_helper_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:m360_app_corpsec/app/app.bottomsheets.dart';
-import 'package:m360_app_corpsec/app/app.locator.dart';
-import 'package:m360_app_corpsec/common/ui.dart';
-import 'package:m360_app_corpsec/models/model.company.dart';
-import 'package:m360_app_corpsec/ui/components/chart.dart';
-import 'package:m360_app_corpsec/ui/components/member_display.dart';
-import 'package:m360_app_corpsec/ui/components/sticky_table.dart';
-import 'package:m360_app_corpsec/ui/views/company/company_viewmodel.dart';
+import 'package:glory_vansales_app/app/app.bottomsheets.dart';
+import 'package:glory_vansales_app/app/app.locator.dart';
+import 'package:glory_vansales_app/common/ui.dart';
+import 'package:glory_vansales_app/models/model.company.dart';
+import 'package:glory_vansales_app/ui/components/chart.dart';
+import 'package:glory_vansales_app/ui/components/member_display.dart';
+import 'package:glory_vansales_app/ui/components/sticky_table.dart';
+import 'package:glory_vansales_app/ui/views/company/company_viewmodel.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:table_sticky_headers/table_sticky_headers.dart';
 

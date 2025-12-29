@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:app_links/app_links.dart';
-import 'package:m360_app_corpsec/app/app.locator.dart';
-import 'package:m360_app_corpsec/app/app.router.dart';
-import 'package:m360_app_corpsec/helpers/shareFunc.dart';
-import 'package:m360_app_corpsec/helpers/utils.dart';
-import 'package:m360_app_corpsec/services/authentication_service.dart';
+import 'package:glory_vansales_app/app/app.locator.dart';
+import 'package:glory_vansales_app/app/app.router.dart';
+import 'package:glory_vansales_app/helpers/shareFunc.dart';
+import 'package:glory_vansales_app/helpers/utils.dart';
+import 'package:glory_vansales_app/services/authentication_service.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class DeepLinkHelper {

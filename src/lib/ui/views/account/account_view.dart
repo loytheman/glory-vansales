@@ -1,11 +1,11 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:m360_app_corpsec/app/app.dialogs.dart';
-import 'package:m360_app_corpsec/app/app.locator.dart';
-import 'package:m360_app_corpsec/common/theme.dart';
-import 'package:m360_app_corpsec/common/ui.dart';
-import 'package:m360_app_corpsec/services/authentication_service.dart';
-import 'package:m360_app_corpsec/ui/views/_layout.dart';
+import 'package:glory_vansales_app/app/app.dialogs.dart';
+import 'package:glory_vansales_app/app/app.locator.dart';
+import 'package:glory_vansales_app/common/theme.dart';
+import 'package:glory_vansales_app/common/ui.dart';
+import 'package:glory_vansales_app/services/authentication_service.dart';
+import 'package:glory_vansales_app/ui/views/_layout.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:url_launcher/url_launcher.dart';

@@ -1,6 +1,6 @@
 {
-    "name": "m360_app_corpsec",
-    "short_name": "m360_app_corpsec",
+    "name": "glory_vansales_app",
+    "short_name": "glory_vansales_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#hexcode",

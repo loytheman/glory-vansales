@@ -1,18 +1,18 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:m360_app_corpsec/app/app.locator.dart';
-import 'package:m360_app_corpsec/app/app.router.dart';
-import 'package:m360_app_corpsec/common/theme.dart';
-import 'package:m360_app_corpsec/common/ui.dart';
-import 'package:m360_app_corpsec/ui/views/_layout.dart';
-import 'package:m360_app_corpsec/ui/views/company/company_info_table.dart';
-import 'package:m360_app_corpsec/ui/views/customer/customer_card.dart';
-import 'package:m360_app_corpsec/ui/views/dashboard/dashboard_shareholder.dart';
+import 'package:glory_vansales_app/app/app.locator.dart';
+import 'package:glory_vansales_app/app/app.router.dart';
+import 'package:glory_vansales_app/common/theme.dart';
+import 'package:glory_vansales_app/common/ui.dart';
+import 'package:glory_vansales_app/ui/views/_layout.dart';
+import 'package:glory_vansales_app/ui/views/company/company_info_table.dart';
+import 'package:glory_vansales_app/ui/views/customer/customer_card.dart';
+import 'package:glory_vansales_app/ui/views/dashboard/dashboard_shareholder.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'dashboard_viewmodel.dart';
-import 'package:m360_app_corpsec/helpers/store.dart';
+import 'package:glory_vansales_app/helpers/store.dart';
 
 class DashboardView extends StackedView<DashboardViewModel> {
   const DashboardView({Key? key}) : super(key: key);

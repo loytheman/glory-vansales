@@ -1,8 +1,8 @@
-import 'package:m360_app_corpsec/helpers/mixins.dart';
-import 'package:m360_app_corpsec/helpers/store.dart';
-import 'package:m360_app_corpsec/helpers/utils.dart';
-import 'package:m360_app_corpsec/models/model.company.dart';
-import 'package:m360_app_corpsec/services/_webapi.dart';
+import 'package:glory_vansales_app/helpers/mixins.dart';
+import 'package:glory_vansales_app/helpers/store.dart';
+import 'package:glory_vansales_app/helpers/utils.dart';
+import 'package:glory_vansales_app/models/model.company.dart';
+import 'package:glory_vansales_app/services/_webapi.dart';
 import 'package:stacked/stacked.dart';
 
 class CompanyService with ApiServiceMixin, ListenableServiceMixin {

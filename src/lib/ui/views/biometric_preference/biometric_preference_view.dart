@@ -2,7 +2,7 @@ import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:m360_app_corpsec/common/ui.dart';
+import 'package:glory_vansales_app/common/ui.dart';
 import 'package:stacked/stacked.dart';
 
 import 'biometric_preference_viewmodel.dart';

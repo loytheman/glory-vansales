@@ -1,6 +1,6 @@
 import 'dart:ffi';
 import 'package:dart_helper_utils/dart_helper_utils.dart';
-import 'package:m360_app_corpsec/models/model.customer.dart';
+import 'package:glory_vansales_app/models/model.customer.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class SalesInvoice {

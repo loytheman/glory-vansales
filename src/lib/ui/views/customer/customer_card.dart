@@ -1,6 +1,6 @@
 // ignore_for_file: camel_case_types
 import 'package:flutter/material.dart';
-import 'package:m360_app_corpsec/models/model.customer.dart';
+import 'package:glory_vansales_app/models/model.customer.dart';
 
 class wCustomerList extends StatelessWidget {
   final List<Customer> list;

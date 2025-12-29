@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:m360_app_corpsec/ui/common/app_colors.dart';
-import 'package:m360_app_corpsec/ui/common/ui_helpers.dart';
+import 'package:glory_vansales_app/ui/common/app_colors.dart';
+import 'package:glory_vansales_app/ui/common/ui_helpers.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 

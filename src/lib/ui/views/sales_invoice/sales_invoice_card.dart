@@ -1,10 +1,10 @@
 // ignore_for_file: camel_case_types
 import 'package:flutter/cupertino.dart';
-import 'package:m360_app_corpsec/helpers/utils.dart';
+import 'package:glory_vansales_app/helpers/utils.dart';
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:m360_app_corpsec/common/ui.dart';
-import 'package:m360_app_corpsec/models/model.salesInvoice.dart';
+import 'package:glory_vansales_app/common/ui.dart';
+import 'package:glory_vansales_app/models/model.salesInvoice.dart';
 
 class wSalesInvoiceList extends StatelessWidget {
   final List<SalesInvoice> list;

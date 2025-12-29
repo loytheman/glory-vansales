@@ -7,27 +7,27 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:flutter/material.dart' as _i16;
 import 'package:flutter/material.dart';
-import 'package:m360_app_corpsec/models/model.account.dart' as _i17;
-import 'package:m360_app_corpsec/models/model.salesInvoice.dart' as _i18;
-import 'package:m360_app_corpsec/ui/views/_startup/startup_view.dart' as _i2;
-import 'package:m360_app_corpsec/ui/views/account/account_view.dart' as _i12;
-import 'package:m360_app_corpsec/ui/views/biometric_preference/biometric_preference_view.dart'
+import 'package:glory_vansales_app/models/model.account.dart' as _i17;
+import 'package:glory_vansales_app/models/model.salesInvoice.dart' as _i18;
+import 'package:glory_vansales_app/ui/views/_startup/startup_view.dart' as _i2;
+import 'package:glory_vansales_app/ui/views/account/account_view.dart' as _i12;
+import 'package:glory_vansales_app/ui/views/biometric_preference/biometric_preference_view.dart'
     as _i13;
-import 'package:m360_app_corpsec/ui/views/company/company_view.dart' as _i6;
-import 'package:m360_app_corpsec/ui/views/dashboard/dashboard_view.dart' as _i5;
-import 'package:m360_app_corpsec/ui/views/dev_debug/dev_debug_view.dart'
+import 'package:glory_vansales_app/ui/views/company/company_view.dart' as _i6;
+import 'package:glory_vansales_app/ui/views/dashboard/dashboard_view.dart' as _i5;
+import 'package:glory_vansales_app/ui/views/dev_debug/dev_debug_view.dart'
     as _i10;
-import 'package:m360_app_corpsec/ui/views/document/document_view.dart' as _i8;
-import 'package:m360_app_corpsec/ui/views/document_detail/document_detail_view.dart'
+import 'package:glory_vansales_app/ui/views/document/document_view.dart' as _i8;
+import 'package:glory_vansales_app/ui/views/document_detail/document_detail_view.dart'
     as _i11;
-import 'package:m360_app_corpsec/ui/views/login/login_view.dart' as _i3;
-import 'package:m360_app_corpsec/ui/views/request/request_view.dart' as _i7;
-import 'package:m360_app_corpsec/ui/views/sales_invoice/sales_invoice_detail_view.dart'
+import 'package:glory_vansales_app/ui/views/login/login_view.dart' as _i3;
+import 'package:glory_vansales_app/ui/views/request/request_view.dart' as _i7;
+import 'package:glory_vansales_app/ui/views/sales_invoice/sales_invoice_detail_view.dart'
     as _i15;
-import 'package:m360_app_corpsec/ui/views/sales_invoice/sales_invoice_view.dart'
+import 'package:glory_vansales_app/ui/views/sales_invoice/sales_invoice_view.dart'
     as _i14;
-import 'package:m360_app_corpsec/ui/views/sign_up/sign_up_view.dart' as _i4;
-import 'package:m360_app_corpsec/ui/views/timeline/timeline_view.dart' as _i9;
+import 'package:glory_vansales_app/ui/views/sign_up/sign_up_view.dart' as _i4;
+import 'package:glory_vansales_app/ui/views/timeline/timeline_view.dart' as _i9;
 import 'package:stacked/stacked.dart' as _i1;
 import 'package:stacked_services/stacked_services.dart' as _i19;
 

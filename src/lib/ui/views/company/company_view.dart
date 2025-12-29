@@ -1,13 +1,13 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:m360_app_corpsec/common/constants.dart';
-import 'package:m360_app_corpsec/common/ui.dart';
-import 'package:m360_app_corpsec/helpers/utils.dart';
-import 'package:m360_app_corpsec/models/model.company.dart';
-import 'package:m360_app_corpsec/ui/views/company/company_cap_table.dart';
-import 'package:m360_app_corpsec/ui/views/company/company_info_table.dart';
-import 'package:m360_app_corpsec/ui/views/company/company_member.dart';
-import 'package:m360_app_corpsec/ui/views/_layout.dart';
+import 'package:glory_vansales_app/common/constants.dart';
+import 'package:glory_vansales_app/common/ui.dart';
+import 'package:glory_vansales_app/helpers/utils.dart';
+import 'package:glory_vansales_app/models/model.company.dart';
+import 'package:glory_vansales_app/ui/views/company/company_cap_table.dart';
+import 'package:glory_vansales_app/ui/views/company/company_info_table.dart';
+import 'package:glory_vansales_app/ui/views/company/company_member.dart';
+import 'package:glory_vansales_app/ui/views/_layout.dart';
 import 'package:stacked/stacked.dart';
 
 import 'company_viewmodel.dart';

@@ -1,9 +1,9 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:dart_helper_utils/dart_helper_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:m360_app_corpsec/common/ui.dart';
-import 'package:m360_app_corpsec/models/model.company.dart';
-import 'package:m360_app_corpsec/ui/components/member_display.dart';
+import 'package:glory_vansales_app/common/ui.dart';
+import 'package:glory_vansales_app/models/model.company.dart';
+import 'package:glory_vansales_app/ui/components/member_display.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 

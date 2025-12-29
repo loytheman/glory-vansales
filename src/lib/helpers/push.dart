@@ -2,8 +2,8 @@
 // https://developer.apple.com/documentation/uikit/uiapplication/unregisterforremotenotifications()
 //https://pub.dev/packages/push
 import 'dart:async';
-import 'package:m360_app_corpsec/helpers/shareFunc.dart';
-import 'package:m360_app_corpsec/helpers/utils.dart';
+import 'package:glory_vansales_app/helpers/shareFunc.dart';
+import 'package:glory_vansales_app/helpers/utils.dart';
 import 'package:push/push.dart';
 
 class PushHelper {

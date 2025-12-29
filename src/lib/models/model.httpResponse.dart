@@ -1,5 +1,8 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
+import 'package:glory_vansales_app/helpers/utils.dart';
+
+
 
 class ApiResponse {
   late int? statusCode; //Not Implemented
@@ -115,4 +118,45 @@ class ValidationError {
         field: data['field'],
         message: data['message'],
       );
+}
+
+
+
+
+class FilterQuery {
+  List<String> filterList = [];
+
+  FilterQuery();
+
+  FilterQuery.fromList(List<String> l) {
+    filterList = l;
+  }
+
+  void filter({required String field, required String value}) {
+    String s = "$field eq '$value'";
+    filterList.add(s);
+  }
+
+  void filterDate({required String field, required String startDate, String? endDate}) {
+    String s = "$field ge $startDate";
+    if (endDate != null) {
+      s += " and $field le $endDate";
+    }
+    filterList.add(s);
+  }
+
+  String getString() {
+    String filterStr = "?\$filter=";
+    for (int i = 0; i< filterList.length; i++) {
+      String s = filterList[i];
+      Utils.log(s);
+      if (i == 0) {
+        filterStr += "$s ";
+      } else {
+        filterStr += "and $s ";
+      }
+      
+    }    
+    return filterStr;
+  }
 }

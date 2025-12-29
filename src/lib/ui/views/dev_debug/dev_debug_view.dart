@@ -1,9 +1,9 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:m360_app_corpsec/common/ui.dart';
-import 'package:m360_app_corpsec/helpers/shareFunc.dart';
-import 'package:m360_app_corpsec/ui/views/_layout.dart';
+import 'package:glory_vansales_app/common/ui.dart';
+import 'package:glory_vansales_app/helpers/shareFunc.dart';
+import 'package:glory_vansales_app/ui/views/_layout.dart';
 import 'package:stacked/stacked.dart';
 
 import 'dev_debug_viewmodel.dart';

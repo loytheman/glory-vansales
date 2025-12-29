@@ -1,3 +1,3 @@
-# m360_app_corpsec
+# glory_vansales_app
 
 A new Flutter project.

@@ -4,16 +4,16 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
-import 'package:m360_app_corpsec/app/app.locator.dart';
-import 'package:m360_app_corpsec/app/app.router.dart';
-import 'package:m360_app_corpsec/common/config.dart';
-import 'package:m360_app_corpsec/common/constants.dart';
-import 'package:m360_app_corpsec/helpers/shareFunc.dart';
-import 'package:m360_app_corpsec/helpers/utils.dart';
-import 'package:m360_app_corpsec/models/model.httpResponse.dart';
-import 'package:m360_app_corpsec/services/authentication_service.dart';
+import 'package:glory_vansales_app/app/app.locator.dart';
+import 'package:glory_vansales_app/app/app.router.dart';
+import 'package:glory_vansales_app/common/config.dart';
+import 'package:glory_vansales_app/common/constants.dart';
+import 'package:glory_vansales_app/helpers/shareFunc.dart';
+import 'package:glory_vansales_app/helpers/utils.dart';
+import 'package:glory_vansales_app/models/model.httpResponse.dart';
+import 'package:glory_vansales_app/services/authentication_service.dart';
 import 'package:stacked_services/stacked_services.dart';
-import 'package:m360_app_corpsec/helpers/store.dart';
+import 'package:glory_vansales_app/helpers/store.dart';
 
 class WebApi {
   //static final WebApi _singleton = WebApi._();

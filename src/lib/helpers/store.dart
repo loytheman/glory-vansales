@@ -1,7 +1,7 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:m360_app_corpsec/common/constants.dart';
-import 'package:m360_app_corpsec/helpers/utils.dart';
-import 'package:m360_app_corpsec/models/model.company.dart';
+import 'package:glory_vansales_app/common/constants.dart';
+import 'package:glory_vansales_app/helpers/utils.dart';
+import 'package:glory_vansales_app/models/model.company.dart';
 
 class StoreHelper {
   static const secureStore = FlutterSecureStorage();

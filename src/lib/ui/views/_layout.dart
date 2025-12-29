@@ -3,15 +3,15 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:m360_app_corpsec/app/app.dialogs.dart';
-import 'package:m360_app_corpsec/app/app.locator.dart';
-import 'package:m360_app_corpsec/app/app.router.dart';
-import 'package:m360_app_corpsec/common/theme.dart';
-import 'package:m360_app_corpsec/common/ui.dart';
-import 'package:m360_app_corpsec/models/model.company.dart';
-import 'package:m360_app_corpsec/services/authentication_service.dart';
-import 'package:m360_app_corpsec/services/company_service.dart';
-import 'package:m360_app_corpsec/ui/components/company_name.dart';
+import 'package:glory_vansales_app/app/app.dialogs.dart';
+import 'package:glory_vansales_app/app/app.locator.dart';
+import 'package:glory_vansales_app/app/app.router.dart';
+import 'package:glory_vansales_app/common/theme.dart';
+import 'package:glory_vansales_app/common/ui.dart';
+import 'package:glory_vansales_app/models/model.company.dart';
+import 'package:glory_vansales_app/services/authentication_service.dart';
+import 'package:glory_vansales_app/services/company_service.dart';
+import 'package:glory_vansales_app/ui/components/company_name.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 

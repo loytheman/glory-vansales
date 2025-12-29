@@ -1,7 +1,7 @@
-import 'package:m360_app_corpsec/app/app.locator.dart';
-import 'package:m360_app_corpsec/helpers/utils.dart';
-import 'package:m360_app_corpsec/models/model.company.dart';
-import 'package:m360_app_corpsec/services/company_service.dart';
+import 'package:glory_vansales_app/app/app.locator.dart';
+import 'package:glory_vansales_app/helpers/utils.dart';
+import 'package:glory_vansales_app/models/model.company.dart';
+import 'package:glory_vansales_app/services/company_service.dart';
 import 'package:stacked/stacked.dart';
 
 class DocumentViewModel extends ReactiveViewModel {

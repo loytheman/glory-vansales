@@ -2,11 +2,11 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:dart_helper_utils/dart_helper_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:m360_app_corpsec/common/ui.dart';
-import 'package:m360_app_corpsec/models/model.company.dart';
-import 'package:m360_app_corpsec/ui/components/chart.dart';
-import 'package:m360_app_corpsec/ui/views/company/company_shareholder_legend.dart';
-import 'package:m360_app_corpsec/ui/views/company/company_viewmodel.dart';
+import 'package:glory_vansales_app/common/ui.dart';
+import 'package:glory_vansales_app/models/model.company.dart';
+import 'package:glory_vansales_app/ui/components/chart.dart';
+import 'package:glory_vansales_app/ui/views/company/company_shareholder_legend.dart';
+import 'package:glory_vansales_app/ui/views/company/company_viewmodel.dart';
 
 class wCompanyShareholder extends StatelessWidget {
   final Company? company;

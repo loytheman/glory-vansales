@@ -1,8 +1,9 @@
-import 'package:m360_app_corpsec/app/app.locator.dart';
-import 'package:m360_app_corpsec/helpers/store.dart';
-import 'package:m360_app_corpsec/helpers/utils.dart';
-import 'package:m360_app_corpsec/models/model.salesInvoice.dart';
-import 'package:m360_app_corpsec/services/business_central_service.dart';
+import 'package:glory_vansales_app/app/app.locator.dart';
+import 'package:glory_vansales_app/helpers/store.dart';
+import 'package:glory_vansales_app/helpers/utils.dart';
+import 'package:glory_vansales_app/models/model.httpResponse.dart';
+import 'package:glory_vansales_app/models/model.salesInvoice.dart';
+import 'package:glory_vansales_app/services/business_central_service.dart';
 import 'package:stacked/stacked.dart';
 
 class SalesInvoiceViewModel extends ReactiveViewModel {
@@ -18,10 +19,10 @@ class SalesInvoiceViewModel extends ReactiveViewModel {
 
     // await Future.delayed(const Duration(milliseconds: 30));
     try {
-      salesInvoiceList = await _bcService.getAllPostedSalesInvoice();
-
-      final a = await _bcService.getSalesInvoiceDetail('9dafc879-7bd0-f011-8bce-6045bd74ddca');
-
+      var f = FilterQuery();
+      f.filter(field:'customerNumber', value:'10000');
+      f.filterDate(field:'invoiceDate', startDate:'2025-11-01', endDate: '2025-11-21');
+      salesInvoiceList = await _bcService.getAllPostedSalesInvoice(filter: f);
       Utils.log(salesInvoiceList);
     } catch (e) {
       Utils.err("SalesInvoiceViewModel refreshData error $e");

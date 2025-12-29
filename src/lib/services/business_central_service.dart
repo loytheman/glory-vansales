@@ -1,9 +1,10 @@
-import 'package:m360_app_corpsec/helpers/mixins.dart';
-import 'package:m360_app_corpsec/helpers/store.dart';
-import 'package:m360_app_corpsec/helpers/utils.dart';
-import 'package:m360_app_corpsec/models/model.customer.dart';
-import 'package:m360_app_corpsec/models/model.salesInvoice.dart';
-import 'package:m360_app_corpsec/services/_webapi.dart';
+import 'package:glory_vansales_app/helpers/mixins.dart';
+import 'package:glory_vansales_app/helpers/store.dart';
+import 'package:glory_vansales_app/helpers/utils.dart';
+import 'package:glory_vansales_app/models/model.customer.dart';
+import 'package:glory_vansales_app/models/model.httpResponse.dart';
+import 'package:glory_vansales_app/models/model.salesInvoice.dart';
+import 'package:glory_vansales_app/services/_webapi.dart';
 import 'package:stacked/stacked.dart';
 
 class BusinessCentralService with ApiServiceMixin, ListenableServiceMixin {
@@ -30,10 +31,11 @@ class BusinessCentralService with ApiServiceMixin, ListenableServiceMixin {
 
   // GET {businesscentralPrefix}/companies({id})/salesInvoices({salesInvoiceId})/salesInvoiceLines
 
-  Future<List<SalesInvoice>> getAllPostedSalesInvoice() async {
+  Future<List<SalesInvoice>> getAllPostedSalesInvoice({FilterQuery? filter}) async {
     List<SalesInvoice> l = [];
+    String f = filter?.getString() ?? "";
     try {
-      final ar = await WebApi.callApi("GET", '/salesInvoices');
+      final ar = await WebApi.callApi("GET", '/salesInvoices$f');
       final d = ar.data;
       l = (List<SalesInvoice>.from(d.map((x) => SalesInvoice.fromJson(x))));
       salesInvoiceArr = l;

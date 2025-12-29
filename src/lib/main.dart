@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:m360_app_corpsec/app/app.bottomsheets.dart';
-import 'package:m360_app_corpsec/app/app.dialogs.dart';
-import 'package:m360_app_corpsec/app/app.locator.dart';
-import 'package:m360_app_corpsec/app/app.router.dart';
-import 'package:m360_app_corpsec/common/config.dart';
-import 'package:m360_app_corpsec/common/theme.dart';
-import 'package:m360_app_corpsec/helpers/deep_link.dart';
-import 'package:m360_app_corpsec/helpers/life_cycle.dart';
-import 'package:m360_app_corpsec/helpers/push.dart';
-import 'package:m360_app_corpsec/services/_webapi.dart';
-import 'package:m360_app_corpsec/ui/views/_layout_inactive_wrapper.dart';
+import 'package:glory_vansales_app/app/app.bottomsheets.dart';
+import 'package:glory_vansales_app/app/app.dialogs.dart';
+import 'package:glory_vansales_app/app/app.locator.dart';
+import 'package:glory_vansales_app/app/app.router.dart';
+import 'package:glory_vansales_app/common/config.dart';
+import 'package:glory_vansales_app/common/theme.dart';
+import 'package:glory_vansales_app/helpers/deep_link.dart';
+import 'package:glory_vansales_app/helpers/life_cycle.dart';
+import 'package:glory_vansales_app/helpers/push.dart';
+import 'package:glory_vansales_app/services/_webapi.dart';
+import 'package:glory_vansales_app/ui/views/_layout_inactive_wrapper.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 Future<void> main() async {

@@ -7,7 +7,7 @@
 // ignore_for_file: public_member_api_docs, constant_identifier_names, non_constant_identifier_names,unnecessary_this
 
 import 'package:flutter/material.dart';
-import 'package:m360_app_corpsec/helpers/validators.dart';
+import 'package:glory_vansales_app/helpers/validators.dart';
 import 'package:stacked/stacked.dart';
 
 const bool _autoTextFieldValidation = true;

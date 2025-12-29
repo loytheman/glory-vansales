@@ -1,6 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
-import 'package:m360_app_corpsec/helpers/utils.dart';
+import 'package:glory_vansales_app/helpers/utils.dart';
 
 class Config {
   //oidc

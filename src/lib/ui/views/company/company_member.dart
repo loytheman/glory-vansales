@@ -1,13 +1,13 @@
 // ignore_for_file: camel_case_types
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:m360_app_corpsec/app/app.bottomsheets.dart';
-import 'package:m360_app_corpsec/app/app.locator.dart';
-import 'package:m360_app_corpsec/common/constants.dart';
-import 'package:m360_app_corpsec/common/ui.dart';
-import 'package:m360_app_corpsec/helpers/utils.dart';
-import 'package:m360_app_corpsec/models/model.company.dart';
-import 'package:m360_app_corpsec/ui/components/member_display.dart';
+import 'package:glory_vansales_app/app/app.bottomsheets.dart';
+import 'package:glory_vansales_app/app/app.locator.dart';
+import 'package:glory_vansales_app/common/constants.dart';
+import 'package:glory_vansales_app/common/ui.dart';
+import 'package:glory_vansales_app/helpers/utils.dart';
+import 'package:glory_vansales_app/models/model.company.dart';
+import 'package:glory_vansales_app/ui/components/member_display.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class wCompanyMember extends StatelessWidget {

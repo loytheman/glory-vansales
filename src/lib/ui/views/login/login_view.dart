@@ -1,10 +1,10 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:m360_app_corpsec/common/constants.dart';
-import 'package:m360_app_corpsec/common/ui.dart';
-import 'package:m360_app_corpsec/helpers/life_cycle.dart';
-import 'package:m360_app_corpsec/helpers/validators.dart';
-import 'package:m360_app_corpsec/ui/views/login/login_view.form.dart';
+import 'package:glory_vansales_app/common/constants.dart';
+import 'package:glory_vansales_app/common/ui.dart';
+import 'package:glory_vansales_app/helpers/life_cycle.dart';
+import 'package:glory_vansales_app/helpers/validators.dart';
+import 'package:glory_vansales_app/ui/views/login/login_view.form.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:themed/themed.dart';

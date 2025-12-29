@@ -1,11 +1,11 @@
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:m360_app_corpsec/app/app.locator.dart';
+import 'package:glory_vansales_app/app/app.locator.dart';
 import 'package:stacked_services/stacked_services.dart';
-import 'package:m360_app_corpsec/services/authentication_service.dart';
-import 'package:m360_app_corpsec/services/share_service.dart';
-import 'package:m360_app_corpsec/services/company_service.dart';
-import 'package:m360_app_corpsec/services/business_central_service.dart';
+import 'package:glory_vansales_app/services/authentication_service.dart';
+import 'package:glory_vansales_app/services/share_service.dart';
+import 'package:glory_vansales_app/services/company_service.dart';
+import 'package:glory_vansales_app/services/business_central_service.dart';
 // @stacked-import
 
 import 'test_helpers.mocks.dart';

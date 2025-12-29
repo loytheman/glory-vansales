@@ -1,6 +1,6 @@
-import 'package:m360_app_corpsec/app/app.locator.dart';
-import 'package:m360_app_corpsec/helpers/store.dart';
-import 'package:m360_app_corpsec/services/authentication_service.dart';
+import 'package:glory_vansales_app/app/app.locator.dart';
+import 'package:glory_vansales_app/helpers/store.dart';
+import 'package:glory_vansales_app/services/authentication_service.dart';
 import 'package:stacked/stacked.dart';
 
 class BiometricLoginDialogModel extends BaseViewModel {

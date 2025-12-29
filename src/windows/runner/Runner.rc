@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "m360_app_corpsec" "\0"
+            VALUE "FileDescription", "glory_vansales_app" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "m360_app_corpsec" "\0"
+            VALUE "InternalName", "glory_vansales_app" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "m360_app_corpsec.exe" "\0"
-            VALUE "ProductName", "m360_app_corpsec" "\0"
+            VALUE "OriginalFilename", "glory_vansales_app.exe" "\0"
+            VALUE "ProductName", "glory_vansales_app" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
