@@ -11,6 +11,7 @@ import 'package:glory_vansales_app/ui/views/sales_invoice/sales_invoice_card.dar
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
+import '../../../helpers/utils.dart';
 import 'sales_invoice_viewmodel.dart';
 
 class SalesInvoiceView extends StackedView<SalesInvoiceViewModel> {
@@ -36,17 +37,6 @@ class SalesInvoiceView extends StackedView<SalesInvoiceViewModel> {
       physics: const AlwaysScrollableScrollPhysics(),
       child: Column(
         children: [
-          // SizedBox(
-          //     width: double.infinity,
-          //     child: InkWell(
-          //       child: Text("Refresh salse invoice information",
-          //           textAlign: TextAlign.right, style: context.bodyMedium?.copyWith(color: myStyle?.linkColor)),
-          //       onTap: () {
-          //         viewModel.refreshData();
-          //         //navigationService.navigateTo(Routes.companyView, parameters: {"tabIndex": "0"});
-          //       },
-          //     )),
-          // MyUi.hs_lg(),
           viewModel.isBusy ? MyUi.loadingList() : wSalesInvoiceList(list: viewModel.salesInvoiceList, onTapFunc: gotoDetail),
         ],
       ),
@@ -54,7 +44,37 @@ class SalesInvoiceView extends StackedView<SalesInvoiceViewModel> {
 
     final l = Layout01Scaffold(
         body: CustomMaterialIndicator(
-            triggerMode: IndicatorTriggerMode.anywhere, onRefresh: viewModel.refreshData, child: w));
+            // triggerMode: IndicatorTriggerMode.anywhere, 
+            leadingScrollIndicatorVisible:false,
+            trailingScrollIndicatorVisible: false,
+            trigger: IndicatorTrigger.bothEdges,
+            onRefresh: viewModel.getData, 
+            // onRefresh: () async => {  Utils.log("refresh") },
+            indicatorBuilder:(context, controller) {
+              var indicator = Icon(Icons.refresh);
+              viewModel.loadMoreFlag = false;
+              if (controller.edge == IndicatorEdge.trailing) {
+                indicator = Icon(Icons.arrow_upward);
+                viewModel.loadMoreFlag = true;
+              }
+              return indicator;
+            },
+            child: w,
+
+              
+            )
+      );
+
+    // final l = Layout01Scaffold(
+    //     body: CustomRefreshIndicator(
+    //         trigger: IndicatorTrigger.bothEdges, 
+    //         onRefresh: viewModel.refreshData, 
+    //         child: w,
+    //         builder: (context, child, controller)  {
+    //           return child;
+    //         },
+    //       )
+    //     );
 
     return l;
   }

@@ -68,8 +68,9 @@ class Layout01Scaffold extends StatelessWidget {
       l = leading;
     }
 
-    Widget t = Container();
-    t = Text(title);
+    // Widget t = Container();
+    // t = Text(title);
+    Widget t = Image.asset("assets/img/glory.png", height: 48);
 
     Widget tt = Container();
     if (trailing == "profile") {

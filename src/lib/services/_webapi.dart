@@ -2,6 +2,7 @@
 
 import 'dart:io';
 
+import 'package:dart_helper_utils/dart_helper_utils.dart';
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:glory_vansales_app/app/app.locator.dart';
@@ -173,4 +174,78 @@ class DioInterceptor extends Interceptor {
     Utils.err('Dio Error: $m');
     ShareFunc.showToast(m);
   }
+}
+
+
+
+
+enum SortDirection {
+  ASC,
+  DESC,
+}
+
+
+class FilterQuery {
+  int pageSize = 1;
+  int skipRecord = 0;
+  List<String> filterList = [];
+  List<String> orderList = [];
+
+  FilterQuery();
+
+  void filterField({required String field, required String value}) {
+    String s = "$field eq '$value'";
+    filterList.add(s);
+  }
+
+  void filterDate({required String field, required String startDate, String? endDate}) {
+    String s = "$field ge $startDate";
+    if (endDate != null) {
+      s += " and $field le $endDate";
+    }
+    filterList.add(s);
+  }
+
+  void orderBy({required String field, required SortDirection direction}) {
+    var d = "desc";
+    if (direction == SortDirection.ASC) {
+      d = "asc";
+    }
+    String s = "$field $d'";
+    orderList.add(s);
+  }
+
+  void setPage({int? top, int skip = 0}) {
+    if (top.isNotNull) {
+      pageSize = top!;
+    }
+    skipRecord = skip;
+  }
+
+
+  String getString() {
+    String qs = "?";
+    for (int i = 0; i< filterList.length; i++) {
+      String s = filterList[i];
+      if (i == 0) {
+        qs += "&\$filter=$s ";
+      } else {
+        qs += "and $s ";
+      }
+    }
+    for (int i = 0; i< orderList.length; i++) {
+      String s = orderList[i];
+      if (i == 0) {
+        qs += "&\$orderby=$s";
+      } else {
+        qs += ",$s";
+      }
+    }
+    qs += "&\$top=$pageSize&\$skip=$skipRecord";
+    return qs;
+  }
+
+  //$orderby={field} {direction}
+  //$top={pageSize}
+  //$skip={skipRecords}
 }
