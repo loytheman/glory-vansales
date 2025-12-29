@@ -184,14 +184,17 @@ enum SortDirection {
   DESC,
 }
 
-
 class FilterQuery {
   int pageSize = 1;
   int skipRecord = 0;
   List<String> filterList = [];
   List<String> orderList = [];
 
-  FilterQuery();
+  FilterQuery({int? top}) {
+    if (top.isNotNull) {
+      pageSize = top!;
+    }
+  }
 
   void filterField({required String field, required String value}) {
     String s = "$field eq '$value'";
@@ -220,6 +223,16 @@ class FilterQuery {
       pageSize = top!;
     }
     skipRecord = skip;
+  }
+
+  void loadNextPage() {
+    skipRecord += pageSize;
+  }
+
+  void reset() {
+    skipRecord = 0;
+    filterList = [];
+    orderList = [];
   }
 
 

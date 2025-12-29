@@ -12,6 +12,7 @@ class SalesInvoiceViewModel extends ReactiveViewModel {
   final _bcService = locator<BusinessCentralService>();
   List<SalesInvoice> salesInvoiceList = [];
   bool loadMoreFlag = false;
+  FilterQuery fq = FilterQuery();
   int pageSkip = 0;
 
   Future<void> getData() async {
@@ -24,17 +25,14 @@ class SalesInvoiceViewModel extends ReactiveViewModel {
 
   Future<void> refreshData() async {
     // await StoreHelper.clearCredential();
-
     setBusy(true);
     salesInvoiceList = [];
-
     // await Future.delayed(const Duration(milliseconds: 30));
     try {
-      var f = FilterQuery();
-      f.filterField(field:'customerNumber', value:'10000');
-      // f.filterDate(field:'invoiceDate', startDate:'2025-11-01', endDate: '2025-11-21');
-      salesInvoiceList = await _bcService.getAllPostedSalesInvoice(filter: f);
-      // Utils.log(salesInvoiceList);
+      fq.reset();
+      fq.filterField(field:'customerNumber', value:'10000');
+      fq.filterDate(field:'invoiceDate', startDate:'2025-11-01', endDate: '2025-11-21');
+      salesInvoiceList = await _bcService.getAllPostedSalesInvoice(filter: fq);
     } catch (e) {
       Utils.err("SalesInvoiceViewModel refreshData error $e");
     }
@@ -44,13 +42,8 @@ class SalesInvoiceViewModel extends ReactiveViewModel {
   Future<void> loadMore() async {
     setBusy(true);
     try {
-      var f = FilterQuery();
-      f.filterField(field:'customerNumber', value:'10000');
-      // f.filterDate(field:'invoiceDate', startDate:'2025-11-01', endDate: '2025-11-21');
-      pageSkip += 1;
-      f.setPage(skip: pageSkip);
-      
-      var l = await _bcService.getAllPostedSalesInvoice(filter: f);
+      fq.loadNextPage();
+      var l = await _bcService.getAllPostedSalesInvoice(filter: fq);
       salesInvoiceList.addAll(l);
     } catch (e) {
       Utils.err("SalesInvoiceViewModel load more error $e");
