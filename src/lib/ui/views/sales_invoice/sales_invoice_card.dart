@@ -12,6 +12,16 @@ class wSalesInvoiceList extends StatelessWidget {
 
   const wSalesInvoiceList({super.key, required this.list, this.onTapFunc});
 
+  factory wSalesInvoiceList.createContentFunc(List<dynamic> list, Function(dynamic s)? onTapFunc) {
+    list = list as List<SalesInvoice>;
+    void Function(SalesInvoice)? f = onTapFunc as Function(SalesInvoice)?;
+    var w = wSalesInvoiceList(list: list, onTapFunc: f);
+    return w;
+  }
+
+
+
+
   @override
   Widget build(BuildContext context) {
     String header = "Outstanding Invoices";

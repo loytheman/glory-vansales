@@ -25,7 +25,7 @@ class SalesInvoiceView extends StackedView<SalesInvoiceViewModel> {
     await viewModel.refreshData();
   }
 
-  void gotoDetail(SalesInvoice s) {
+  void gotoDetail(dynamic s) {
     _navigationService.navigateToSalesInvoiceDetailView(salesInvoice: s);
   }
 
@@ -44,7 +44,9 @@ class SalesInvoiceView extends StackedView<SalesInvoiceViewModel> {
 
     final l = Layout01Scaffold(
         body: wPaginationLoadMore(
+            createContentFunc:wSalesInvoiceList.createContentFunc,
             list: viewModel.salesInvoiceList,
+            onTapFunc: gotoDetail,
             onRefreshFunc: viewModel.refreshData,
             onLoadMoreFunc: viewModel.loadMore));
 

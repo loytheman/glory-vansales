@@ -40,35 +40,35 @@ class wPaginationLoadMoreModel extends ReactiveViewModel {
 class wPaginationLoadMore extends StackedView<wPaginationLoadMoreModel> {
   final Future<void> Function() onRefreshFunc;
   final Future<void> Function() onLoadMoreFunc;
+  final Widget Function(List<dynamic> list, Function(dynamic s)? onTapFunc) createContentFunc;
   final List<dynamic> list;
+  final void Function(dynamic s)? onTapFunc;
 
-  const wPaginationLoadMore({super.key, required this.list, required this.onRefreshFunc, required this.onLoadMoreFunc});
+  const wPaginationLoadMore({super.key, required this.createContentFunc, required this.list, required this.onTapFunc, 
+    required this.onRefreshFunc, required this.onLoadMoreFunc});
 
-
-  void gotoDetail(SalesInvoice s) {
-    // _navigationService.navigateToSalesInvoiceDetailView(salesInvoice: s);
-  }
 
   @override
   Widget builder( BuildContext context, wPaginationLoadMoreModel viewModel, Widget? child) {
-    @override
-            var c = SingleChildScrollView(
-              physics: const AlwaysScrollableScrollPhysics(),
-              child: Column(
-                children: [
-                  TextButton(
-                    // onPressed: () => { viewModel.loadMoreFlag = true},
-                    onPressed: () => { },
-                    child: const Text("NO"),
-                  ),
-                  // Text("loadMoreFlag: ${viewModel.loadMoreFlag} ${viewModel.counter}"), 
-                  viewModel.isBusy && !viewModel.loadMoreFlag
-                    ? MyUi.loadingList() : wSalesInvoiceList(list: viewModel.list as List<SalesInvoice>, onTapFunc: gotoDetail),
-                  // wSalesInvoiceList(list: viewModel.list as List<SalesInvoice>)
-                  if (viewModel.loadMoreFlag) ...[MyUi.loadingList()]
-                  ],
-              ),
-            );
+
+            var c = createContentFunc(list, onTapFunc);
+            // var c = SingleChildScrollView(
+            //   physics: const AlwaysScrollableScrollPhysics(),
+            //   child: Column(
+            //     children: [
+            //       TextButton(
+            //         // onPressed: () => { viewModel.loadMoreFlag = true},
+            //         onPressed: () => { },
+            //         child: const Text("NO"),
+            //       ),
+            //       // Text("loadMoreFlag: ${viewModel.loadMoreFlag} ${viewModel.counter}"), 
+            //       viewModel.isBusy && !viewModel.loadMoreFlag
+            //         ? MyUi.loadingList() : wSalesInvoiceList(list: viewModel.list as List<SalesInvoice>, onTapFunc: gotoDetail),
+            //       // wSalesInvoiceList(list: viewModel.list as List<SalesInvoice>)
+            //       if (viewModel.loadMoreFlag) ...[MyUi.loadingList()]
+            //       ],
+            //   ),
+            // );
 
             Widget w = CustomMaterialIndicator(
               // triggerMode: IndicatorTriggerMode.anywhere,
