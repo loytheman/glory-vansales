@@ -29,6 +29,7 @@ import 'package:glory_vansales_app/ui/views/biometric_preference/biometric_prefe
 import 'package:glory_vansales_app/services/business_central_service.dart';
 import 'package:glory_vansales_app/ui/views/sales_invoice/sales_invoice_view.dart';
 import 'package:glory_vansales_app/ui/views/sales_invoice/sales_invoice_detail_view.dart';
+import 'package:glory_vansales_app/ui/dialogs/calender_date_picker/calender_date_picker_dialog.dart';
 // @stacked-import
 
 @StackedApp(
@@ -75,6 +76,7 @@ import 'package:glory_vansales_app/ui/views/sales_invoice/sales_invoice_detail_v
     StackedDialog(classType: ConfirmationDialog),
     StackedDialog(classType: AboutUsDialog),
     StackedDialog(classType: BiometricLoginDialog),
+    StackedDialog(classType: CalenderDatePickerDialog),
 // @stacked-dialog
   ],
 )

@@ -2,5 +2,6 @@ include: package:flutter_lints/flutter.yaml
 analyzer:
   errors:
     non_constant_identifier_names: ignore
+    sort_child_properties_last: ignore
     unused_catch_clause: ignore
     use_super_parameters: ignore

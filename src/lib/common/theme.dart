@@ -76,7 +76,7 @@ class MyTheme {
     bodyLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.grey[900]),
     bodyMedium: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.grey[900]),
     bodySmall: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.grey[900]),
-    labelLarge: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey[50]),
+    labelLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.grey[900]),
   );
 
   static TextTheme darkTextTheme = TextTheme(
@@ -89,7 +89,7 @@ class MyTheme {
     bodyLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.grey[50]),
     bodyMedium: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Colors.grey[50]),
     bodySmall: TextStyle(fontSize: 12, fontWeight: FontWeight.w400, color: Colors.grey[50]),
-    labelLarge: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey[900]),
+    labelLarge: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.grey[50]),
   );
 
   static ElevatedButtonThemeData elevatedButtonTheme = ElevatedButtonThemeData(

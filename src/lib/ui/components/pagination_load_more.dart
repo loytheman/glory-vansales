@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:glory_vansales_app/common/ui.dart';
 import 'package:stacked/stacked.dart';
 
-
 class wPaginationLoadMoreModel extends ReactiveViewModel {
   List<dynamic> list;
   Future<void> Function() onRefreshFunc;
@@ -28,7 +27,6 @@ class wPaginationLoadMoreModel extends ReactiveViewModel {
   }
 }
 
-
 class wPaginationLoadMore extends StackedView<wPaginationLoadMoreModel> {
   final Future<void> Function() onRefreshFunc;
   final Future<void> Function() onLoadMoreFunc;
@@ -36,54 +34,56 @@ class wPaginationLoadMore extends StackedView<wPaginationLoadMoreModel> {
   final List<dynamic> list;
   final void Function(dynamic s)? onTapFunc;
 
-  const wPaginationLoadMore({super.key, required this.createContentFunc, required this.list, required this.onTapFunc, 
-    required this.onRefreshFunc, required this.onLoadMoreFunc});
-
+  const wPaginationLoadMore(
+      {super.key,
+      required this.createContentFunc,
+      required this.list,
+      required this.onTapFunc,
+      required this.onRefreshFunc,
+      required this.onLoadMoreFunc});
 
   @override
-  Widget builder( BuildContext context, wPaginationLoadMoreModel viewModel, Widget? child) {
+  Widget builder(BuildContext context, wPaginationLoadMoreModel viewModel, Widget? child) {
+    var content = createContentFunc(list, onTapFunc);
 
-            var content = createContentFunc(list, onTapFunc);
+    var c = SingleChildScrollView(
+      physics: const AlwaysScrollableScrollPhysics(),
+      child: Column(
+        children: [
+          // TextButton(
+          //   onPressed: () => { },
+          //   child: const Text("NO"),
+          // ),
+          viewModel.isBusy && !viewModel.loadMoreFlag ? MyUi.loadingList() : content,
+          if (viewModel.loadMoreFlag) ...[MyUi.loadingList()]
+        ],
+      ),
+    );
 
-            var c = SingleChildScrollView(
-              physics: const AlwaysScrollableScrollPhysics(),
-              child: Column(
-                children: [
-                  // TextButton(
-                  //   onPressed: () => { },
-                  //   child: const Text("NO"),
-                  // ),
-                  viewModel.isBusy && !viewModel.loadMoreFlag
-                    ? MyUi.loadingList() : content,
-                  if (viewModel.loadMoreFlag) ...[MyUi.loadingList()]
-                  ],
-              ),
-            );
+    Widget w = CustomMaterialIndicator(
+      // triggerMode: IndicatorTriggerMode.anywhere,
+      leadingScrollIndicatorVisible: false,
+      trailingScrollIndicatorVisible: false,
+      trigger: IndicatorTrigger.bothEdges,
+      onRefresh: viewModel.getData,
+      indicatorBuilder: (context, controller) {
+        var indicator = Icon(Icons.refresh);
+        viewModel.loadMoreFlag = false;
+        if (controller.edge == IndicatorEdge.trailing) {
+          indicator = Icon(Icons.arrow_upward);
+          viewModel.loadMoreFlag = true;
+        }
+        return indicator;
+      },
+      child: c,
+    );
 
-            Widget w = CustomMaterialIndicator(
-              // triggerMode: IndicatorTriggerMode.anywhere,
-              leadingScrollIndicatorVisible: false,
-              trailingScrollIndicatorVisible: false,
-              trigger: IndicatorTrigger.bothEdges,
-              onRefresh: viewModel.getData,
-              indicatorBuilder: (context, controller) {
-                var indicator = Icon(Icons.refresh);
-                viewModel.loadMoreFlag = false;
-                if (controller.edge == IndicatorEdge.trailing) {
-                  indicator = Icon(Icons.arrow_upward);
-                  viewModel.loadMoreFlag = true;
-                }
-                return indicator;
-              },
-              child: c,
-            );
-
-            return w;
-
+    return w;
   }
 
   @override
-  wPaginationLoadMoreModel viewModelBuilder(BuildContext context,) => wPaginationLoadMoreModel(list, onRefreshFunc, onLoadMoreFunc);
+  wPaginationLoadMoreModel viewModelBuilder(
+    BuildContext context,
+  ) =>
+      wPaginationLoadMoreModel(list, onRefreshFunc, onLoadMoreFunc);
 }
-
-

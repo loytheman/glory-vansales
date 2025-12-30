@@ -19,9 +19,6 @@ class wSalesInvoiceList extends StatelessWidget {
     return w;
   }
 
-
-
-
   @override
   Widget build(BuildContext context) {
     String header = "Outstanding Invoices";

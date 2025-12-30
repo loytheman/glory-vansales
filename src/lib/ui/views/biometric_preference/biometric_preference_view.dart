@@ -72,7 +72,6 @@ class BiometricPreferenceView extends StackedView<BiometricPreferenceViewModel> 
                       icon: viewModel.isBusy ? MyUi.loadingCirlce() : null,
                       onPressed: viewModel.isBusy ? null : () => viewModel.useBiometric(true),
                       label: const Text("Enable Now")),
-                  // label: const Text("Sign In with MEYZER360")),
                 ),
                 MyUi.hs_md(),
                 SizedBox(

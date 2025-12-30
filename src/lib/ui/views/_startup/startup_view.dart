@@ -124,9 +124,8 @@ class StartupView extends StackedView<StartupViewModel> {
                             icon: viewModel.isBusy ? MyUi.loadingCirlce() : null,
                             onPressed: viewModel.isBusy ? null : onClickLogin,
                             label: viewModel.isBusy
-                                ? const Text("Logging into MEYZER360")
+                                ? const Text("Logging into Business Central")
                                 : const Text("Biometric Authentication")),
-                        // label: const Text("Sign In with MEYZER360")),
                       ),
 
                       //viewModel.onOidcLogout

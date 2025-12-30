@@ -62,11 +62,11 @@ class MyUi {
     return w;
   }
 
-  static Widget dialog({Widget? child}) {
+  static Widget dialog({Widget? child, double padding=0}) {
     final d = Dialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         backgroundColor: Colors.white,
-        child: child?.paddingAll(20));
+        child: child?.paddingAll(padding));
     return d;
   }
 
@@ -166,6 +166,8 @@ class MyUi {
       offset: Offset(0, 2), // changes position of shadow
     );
   }
+
+  //loynote: use wTag in _general_ui.dart
 
   static Widget tag(String txt) {
     final w = Container(
