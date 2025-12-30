@@ -1,15 +1,7 @@
 // ignore_for_file: camel_case_types
-
-import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:glory_vansales_app/common/ui.dart';
-import 'package:glory_vansales_app/helpers/utils.dart';
-import 'package:glory_vansales_app/models/model.salesInvoice.dart';
-import 'package:glory_vansales_app/ui/views/sales_invoice/sales_invoice_card.dart';
-import 'package:smart_text_widget/smart_text_widget.dart';
-import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 
@@ -51,24 +43,22 @@ class wPaginationLoadMore extends StackedView<wPaginationLoadMoreModel> {
   @override
   Widget builder( BuildContext context, wPaginationLoadMoreModel viewModel, Widget? child) {
 
-            var c = createContentFunc(list, onTapFunc);
-            // var c = SingleChildScrollView(
-            //   physics: const AlwaysScrollableScrollPhysics(),
-            //   child: Column(
-            //     children: [
-            //       TextButton(
-            //         // onPressed: () => { viewModel.loadMoreFlag = true},
-            //         onPressed: () => { },
-            //         child: const Text("NO"),
-            //       ),
-            //       // Text("loadMoreFlag: ${viewModel.loadMoreFlag} ${viewModel.counter}"), 
-            //       viewModel.isBusy && !viewModel.loadMoreFlag
-            //         ? MyUi.loadingList() : wSalesInvoiceList(list: viewModel.list as List<SalesInvoice>, onTapFunc: gotoDetail),
-            //       // wSalesInvoiceList(list: viewModel.list as List<SalesInvoice>)
-            //       if (viewModel.loadMoreFlag) ...[MyUi.loadingList()]
-            //       ],
-            //   ),
-            // );
+            var content = createContentFunc(list, onTapFunc);
+
+            var c = SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(),
+              child: Column(
+                children: [
+                  // TextButton(
+                  //   onPressed: () => { },
+                  //   child: const Text("NO"),
+                  // ),
+                  viewModel.isBusy && !viewModel.loadMoreFlag
+                    ? MyUi.loadingList() : content,
+                  if (viewModel.loadMoreFlag) ...[MyUi.loadingList()]
+                  ],
+              ),
+            );
 
             Widget w = CustomMaterialIndicator(
               // triggerMode: IndicatorTriggerMode.anywhere,

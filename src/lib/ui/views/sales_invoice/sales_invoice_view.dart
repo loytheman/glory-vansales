@@ -33,44 +33,15 @@ class SalesInvoiceView extends StackedView<SalesInvoiceViewModel> {
   Widget builder(BuildContext context, SalesInvoiceViewModel viewModel, Widget? child) {
     final myStyle = Theme.of(context).extension<MyCustomStyle>();
 
-    // final w = SingleChildScrollView(
-    //   physics: const AlwaysScrollableScrollPhysics(),
-    //   child: Column(
-    //     children: [
-    //       viewModel.isBusy ? MyUi.loadingList() : wSalesInvoiceList(list: viewModel.salesInvoiceList, onTapFunc: gotoDetail),
-    //     ],
-    //   ),
-    // );
-
     final l = Layout01Scaffold(
         body: wPaginationLoadMore(
             createContentFunc:wSalesInvoiceList.createContentFunc,
             list: viewModel.salesInvoiceList,
             onTapFunc: gotoDetail,
             onRefreshFunc: viewModel.refreshData,
-            onLoadMoreFunc: viewModel.loadMore));
-
-    // final l = Layout01Scaffold(
-    //     body: CustomMaterialIndicator(
-    //         // triggerMode: IndicatorTriggerMode.anywhere,
-    //         leadingScrollIndicatorVisible:false,
-    //         trailingScrollIndicatorVisible: false,
-    //         trigger: IndicatorTrigger.bothEdges,
-    //         onRefresh: viewModel.getData,
-    //         // onRefresh: () async => {  Utils.log("refresh") },
-    //         indicatorBuilder:(context, controller) {
-    //           var indicator = Icon(Icons.refresh);
-    //           viewModel.loadMoreFlag = false;
-    //           if (controller.edge == IndicatorEdge.trailing) {
-    //             indicator = Icon(Icons.arrow_upward);
-    //             viewModel.loadMoreFlag = true;
-    //           }
-    //           return indicator;
-    //         },
-    //         child: w,
-
-    //         )
-    //   );
+            onLoadMoreFunc: viewModel.loadMore
+        )
+    );
 
     // final l = Layout01Scaffold(
     //     body: CustomRefreshIndicator(
