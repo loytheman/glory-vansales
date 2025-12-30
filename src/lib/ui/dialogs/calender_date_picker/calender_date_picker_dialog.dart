@@ -35,7 +35,6 @@ class CalenderDatePickerDialog extends StackedView<CalenderDatePickerDialogModel
         firstDate: startOfToday.add(Duration(days: -7)),
         lastDate: startOfToday.add(Duration(days: 7)),
         calendarType: CalendarDatePicker2Type.range,
-
         firstDayOfWeek: 1,
         animateToDisplayedMonthDate: true,
         daySplashColor: Colors.transparent,
@@ -63,9 +62,21 @@ class CalenderDatePickerDialog extends StackedView<CalenderDatePickerDialogModel
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              wTag(text: "-1 day", onTapFunc: () {viewModel.selectDate(day:-1); }),
-              wTag(text: "Today", onTapFunc: () {viewModel.selectDate(day:0); }),
-              wTag(text: "+1 day", onTapFunc: () {viewModel.selectDate(day:1); }),
+              wTag(
+                  text: "-1 day",
+                  onTapFunc: () {
+                    viewModel.selectDate(day: -1);
+                  }),
+              wTag(
+                  text: "Today",
+                  onTapFunc: () {
+                    viewModel.selectDate(day: 0);
+                  }),
+              wTag(
+                  text: "+1 day",
+                  onTapFunc: () {
+                    viewModel.selectDate(day: 1);
+                  }),
             ],
           ).paddingOnly(top: 12, bottom: 6),
           MyUi.hr(),
@@ -88,5 +99,6 @@ class CalenderDatePickerDialog extends StackedView<CalenderDatePickerDialogModel
   }
 
   @override
-  CalenderDatePickerDialogModel viewModelBuilder(BuildContext context) => CalenderDatePickerDialogModel(request.data["selectedDates"]);
+  CalenderDatePickerDialogModel viewModelBuilder(BuildContext context) =>
+      CalenderDatePickerDialogModel(request.data["selectedDates"]);
 }

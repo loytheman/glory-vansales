@@ -27,8 +27,8 @@ import 'package:glory_vansales_app/ui/bottom_sheets/about_us/about_us_sheet.dart
 import 'package:glory_vansales_app/ui/dialogs/biometric_login/biometric_login_dialog.dart';
 import 'package:glory_vansales_app/ui/views/biometric_preference/biometric_preference_view.dart';
 import 'package:glory_vansales_app/services/business_central_service.dart';
-import 'package:glory_vansales_app/ui/views/sales_invoice/sales_invoice_view.dart';
-import 'package:glory_vansales_app/ui/views/sales_invoice/sales_invoice_detail_view.dart';
+import 'package:glory_vansales_app/ui/views/sales_order/sales_order_view.dart';
+import 'package:glory_vansales_app/ui/views/sales_order/sales_order_detail_view.dart';
 import 'package:glory_vansales_app/ui/dialogs/calender_date_picker/calender_date_picker_dialog.dart';
 // @stacked-import
 
@@ -49,8 +49,8 @@ import 'package:glory_vansales_app/ui/dialogs/calender_date_picker/calender_date
       page: BiometricPreferenceView,
       transitionsBuilder: TransitionsBuilders.fadeIn,
     ),
-    MaterialRoute(page: SalesInvoiceView),
-    MaterialRoute(page: SalesInvoiceDetailView),
+    MaterialRoute(page: SalesOrderView),
+    MaterialRoute(page: SalesOrderDetailView),
 // @stacked-route
   ],
   dependencies: [

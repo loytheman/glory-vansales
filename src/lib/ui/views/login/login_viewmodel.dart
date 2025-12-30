@@ -8,6 +8,8 @@ import 'package:glory_vansales_app/services/authentication_service.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
+import '../../../helpers/utils.dart';
+
 class LoginViewModel extends FormViewModel with FormMixin {
   final _authenticationService = locator<AuthenticationService>();
   final _navigationService = locator<NavigationService>();
@@ -50,7 +52,7 @@ class LoginViewModel extends FormViewModel with FormMixin {
       await _authenticationService.loginViaOidc();
       // _navigationService.navigateTo(Routes.startupView);
     } catch (e) {
-      print(e);
+      Utils.err(e);
     }
   }
 

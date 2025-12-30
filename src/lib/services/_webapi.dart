@@ -182,7 +182,7 @@ enum SortDirection {
 }
 
 class FilterQuery {
-  int pageSize = 1;
+  int pageSize = 7;
   int skipRecord = 0;
   List<String> filterList = [];
   List<String> orderList = [];

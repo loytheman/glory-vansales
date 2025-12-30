@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart' as _i16;
 import 'package:flutter/material.dart';
 import 'package:glory_vansales_app/models/model.account.dart' as _i17;
-import 'package:glory_vansales_app/models/model.salesInvoice.dart' as _i18;
+import 'package:glory_vansales_app/models/model.salesOrder.dart' as _i18;
 import 'package:glory_vansales_app/ui/views/_startup/startup_view.dart' as _i2;
 import 'package:glory_vansales_app/ui/views/account/account_view.dart' as _i12;
 import 'package:glory_vansales_app/ui/views/biometric_preference/biometric_preference_view.dart' as _i13;
@@ -19,8 +19,8 @@ import 'package:glory_vansales_app/ui/views/document/document_view.dart' as _i8;
 import 'package:glory_vansales_app/ui/views/document_detail/document_detail_view.dart' as _i11;
 import 'package:glory_vansales_app/ui/views/login/login_view.dart' as _i3;
 import 'package:glory_vansales_app/ui/views/request/request_view.dart' as _i7;
-import 'package:glory_vansales_app/ui/views/sales_invoice/sales_invoice_detail_view.dart' as _i15;
-import 'package:glory_vansales_app/ui/views/sales_invoice/sales_invoice_view.dart' as _i14;
+import 'package:glory_vansales_app/ui/views/sales_order/sales_order_detail_view.dart' as _i15;
+import 'package:glory_vansales_app/ui/views/sales_order/sales_order_view.dart' as _i14;
 import 'package:glory_vansales_app/ui/views/sign_up/sign_up_view.dart' as _i4;
 import 'package:glory_vansales_app/ui/views/timeline/timeline_view.dart' as _i9;
 import 'package:stacked/stacked.dart' as _i1;
@@ -51,9 +51,9 @@ class Routes {
 
   static const biometricPreferenceView = '/biometric-preference-view';
 
-  static const salesInvoiceView = '/sales-invoice-view';
+  static const salesOrderView = '/sales-order-view';
 
-  static const salesInvoiceDetailView = '/sales-invoice-detail-view';
+  static const salesOrderDetailView = '/sales-order-detail-view';
 
   static const all = <String>{
     startupView,
@@ -68,8 +68,8 @@ class Routes {
     documentDetailView,
     accountView,
     biometricPreferenceView,
-    salesInvoiceView,
-    salesInvoiceDetailView,
+    salesOrderView,
+    salesOrderDetailView,
   };
 }
 
@@ -124,12 +124,12 @@ class StackedRouter extends _i1.RouterBase {
       page: _i13.BiometricPreferenceView,
     ),
     _i1.RouteDef(
-      Routes.salesInvoiceView,
-      page: _i14.SalesInvoiceView,
+      Routes.salesOrderView,
+      page: _i14.SalesOrderView,
     ),
     _i1.RouteDef(
-      Routes.salesInvoiceDetailView,
-      page: _i15.SalesInvoiceDetailView,
+      Routes.salesOrderDetailView,
+      page: _i15.SalesOrderDetailView,
     ),
   ];
 
@@ -218,16 +218,16 @@ class StackedRouter extends _i1.RouterBase {
         transitionsBuilder: data.transition ?? _i1.TransitionsBuilders.fadeIn,
       );
     },
-    _i14.SalesInvoiceView: (data) {
+    _i14.SalesOrderView: (data) {
       return _i16.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i14.SalesInvoiceView(),
+        builder: (context) => const _i14.SalesOrderView(),
         settings: data,
       );
     },
-    _i15.SalesInvoiceDetailView: (data) {
-      final args = data.getArgs<SalesInvoiceDetailViewArguments>(nullOk: false);
+    _i15.SalesOrderDetailView: (data) {
+      final args = data.getArgs<SalesOrderDetailViewArguments>(nullOk: false);
       return _i16.MaterialPageRoute<dynamic>(
-        builder: (context) => _i15.SalesInvoiceDetailView(key: args.key, salesInvoice: args.salesInvoice),
+        builder: (context) => _i15.SalesOrderDetailView(key: args.key, salesOrder: args.salesOrder),
         settings: data,
       );
     },
@@ -351,30 +351,30 @@ class DocumentDetailViewArguments {
   }
 }
 
-class SalesInvoiceDetailViewArguments {
-  const SalesInvoiceDetailViewArguments({
+class SalesOrderDetailViewArguments {
+  const SalesOrderDetailViewArguments({
     this.key,
-    required this.salesInvoice,
+    required this.salesOrder,
   });
 
   final _i16.Key? key;
 
-  final _i18.SalesInvoice salesInvoice;
+  final _i18.SalesOrder salesOrder;
 
   @override
   String toString() {
-    return '{"key": "$key", "salesInvoice": "$salesInvoice"}';
+    return '{"key": "$key", "salesOrder": "$salesOrder"}';
   }
 
   @override
-  bool operator ==(covariant SalesInvoiceDetailViewArguments other) {
+  bool operator ==(covariant SalesOrderDetailViewArguments other) {
     if (identical(this, other)) return true;
-    return other.key == key && other.salesInvoice == salesInvoice;
+    return other.key == key && other.salesOrder == salesOrder;
   }
 
   @override
   int get hashCode {
-    return key.hashCode ^ salesInvoice.hashCode;
+    return key.hashCode ^ salesOrder.hashCode;
   }
 }
 
@@ -524,26 +524,26 @@ extension NavigatorStateExtension on _i19.NavigationService {
         id: routerId, preventDuplicates: preventDuplicates, parameters: parameters, transition: transition);
   }
 
-  Future<dynamic> navigateToSalesInvoiceView([
+  Future<dynamic> navigateToSalesOrderView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)? transition,
   ]) async {
-    return navigateTo<dynamic>(Routes.salesInvoiceView,
+    return navigateTo<dynamic>(Routes.salesOrderView,
         id: routerId, preventDuplicates: preventDuplicates, parameters: parameters, transition: transition);
   }
 
-  Future<dynamic> navigateToSalesInvoiceDetailView({
+  Future<dynamic> navigateToSalesOrderDetailView({
     _i16.Key? key,
-    required _i18.SalesInvoice salesInvoice,
+    required _i18.SalesOrder salesOrder,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)? transition,
   }) async {
-    return navigateTo<dynamic>(Routes.salesInvoiceDetailView,
-        arguments: SalesInvoiceDetailViewArguments(key: key, salesInvoice: salesInvoice),
+    return navigateTo<dynamic>(Routes.salesOrderDetailView,
+        arguments: SalesOrderDetailViewArguments(key: key, salesOrder: salesOrder),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -695,26 +695,26 @@ extension NavigatorStateExtension on _i19.NavigationService {
         id: routerId, preventDuplicates: preventDuplicates, parameters: parameters, transition: transition);
   }
 
-  Future<dynamic> replaceWithSalesInvoiceView([
+  Future<dynamic> replaceWithSalesOrderView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)? transition,
   ]) async {
-    return replaceWith<dynamic>(Routes.salesInvoiceView,
+    return replaceWith<dynamic>(Routes.salesOrderView,
         id: routerId, preventDuplicates: preventDuplicates, parameters: parameters, transition: transition);
   }
 
-  Future<dynamic> replaceWithSalesInvoiceDetailView({
+  Future<dynamic> replaceWithSalesOrderDetailView({
     _i16.Key? key,
-    required _i18.SalesInvoice salesInvoice,
+    required _i18.SalesOrder salesOrder,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)? transition,
   }) async {
-    return replaceWith<dynamic>(Routes.salesInvoiceDetailView,
-        arguments: SalesInvoiceDetailViewArguments(key: key, salesInvoice: salesInvoice),
+    return replaceWith<dynamic>(Routes.salesOrderDetailView,
+        arguments: SalesOrderDetailViewArguments(key: key, salesOrder: salesOrder),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

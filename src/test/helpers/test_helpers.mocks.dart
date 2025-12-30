@@ -10,7 +10,7 @@ import 'package:flutter/material.dart' as _i6;
 import 'package:glory_vansales_app/models/model.account.dart' as _i2;
 import 'package:glory_vansales_app/models/model.company.dart' as _i12;
 import 'package:glory_vansales_app/models/model.customer.dart' as _i14;
-import 'package:glory_vansales_app/models/model.salesInvoice.dart' as _i3;
+import 'package:glory_vansales_app/models/model.salesOrder.dart' as _i3;
 import 'package:glory_vansales_app/services/_webapi.dart' as _i15;
 import 'package:glory_vansales_app/services/authentication_service.dart' as _i9;
 import 'package:glory_vansales_app/services/business_central_service.dart' as _i13;
@@ -44,8 +44,8 @@ class _FakeTokenSet_0 extends _i1.SmartFake implements _i2.TokenSet {
         );
 }
 
-class _FakeSalesInvoice_1 extends _i1.SmartFake implements _i3.SalesInvoice {
-  _FakeSalesInvoice_1(
+class _FakeSalesOrder_1 extends _i1.SmartFake implements _i3.SalesOrder {
+  _FakeSalesOrder_1(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -1347,17 +1347,17 @@ class MockBusinessCentralService extends _i1.Mock implements _i13.BusinessCentra
       );
 
   @override
-  List<_i3.SalesInvoice> get salesInvoiceArr => (super.noSuchMethod(
-        Invocation.getter(#salesInvoiceArr),
-        returnValue: <_i3.SalesInvoice>[],
-        returnValueForMissingStub: <_i3.SalesInvoice>[],
-      ) as List<_i3.SalesInvoice>);
+  List<_i3.SalesOrder> get SalesOrderArr => (super.noSuchMethod(
+        Invocation.getter(#SalesOrderArr),
+        returnValue: <_i3.SalesOrder>[],
+        returnValueForMissingStub: <_i3.SalesOrder>[],
+      ) as List<_i3.SalesOrder>);
 
   @override
-  set salesInvoiceArr(List<_i3.SalesInvoice>? _salesInvoiceArr) => super.noSuchMethod(
+  set SalesOrderArr(List<_i3.SalesOrder>? _SalesOrderArr) => super.noSuchMethod(
         Invocation.setter(
-          #salesInvoiceArr,
-          _salesInvoiceArr,
+          #SalesOrderArr,
+          _SalesOrderArr,
         ),
         returnValueForMissingStub: null,
       );
@@ -1396,37 +1396,37 @@ class MockBusinessCentralService extends _i1.Mock implements _i13.BusinessCentra
       ) as _i7.Future<List<_i14.Customer>>);
 
   @override
-  _i7.Future<List<_i3.SalesInvoice>> getAllPostedSalesInvoice({_i15.FilterQuery? filter}) => (super.noSuchMethod(
+  _i7.Future<List<_i3.SalesOrder>> getAllPostedSalesOrder({_i15.FilterQuery? filter}) => (super.noSuchMethod(
         Invocation.method(
-          #getAllPostedSalesInvoice,
+          #getAllPostedSalesOrder,
           [],
           {#filter: filter},
         ),
-        returnValue: _i7.Future<List<_i3.SalesInvoice>>.value(<_i3.SalesInvoice>[]),
-        returnValueForMissingStub: _i7.Future<List<_i3.SalesInvoice>>.value(<_i3.SalesInvoice>[]),
-      ) as _i7.Future<List<_i3.SalesInvoice>>);
+        returnValue: _i7.Future<List<_i3.SalesOrder>>.value(<_i3.SalesOrder>[]),
+        returnValueForMissingStub: _i7.Future<List<_i3.SalesOrder>>.value(<_i3.SalesOrder>[]),
+      ) as _i7.Future<List<_i3.SalesOrder>>);
 
   @override
-  _i7.Future<_i3.SalesInvoice> getSalesInvoiceDetail(String? id) => (super.noSuchMethod(
+  _i7.Future<_i3.SalesOrder> getSalesOrderDetail(String? id) => (super.noSuchMethod(
         Invocation.method(
-          #getSalesInvoiceDetail,
+          #getSalesOrderDetail,
           [id],
         ),
-        returnValue: _i7.Future<_i3.SalesInvoice>.value(_FakeSalesInvoice_1(
+        returnValue: _i7.Future<_i3.SalesOrder>.value(_FakeSalesOrder_1(
           this,
           Invocation.method(
-            #getSalesInvoiceDetail,
+            #getSalesOrderDetail,
             [id],
           ),
         )),
-        returnValueForMissingStub: _i7.Future<_i3.SalesInvoice>.value(_FakeSalesInvoice_1(
+        returnValueForMissingStub: _i7.Future<_i3.SalesOrder>.value(_FakeSalesOrder_1(
           this,
           Invocation.method(
-            #getSalesInvoiceDetail,
+            #getSalesOrderDetail,
             [id],
           ),
         )),
-      ) as _i7.Future<_i3.SalesInvoice>);
+      ) as _i7.Future<_i3.SalesOrder>);
 
   @override
   void setBusy(bool? flag) => super.noSuchMethod(

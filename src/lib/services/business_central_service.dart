@@ -3,13 +3,13 @@ import 'package:glory_vansales_app/helpers/store.dart';
 import 'package:glory_vansales_app/helpers/utils.dart';
 import 'package:glory_vansales_app/models/model.customer.dart';
 import 'package:glory_vansales_app/models/model.httpResponse.dart';
-import 'package:glory_vansales_app/models/model.salesInvoice.dart';
+import 'package:glory_vansales_app/models/model.salesOrder.dart';
 import 'package:glory_vansales_app/services/_webapi.dart';
 import 'package:stacked/stacked.dart';
 
 class BusinessCentralService with ApiServiceMixin, ListenableServiceMixin {
   List<Customer> customerArr = [];
-  List<SalesInvoice> salesInvoiceArr = [];
+  List<SalesOrder> SalesOrderArr = [];
 
   BusinessCentralService();
 
@@ -29,36 +29,36 @@ class BusinessCentralService with ApiServiceMixin, ListenableServiceMixin {
     return l;
   }
 
-  // GET {businesscentralPrefix}/companies({id})/salesInvoices({salesInvoiceId})/salesInvoiceLines
+  // GET {businesscentralPrefix}/companies({id})/SalesOrders({SalesOrderId})/SalesOrderLines
 
-  Future<List<SalesInvoice>> getAllPostedSalesInvoice({FilterQuery? filter}) async {
-    List<SalesInvoice> l = [];
+  Future<List<SalesOrder>> getAllPostedSalesOrder({FilterQuery? filter}) async {
+    List<SalesOrder> l = [];
     String f = filter?.getString() ?? "";
     try {
-      final ar = await WebApi.callApi("GET", '/salesInvoices$f');
+      final ar = await WebApi.callApi("GET", '/SalesOrders$f');
       final d = ar.data;
-      l = (List<SalesInvoice>.from(d.map((x) => SalesInvoice.fromJson(x))));
-      salesInvoiceArr = l;
+      l = (List<SalesOrder>.from(d.map((x) => SalesOrder.fromJson(x))));
+      SalesOrderArr = l;
     } catch (e) {
       // ShareFunc.showToast(e.toString());
-      Utils.err("getAllSalesInvoice : $e");
+      Utils.err("getAllSalesOrder : $e");
       rethrow;
     }
 
     return l;
   }
 
-  Future<SalesInvoice> getSalesInvoiceDetail(String id) async {
-    SalesInvoice? s;
-    Utils.log("getSalesInvoiceDetail $id");
+  Future<SalesOrder> getSalesOrderDetail(String id) async {
+    SalesOrder? s;
+    Utils.log("getSalesOrderDetail $id");
     try {
-      final ar = await WebApi.callApi("GET", '/salesInvoices($id)?\$expand=salesInvoiceLines,customer');
-      // final ar = await WebApi.callApi("GET", '/salesInvoices(92afc879-7bd0-f011-8bce-6045bd74ddca)');
+      final ar = await WebApi.callApi("GET", '/SalesOrders($id)?\$expand=SalesOrderLines,customer');
+      // final ar = await WebApi.callApi("GET", '/SalesOrders(92afc879-7bd0-f011-8bce-6045bd74ddca)');
       final d = ar.data;
-      s = SalesInvoice.fromJson(d);
+      s = SalesOrder.fromJson(d);
     } catch (e) {
       // ShareFunc.showToast(e.toString());
-      Utils.err("getSalesInvoiceDetail : $e");
+      Utils.err("getSalesOrderDetail : $e");
       rethrow;
     }
 

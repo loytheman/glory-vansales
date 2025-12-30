@@ -55,7 +55,7 @@ class StartupViewModel extends BaseViewModel {
     // login with biometric 'no'
     await _authenticationService.afterLogin(ts);
     //await _navigationService.navigateTo(Routes.dashboardView, transition: TransitionsBuilders.fadeIn);
-    await _navigationService.navigateTo(Routes.salesInvoiceView, transition: TransitionsBuilders.fadeIn);
+    await _navigationService.navigateTo(Routes.salesOrderView, transition: TransitionsBuilders.fadeIn);
     setBusy(false);
   }
 }

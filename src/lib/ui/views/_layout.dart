@@ -93,6 +93,7 @@ class Layout01Scaffold extends StatelessWidget {
     final ab = MyAppBar(leading: l, title: t, trailing: tt.paddingLTRB(0, 0, 8, 0));
 
     final s = Scaffold(
+      resizeToAvoidBottomInset: false,
       key: _key,
       appBar: ab,
       drawer: NavDrawer(onShowCompanySelector: f2, closeDrawer: () => {_key.currentState?.closeDrawer()}),

@@ -3,42 +3,42 @@ import 'package:dart_helper_utils/dart_helper_utils.dart';
 import 'package:glory_vansales_app/models/model.customer.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-class SalesInvoice {
+class SalesOrder {
   late String id;
   late String number;
   late String customerNumber;
   late String customerName;
-  late String invoiceDate;
+  late String orderDate;
   late String shipToContact;
   late String shipToAddressLine1;
   late double totalAmountIncludingTax;
 
   Customer? customer;
-  List<SalesInvoiceLine>? salesInvoiceLine_arr;
+  List<SalesOrderLine>? salesOrderLine_arr;
 
-  SalesInvoice();
+  SalesOrder();
 
-  factory SalesInvoice.fromMock() {
-    final s = SalesInvoice();
+  factory SalesOrder.fromMock() {
+    final s = SalesOrder();
     s.number = BoneMock.chars(8, "-");
     s.customerNumber = BoneMock.chars(48, "-");
     s.customerName = BoneMock.chars(48, "-");
-    s.invoiceDate = BoneMock.chars(48, "-");
+    s.orderDate = BoneMock.chars(48, "-");
     s.shipToContact = BoneMock.chars(48, "-");
     s.shipToAddressLine1 = BoneMock.chars(48, "-");
     s.totalAmountIncludingTax = 1000.0;
     return s;
   }
 
-  factory SalesInvoice.fromJson(Map<String, dynamic> json) {
-    final s = SalesInvoice();
+  factory SalesOrder.fromJson(Map<String, dynamic> json) {
+    final s = SalesOrder();
     final d = json;
 
     s.id = d["id"];
     s.number = d["number"];
     s.customerNumber = d["customerNumber"];
     s.customerName = d["customerName"];
-    s.invoiceDate = d["invoiceDate"];
+    s.orderDate = d["orderDate"];
     s.shipToContact = d["shipToContact"];
     s.shipToAddressLine1 = d["shipToAddressLine1"];
     s.totalAmountIncludingTax = d["totalAmountIncludingTax"].toDouble();
@@ -47,22 +47,22 @@ class SalesInvoice {
       s.customer = Customer.fromJson(d['customer']);
     }
 
-    final arr = d['salesInvoiceLines'];
+    final arr = d['salesOrderLines'];
     if (arr != null) {
-      s.salesInvoiceLine_arr = (List<SalesInvoiceLine>.from(arr.map((x) => SalesInvoiceLine.fromJson(x))));
+      s.salesOrderLine_arr = (List<SalesOrderLine>.from(arr.map((x) => SalesOrderLine.fromJson(x))));
     }
 
     return s;
   }
   @override
   String toString() {
-    return "\n> SalesInvoice: ($id, $customerName)";
+    return "\n> SalesOrder: ($id, $customerName)";
   }
 }
 
 enum LineType { item, comment }
 
-class SalesInvoiceLine {
+class SalesOrderLine {
   late String id;
   late String itemId;
   late LineType lineType;
@@ -76,17 +76,17 @@ class SalesInvoiceLine {
   late double netAmountIncludingTax;
 
   Customer? customer;
-  List<SalesInvoiceLine>? salesInvoiceLine_arr;
+  List<SalesOrderLine>? salesOrderLine_arr;
 
-  SalesInvoiceLine();
+  SalesOrderLine();
 
-  factory SalesInvoiceLine.fromMock() {
-    final s = SalesInvoiceLine();
+  factory SalesOrderLine.fromMock() {
+    final s = SalesOrderLine();
 
     return s;
   }
-  factory SalesInvoiceLine.fromJson(Map<String, dynamic> json) {
-    final s = SalesInvoiceLine();
+  factory SalesOrderLine.fromJson(Map<String, dynamic> json) {
+    final s = SalesOrderLine();
     final d = json;
 
     s.id = d["id"];
@@ -106,6 +106,6 @@ class SalesInvoiceLine {
 
   @override
   String toString() {
-    return "\n> SalesInvoiceLine: ($id, $description)";
+    return "\n> SalesOrderLine: ($id, $description)";
   }
 }

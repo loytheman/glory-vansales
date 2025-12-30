@@ -4,7 +4,7 @@ import 'package:glory_vansales_app/app/app.locator.dart';
 import '../helpers/test_helpers.dart';
 
 void main() {
-  group('SalesInvoiceViewModel Tests -', () {
+  group('SalesOrderViewModel Tests -', () {
     setUp(() => registerServices());
     tearDown(() => locator.reset());
   });

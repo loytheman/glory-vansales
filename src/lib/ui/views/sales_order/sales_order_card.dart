@@ -4,20 +4,22 @@ import 'package:glory_vansales_app/helpers/utils.dart';
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:glory_vansales_app/common/ui.dart';
-import 'package:glory_vansales_app/models/model.salesInvoice.dart';
+import 'package:glory_vansales_app/models/model.salesOrder.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
-class wSalesInvoiceList extends StatelessWidget {
-  final List<SalesInvoice> list;
-  final void Function(SalesInvoice s)? onTapFunc;
+class wSalesOrderList extends StatelessWidget {
+  final List<SalesOrder> list;
+  final void Function(SalesOrder s)? onTapFunc;
 
-  const wSalesInvoiceList({super.key, required this.list, this.onTapFunc});
+  const wSalesOrderList({super.key, required this.list, this.onTapFunc});
 
-  factory wSalesInvoiceList.createContentFunc(List<dynamic> list, Function(dynamic s)? onTapFunc) {
-    list = list as List<SalesInvoice>;
-    void Function(SalesInvoice)? f = onTapFunc as Function(SalesInvoice)?;
-    var w = wSalesInvoiceList(list: list, onTapFunc: f);
+  factory wSalesOrderList.createContentFunc(List<dynamic> list, Function(dynamic s)? onTapFunc) {
+    list = list as List<SalesOrder>;
+    void Function(SalesOrder)? f = onTapFunc as Function(SalesOrder)?;
+    var w = wSalesOrderList(list: list, onTapFunc: f);
     return w;
   }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -25,19 +27,19 @@ class wSalesInvoiceList extends StatelessWidget {
     List<Widget> rows = [];
 
     for (var c in list) {
-      final w = wSalesInvoiceCard(salesInvoice: c, onTapFunc: onTapFunc);
+      final w = wSalesOrderCard(salesOrder: c, onTapFunc: onTapFunc);
       rows.add(w);
     }
 
     final w = Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       // MyUi.hs_sm(),
-      Container(
-          padding: EdgeInsets.all(1),
-          width: double.infinity,
-          color: Colors.grey.shade200,
-          child: Text(header, style: context.bodySmall?.copyWith(color: Colors.grey))),
-      // MyUi.hs_2xs(),
-      MyUi.hr(paddingFlag: false),
+      // Container(
+      //     padding: EdgeInsets.all(1),
+      //     width: double.infinity,
+      //     color: Colors.grey.shade200,
+      //     child: Text(header, style: context.bodySmall?.copyWith(color: Colors.grey))),
+      // // MyUi.hs_2xs(),
+      // MyUi.hr(paddingFlag: false),
       ...rows,
     ]);
 
@@ -45,11 +47,12 @@ class wSalesInvoiceList extends StatelessWidget {
   }
 }
 
-class wSalesInvoiceCard extends StatelessWidget {
-  final SalesInvoice salesInvoice;
-  final void Function(SalesInvoice s)? onTapFunc;
+class wSalesOrderCard extends StatelessWidget {
+  final SalesOrder salesOrder;
+  final void Function(SalesOrder s)? onTapFunc;
 
-  const wSalesInvoiceCard({super.key, required this.salesInvoice, this.onTapFunc});
+  const wSalesOrderCard({super.key, required this.salesOrder, this.onTapFunc});
+
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +61,7 @@ class wSalesInvoiceCard extends StatelessWidget {
     final blgw = blg?.copyWith(color: Colors.white);
     final bsm = context.bodySmall;
 
-    Widget w = Container(
+    final w = Container(
         margin: EdgeInsets.only(bottom: 6),
         // padding: EdgeInsets.symmetric(horizontal: 6.0),
         // color:Colors.grey.shade200,
@@ -83,31 +86,31 @@ class wSalesInvoiceCard extends StatelessWidget {
                           children: [
                             Icon(CupertinoIcons.tray_full, size: 20, color: Colors.white),
                             MyUi.vs_xs(),
-                            Text(salesInvoice.number, style: blgw),
+                            Text(salesOrder.number, style: blgw),
                           ],
                         ),
-                        // Text(Utils.formatDate(salesInvoice.invoiceDate), style: blgw),
+                        // Text(Utils.formatDate(salesOrder.invoiceDate), style: blgw),
                       ],
                     ),
                   ),
-                  Text('${salesInvoice.customerNumber} - ${salesInvoice.customerName}', style: tlg),
-                  Text(salesInvoice.shipToAddressLine1),
-                  Text('Shipping date: ${Utils.formatDate(salesInvoice.invoiceDate)}'),
+                  Text('${salesOrder.customerNumber} - ${salesOrder.customerName}', style: tlg),
+                  Text(salesOrder.shipToAddressLine1),
+                  Text('Shipping date: ${Utils.formatDate(salesOrder.orderDate)}'),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text("Amount:", style: bsm),
                       MyUi.vs_sm(),
-                      Text('\$${salesInvoice.totalAmountIncludingTax.toString()}', style: tlg),
+                      Text('\$${salesOrder.totalAmountIncludingTax.toString()}', style: tlg),
                     ],
                   ),
                 ],
               ),
               onTap: () {
                 // f(m);
-                if (onTapFunc != null) onTapFunc!.call(salesInvoice);
-                Utils.log("onTapFunc ${salesInvoice.id}");
+                if (onTapFunc != null) onTapFunc!.call(salesOrder);
+                Utils.log("onTapFunc ${salesOrder.id}");
               },
             ),
             MyUi.hs_2xs(),

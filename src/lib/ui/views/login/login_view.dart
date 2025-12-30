@@ -30,7 +30,7 @@ class LoginView extends StackedView<LoginViewModel> with $LoginView, WidgetsBind
   const LoginView({Key? key, this.useBiometricFlag}) : super(key: key);
   @override
   void onViewModelReady(LoginViewModel viewModel) {
-    print(useBiometricFlag);
+    // print(useBiometricFlag);
     syncFormWithViewModel(viewModel);
     viewModel.setValidationMessages({});
 

@@ -29,7 +29,7 @@ class CalenderDatePickerDialogModel extends ReactiveViewModel {
   }
 
   void caculateDisplayDate() {
- if (selectedDates.length > 1) {
+    if (selectedDates.length > 1) {
       displayDate = selectedDates.last;
     } else {
       displayDate = selectedDates.first;

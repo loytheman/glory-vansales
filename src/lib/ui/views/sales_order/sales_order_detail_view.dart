@@ -5,39 +5,39 @@ import 'package:glory_vansales_app/app/app.locator.dart';
 import 'package:glory_vansales_app/app/app.router.dart';
 import 'package:glory_vansales_app/common/theme.dart';
 import 'package:glory_vansales_app/common/ui.dart';
-import 'package:glory_vansales_app/models/model.salesInvoice.dart';
+import 'package:glory_vansales_app/models/model.salesOrder.dart';
 import 'package:glory_vansales_app/ui/views/_layout.dart';
-import 'package:glory_vansales_app/ui/views/sales_invoice/sales_invoice_card.dart';
+import 'package:glory_vansales_app/ui/views/sales_order/sales_order_card.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-import 'sales_invoice_detail_viewmodel.dart';
+import '../sales_order/sales_order_detail_viewmodel.dart';
 
-class SalesInvoiceDetailView extends StackedView<SalesInvoiceDetailViewModel> {
+class SalesOrderDetailView extends StackedView<SalesOrderDetailViewModel> {
   // static final _navigationService = locator<NavigationService>();
-  final SalesInvoice salesInvoice;
-  const SalesInvoiceDetailView({Key? key, required this.salesInvoice}) : super(key: key);
+  final SalesOrder salesOrder;
+  const SalesOrderDetailView({Key? key, required this.salesOrder}) : super(key: key);
 
   @override
-  void onViewModelReady(SalesInvoiceDetailViewModel viewModel) async {
+  void onViewModelReady(SalesOrderDetailViewModel viewModel) async {
     await viewModel.refreshData();
   }
 
   @override
-  Widget builder(BuildContext context, SalesInvoiceDetailViewModel viewModel, Widget? child) {
+  Widget builder(BuildContext context, SalesOrderDetailViewModel viewModel, Widget? child) {
     List<Widget> rows = [];
-    List<SalesInvoiceLine>? list = viewModel.salesInvoice?.salesInvoiceLine_arr;
+    List<SalesOrderLine>? list = viewModel.salesOrder?.salesOrderLine_arr;
     list = list ?? [];
 
     for (var r in list) {
       final w = Text(r.description);
       rows.add(w);
     }
-    final w = Column(children: [MyUi.hs_lg(), Text('Invoice ${salesInvoice.number}'), ...rows]);
+    final w = Column(children: [MyUi.hs_lg(), Text('Sales Order ${salesOrder.number}'), ...rows]);
 
     final l = Layout01Scaffold(
         leading: "back-btn",
-        title: salesInvoice.customerName,
+        title: salesOrder.customerName,
         body: viewModel.isBusy ? MyUi.loadingList() : w,
         padding: EdgeInsets.all(0));
 
@@ -45,8 +45,8 @@ class SalesInvoiceDetailView extends StackedView<SalesInvoiceDetailViewModel> {
   }
 
   @override
-  SalesInvoiceDetailViewModel viewModelBuilder(
+  SalesOrderDetailViewModel viewModelBuilder(
     BuildContext context,
   ) =>
-      SalesInvoiceDetailViewModel(salesInvoice);
+      SalesOrderDetailViewModel(salesOrder);
 }

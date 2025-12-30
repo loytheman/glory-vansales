@@ -2,15 +2,15 @@ import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
 import 'package:glory_vansales_app/app/app.locator.dart';
 import 'package:glory_vansales_app/helpers/store.dart';
 import 'package:glory_vansales_app/helpers/utils.dart';
-import 'package:glory_vansales_app/models/model.salesInvoice.dart';
+import 'package:glory_vansales_app/models/model.salesOrder.dart';
 import 'package:glory_vansales_app/services/_webapi.dart';
 import 'package:glory_vansales_app/services/business_central_service.dart';
 import 'package:stacked/stacked.dart';
 
-class SalesInvoiceViewModel extends ReactiveViewModel {
+class SalesOrderViewModel extends ReactiveViewModel {
   // final _dialogService = locator<DialogService>();
   final _bcService = locator<BusinessCentralService>();
-  List<SalesInvoice> salesInvoiceList = [];
+  List<SalesOrder> SalesOrderList = [];
   bool loadMoreFlag = false;
   FilterQuery fq = FilterQuery();
   int pageSkip = 0;
@@ -26,15 +26,15 @@ class SalesInvoiceViewModel extends ReactiveViewModel {
   Future<void> refreshData() async {
     // await StoreHelper.clearCredential();
     setBusy(true);
-    salesInvoiceList = [];
+    SalesOrderList = [];
     // await Future.delayed(const Duration(milliseconds: 30));
     try {
       fq.reset();
-      fq.filterField(field: 'customerNumber', value: '10000');
-      // fq.filterDate(field:'invoiceDate', startDate:'2025-11-01', endDate: '2025-11-21');
-      salesInvoiceList = await _bcService.getAllPostedSalesInvoice(filter: fq);
+      // fq.filterField(field: 'customerNumber', value: '10000');
+      // fq.filterDate(field:'orderDate', startDate:'2025-11-01', endDate: '2025-11-21');
+      SalesOrderList = await _bcService.getAllPostedSalesOrder(filter: fq);
     } catch (e) {
-      Utils.err("SalesInvoiceViewModel refreshData error $e");
+      Utils.err("SalesOrderViewModel refreshData error $e");
     }
     setBusy(false);
   }
@@ -43,10 +43,10 @@ class SalesInvoiceViewModel extends ReactiveViewModel {
     setBusy(true);
     try {
       fq.loadNextPage();
-      var l = await _bcService.getAllPostedSalesInvoice(filter: fq);
-      salesInvoiceList.addAll(l);
+      var l = await _bcService.getAllPostedSalesOrder(filter: fq);
+      SalesOrderList.addAll(l);
     } catch (e) {
-      Utils.err("SalesInvoiceViewModel load more error $e");
+      Utils.err("SalesOrderViewModel load more error $e");
     }
     setBusy(false);
   }

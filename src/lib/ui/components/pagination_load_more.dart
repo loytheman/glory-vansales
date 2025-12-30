@@ -31,12 +31,14 @@ class wPaginationLoadMore extends StackedView<wPaginationLoadMoreModel> {
   final Future<void> Function() onRefreshFunc;
   final Future<void> Function() onLoadMoreFunc;
   final Widget Function(List<dynamic> list, Function(dynamic s)? onTapFunc) createContentFunc;
+  final Widget skeletonRow;
   final List<dynamic> list;
   final void Function(dynamic s)? onTapFunc;
 
   const wPaginationLoadMore(
       {super.key,
       required this.createContentFunc,
+      required this.skeletonRow,
       required this.list,
       required this.onTapFunc,
       required this.onRefreshFunc,
@@ -50,18 +52,16 @@ class wPaginationLoadMore extends StackedView<wPaginationLoadMoreModel> {
       physics: const AlwaysScrollableScrollPhysics(),
       child: Column(
         children: [
-          // TextButton(
-          //   onPressed: () => { },
-          //   child: const Text("NO"),
-          // ),
-          viewModel.isBusy && !viewModel.loadMoreFlag ? MyUi.loadingList() : content,
-          if (viewModel.loadMoreFlag) ...[MyUi.loadingList()]
+          if (viewModel.isBusy && !viewModel.loadMoreFlag) ...[skeletonRow,skeletonRow,skeletonRow] 
+          else content,
+          if (viewModel.loadMoreFlag) ...[skeletonRow],
+          // skeletonRow,
         ],
       ),
     );
 
     Widget w = CustomMaterialIndicator(
-      // triggerMode: IndicatorTriggerMode.anywhere,
+      triggerMode: IndicatorTriggerMode.anywhere,
       leadingScrollIndicatorVisible: false,
       trailingScrollIndicatorVisible: false,
       trigger: IndicatorTrigger.bothEdges,
@@ -75,10 +75,20 @@ class wPaginationLoadMore extends StackedView<wPaginationLoadMoreModel> {
         }
         return indicator;
       },
-      child: c,
+      child: SingleChildScrollView(
+        physics: AlwaysScrollableScrollPhysics(),
+        child: Column(
+          children: [
+            if (viewModel.isBusy && !viewModel.loadMoreFlag) ...[skeletonRow,skeletonRow,skeletonRow] 
+            else content,
+            if (viewModel.loadMoreFlag) ...[skeletonRow],
+            skeletonRow,
+          ],
+        ),
+      ),
     );
 
-    return w;
+    return c;
   }
 
   @override

@@ -127,6 +127,37 @@ class MyUi {
     return w;
   }
 
+
+  static Widget loadingCard() {
+    final w = Skeletonizer(
+      child: Container(
+          margin: EdgeInsets.only(bottom: 6),
+          child: 
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  MyUi.hs_2xs(),
+                  Text(BoneMock.chars(30, "-")),
+                  Text(BoneMock.chars(76, "-")),
+                  Text(BoneMock.chars(42, "-")),
+                  Text(BoneMock.chars(68, "-")),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //   children: [
+                  //     Text(BoneMock.chars(42, "-")),
+                  //     Text(BoneMock.chars(26, "-")),
+                  //   ],
+                  // ),
+                  MyUi.hs_sm(),
+                  MyUi.hr(paddingFlag: false),
+            ],
+          )),
+    );
+
+    return w;
+  }
+
+
   static Widget bullet({Color color = Colors.black}) {
     final w = Container(
       height: 12.0,
