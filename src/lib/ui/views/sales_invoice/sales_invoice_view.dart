@@ -38,7 +38,8 @@ class SalesInvoiceView extends StackedView<SalesInvoiceViewModel> {
   Widget builder(BuildContext context, SalesInvoiceViewModel viewModel, Widget? child) {
     final myStyle = Theme.of(context).extension<MyCustomStyle>();
 
-
+    final DateTime today = DateTime.now();
+    final DateTime tomorrow = today.add(const Duration(days: 1));
 
     final l = Layout01Scaffold(
         body: Column(
@@ -49,13 +50,14 @@ class SalesInvoiceView extends StackedView<SalesInvoiceViewModel> {
                         _dialogService.showCustomDialog(
                             barrierDismissible: true,
                             variant: DialogType.calenderDatePicker,
-                            // title: "date",
+                             data: {
+                              "selectedDates": [today],
+                            }),
                             // description: 'Do you really want to log out?',
                             // data: {
                             //   "yesFunc": null,
                             //   "noFunc": null,
                             // }
-                            )
                       }),
         wPaginationLoadMore(
             createContentFunc: wSalesInvoiceList.createContentFunc,

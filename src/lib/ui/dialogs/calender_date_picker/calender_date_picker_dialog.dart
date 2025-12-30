@@ -1,41 +1,44 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 import 'package:flutter/material.dart';
-import 'package:getwidget/components/button/gf_button.dart';
-import 'package:getwidget/shape/gf_button_shape.dart';
-import 'package:getwidget/size/gf_size.dart';
-import 'package:glory_vansales_app/common/theme.dart';
 import 'package:glory_vansales_app/common/ui.dart';
-import 'package:glory_vansales_app/ui/common/app_colors.dart';
-import 'package:glory_vansales_app/ui/common/ui_helpers.dart';
 import 'package:glory_vansales_app/ui/components/_general_ui.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 import 'calender_date_picker_dialog_model.dart';
 
-const double _graphicSize = 60;
-
 class CalenderDatePickerDialog extends StackedView<CalenderDatePickerDialogModel> {
   final DialogRequest request;
   final Function(DialogResponse) completer;
+
+  // final List<DateTime>? selectedDates;
+  
 
   const CalenderDatePickerDialog({
     Key? key,
     required this.request,
     required this.completer,
+    // required this.selectedDates,
   }) : super(key: key);
 
   @override
   Widget builder( BuildContext context, CalenderDatePickerDialogModel viewModel, Widget? child,) {
+    // final myStyle = Theme.of(context).extension<MyCustomStyle>();
+    final DateTime today = DateTime.now();
+    final DateTime startOfToday = DateTime(today.year, today.month, today.day);
+    final DateTime oneWeekLater = today.add(const Duration(days: 7));
 
-    final myStyle = Theme.of(context).extension<MyCustomStyle>();
+    List<DateTime> selectedDates = request.data["selectedDates"] ?? [];
+    
 
     var c = CalendarDatePicker2(
       config: CalendarDatePicker2Config(
+        firstDate: startOfToday,
         controlsHeight: 36,
         firstDayOfWeek: 1,
-        calendarType: CalendarDatePicker2Type.single,
+        lastDate: oneWeekLater,
+        calendarType: CalendarDatePicker2Type.range,
         daySplashColor: Colors.transparent,
         dayTextStyle: TextStyle(fontSize: 16),
         controlsTextStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
@@ -44,7 +47,7 @@ class CalenderDatePickerDialog extends StackedView<CalenderDatePickerDialogModel
         centerAlignModePicker: true,
         customModePickerIcon: SizedBox(),
       ),
-      value: [],
+      value: selectedDates,
       onValueChanged: (dates) => {},
     );
 
@@ -70,7 +73,7 @@ class CalenderDatePickerDialog extends StackedView<CalenderDatePickerDialogModel
           Row( 
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-            TextButton(onPressed: ()=>{}, child: Text("CANCEL", style: context.labelLarge)),
+            TextButton(onPressed: ()=>{Navigator.pop(context)}, child: Text("CANCEL", style: context.labelLarge)),
             TextButton(onPressed: ()=>{}, child: Text("OK", style: context.labelLarge)),
           ],).paddingOnly(top:8, right: 8, bottom: 8)
         ],
