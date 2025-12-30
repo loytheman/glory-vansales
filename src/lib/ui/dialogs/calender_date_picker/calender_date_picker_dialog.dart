@@ -27,18 +27,17 @@ class CalenderDatePickerDialog extends StackedView<CalenderDatePickerDialogModel
     // final myStyle = Theme.of(context).extension<MyCustomStyle>();
     final DateTime today = DateTime.now();
     final DateTime startOfToday = DateTime(today.year, today.month, today.day);
-    final DateTime oneWeekBefore = startOfToday.subtract(const Duration(days: 7));
-    final DateTime oneWeekLater = startOfToday.add(const Duration(days: 7));
 
     var selectedDates = viewModel.selectedDates;
 
     var c = CalendarDatePicker2(
       config: CalendarDatePicker2Config(
-        firstDate: oneWeekBefore,
-        lastDate: oneWeekLater,
+        firstDate: startOfToday.add(Duration(days: -7)),
+        lastDate: startOfToday.add(Duration(days: 7)),
         calendarType: CalendarDatePicker2Type.range,
 
         firstDayOfWeek: 1,
+        animateToDisplayedMonthDate: true,
         daySplashColor: Colors.transparent,
         controlsHeight: 36,
         dayTextStyle: TextStyle(fontSize: 16),
@@ -50,14 +49,8 @@ class CalenderDatePickerDialog extends StackedView<CalenderDatePickerDialogModel
       ),
       value: selectedDates,
       onValueChanged: viewModel.setDates,
+      displayedMonthDate: viewModel.displayDate,
     );
-
-    var rows = [];
-    rows.add(Text("wtf"));
-    for (var d in viewModel.selectedDates) {
-      var r = Text(d.toString());
-      rows.add(r);
-    }
 
     final d = MyUi.dialog(
       padding: 0,
@@ -65,8 +58,7 @@ class CalenderDatePickerDialog extends StackedView<CalenderDatePickerDialogModel
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(">>> ${viewModel.counter}"),
-          ...rows,
+          // Text(viewModel.displayDate.toString()),
           Text("Select date:").paddingOnly(top: 20, left: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
