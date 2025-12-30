@@ -62,7 +62,7 @@ class MyUi {
     return w;
   }
 
-  static Widget dialog({Widget? child, double padding=0}) {
+  static Widget dialog({Widget? child, double padding = 0}) {
     final d = Dialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         backgroundColor: Colors.white,

@@ -32,8 +32,6 @@ class SalesInvoiceView extends StackedView<SalesInvoiceViewModel> {
     _navigationService.navigateToSalesInvoiceDetailView(salesInvoice: s);
   }
 
-  
-
   @override
   Widget builder(BuildContext context, SalesInvoiceViewModel viewModel, Widget? child) {
     final myStyle = Theme.of(context).extension<MyCustomStyle>();
@@ -45,20 +43,18 @@ class SalesInvoiceView extends StackedView<SalesInvoiceViewModel> {
         body: Column(
       children: [
         InkWell(
-                  child: Text("  Log out  ", style: context.bodyLarge?.copyWith(color: myStyle?.logoutColor)),
-                  onTap: () => {
-                        _dialogService.showCustomDialog(
-                            barrierDismissible: true,
-                            variant: DialogType.calenderDatePicker,
-                             data: {
-                              "selectedDates": [today],
-                            }),
-                            // description: 'Do you really want to log out?',
-                            // data: {
-                            //   "yesFunc": null,
-                            //   "noFunc": null,
-                            // }
-                      }),
+            child: Text("  Log out  ", style: context.bodyLarge?.copyWith(color: myStyle?.logoutColor)),
+            onTap: () => {
+                  _dialogService
+                      .showCustomDialog(barrierDismissible: true, variant: DialogType.calenderDatePicker, data: {
+                    "selectedDates": [today],
+                  }),
+                  // description: 'Do you really want to log out?',
+                  // data: {
+                  //   "yesFunc": null,
+                  //   "noFunc": null,
+                  // }
+                }),
         wPaginationLoadMore(
             createContentFunc: wSalesInvoiceList.createContentFunc,
             list: viewModel.salesInvoiceList,

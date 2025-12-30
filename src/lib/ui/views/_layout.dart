@@ -11,7 +11,6 @@ import 'package:glory_vansales_app/common/ui.dart';
 import 'package:glory_vansales_app/models/model.company.dart';
 import 'package:glory_vansales_app/services/authentication_service.dart';
 import 'package:glory_vansales_app/services/company_service.dart';
-import 'package:glory_vansales_app/ui/components/company_name.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 

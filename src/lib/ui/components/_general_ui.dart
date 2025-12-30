@@ -13,7 +13,7 @@ class wTag extends StatelessWidget {
   Widget build(BuildContext context) {
     final myStyle = Theme.of(context).extension<MyCustomStyle>();
     final s1 = context.bodyMedium?.copyWith(fontWeight: FontWeight.bold, color: Colors.blue.shade900);
-    
+
     var w2 = Material(
       borderRadius: BorderRadius.circular(8.0),
       color: Colors.blue.shade100,
